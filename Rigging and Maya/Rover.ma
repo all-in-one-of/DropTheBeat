@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: Rover.ma
-//Last modified: Thu, Aug 23, 2018 01:05:32 PM
+//Last modified: Thu, Aug 23, 2018 01:11:26 PM
 //Codeset: 1252
 requires maya "2018";
 currentUnit -l centimeter -a degree -t film;
@@ -13,8 +13,8 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "DACA31D1-4E77-DF28-A881-0CB78CF3576F";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 172.53571997992304 145.07920492514091 -281.6418376972191 ;
-	setAttr ".r" -type "double3" -26.13835275309652 -3096.6000000005333 0 ;
+	setAttr ".t" -type "double3" -154.30093090171181 222.96002407155402 -285.62988496323663 ;
+	setAttr ".r" -type "double3" -33.338352753117753 -3035.0000000002724 0 ;
 	setAttr ".rp" -type "double3" -2.8421709430404007e-14 -7.1054273576010019e-15 0 ;
 	setAttr ".rpt" -type "double3" 4.5067615302825991e-14 1.2104894511868702e-15 -2.3376145739758956e-14 ;
 createNode camera -s -n "perspShape" -p "persp";
@@ -22,7 +22,7 @@ createNode camera -s -n "perspShape" -p "persp";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
 	setAttr ".ncp" 1;
-	setAttr ".coi" 384.60385991087247;
+	setAttr ".coi" 362.21905120443404;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -885,6 +885,7 @@ createNode nurbsCurve -n "FrontArm04_ctlShape" -p "FrontArm04_ctl";
 		;
 createNode transform -n "Joints" -p "Rover";
 	rename -uid "8B27C137-4D1C-293F-FC30-3B8DF9FC618D";
+	setAttr ".v" no;
 createNode joint -n "COG_Jnt" -p "Joints";
 	rename -uid "68D78BE5-49CD-F0B2-ECD1-57AD6CE382F1";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
