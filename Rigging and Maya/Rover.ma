@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: Rover.ma
-//Last modified: Tue, Aug 21, 2018 01:28:46 PM
+//Last modified: Wed, Aug 22, 2018 07:28:24 PM
 //Codeset: 1252
 requires maya "2018";
 currentUnit -l centimeter -a degree -t film;
@@ -8,13 +8,13 @@ fileInfo "application" "maya";
 fileInfo "product" "Maya 2018";
 fileInfo "version" "2018";
 fileInfo "cutIdentifier" "201706261615-f9658c4cfc";
-fileInfo "osv" "Microsoft Windows 8 Enterprise Edition, 64-bit  (Build 9200)\n";
+fileInfo "osv" "Microsoft Windows 8 Business Edition, 64-bit  (Build 9200)\n";
 fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "DACA31D1-4E77-DF28-A881-0CB78CF3576F";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 21.845895842738088 22.067016788455025 334.30816597151681 ;
-	setAttr ".r" -type "double3" 1.4616472539538943 -1078.6000000000586 3.1069378838241894e-18 ;
+	setAttr ".t" -type "double3" 513.16185854235562 91.20648138272476 -64.786684988990658 ;
+	setAttr ".r" -type "double3" -6.9383527560422475 -2784.5999999992559 0 ;
 	setAttr ".rp" -type "double3" -2.8421709430404007e-14 -7.1054273576010019e-15 0 ;
 	setAttr ".rpt" -type "double3" 4.5067615302825991e-14 1.2104894511868702e-15 -2.3376145739758956e-14 ;
 createNode camera -s -n "perspShape" -p "persp";
@@ -22,7 +22,7 @@ createNode camera -s -n "perspShape" -p "persp";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
 	setAttr ".ncp" 1;
-	setAttr ".coi" 328.62238872813913;
+	setAttr ".coi" 549.54813881388725;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -40011,161 +40011,161 @@ createNode joint -n "COG_Jnt";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".radi" 2;
-createNode joint -n "joint15" -p "COG_Jnt";
+createNode joint -n "Central_R_Leg01_jnt" -p "COG_Jnt";
 	rename -uid "32BD7DA5-425D-27B0-F59D-808E1DD19791";
 	setAttr ".t" -type "double3" 29.5 -10.500019921875001 -7.4999867889404292 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
-	setAttr ".jo" -type "double3" 97.683287199129552 -69.419235683235883 82.801762822690449 ;
+	setAttr ".jo" -type "double3" 97.683287199129552 -69.419235683235897 82.801762822690449 ;
 	setAttr ".radi" 2;
-createNode joint -n "joint16" -p "joint15";
+createNode joint -n "Front_R_Leg01_jnt" -p "Central_R_Leg01_jnt";
 	rename -uid "9F197DC2-48CD-750B-11F9-3BACAD5BF652";
 	setAttr ".t" -type "double3" -45.405683797163277 -4.4994096775496928e-05 -4.9625796805230493e-08 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" -49.931228986878978 29.819582208443386 -46.890236430592772 ;
 	setAttr ".radi" 0.88084575965786172;
-createNode joint -n "joint17" -p "joint16";
+createNode joint -n "Front_R_Leg02_jnt" -p "Front_R_Leg01_jnt";
 	rename -uid "E8733CCE-41C4-B82D-C866-C58783EF6424";
 	setAttr ".t" -type "double3" -8.3630571879584501 3.047466785233155e-05 2.7599595142646649e-06 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 0 216.64432762243902 53.168210914054747 ;
 	setAttr ".radi" 0.90493010719503331;
-createNode joint -n "joint18" -p "joint17";
+createNode joint -n "Front_R_Leg03_jnt" -p "Front_R_Leg02_jnt";
 	rename -uid "F4BFE015-44B4-29EB-64BE-0DB1527A7AD0";
 	setAttr ".t" -type "double3" 8.3129999999999988 2.9731000000000058 0.0022000000000019782 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" -2.6426254397122384e-14 -89.999999999999957 0 ;
 	setAttr ".radi" 0.90493010719503331;
-createNode joint -n "joint19" -p "joint15";
+createNode joint -n "Back_Central_R_Leg01_jnt" -p "Central_R_Leg01_jnt";
 	rename -uid "E1B192FE-4495-4986-71E1-A19050C08D01";
 	setAttr ".t" -type "double3" 33.379421183574486 19.03654369719375 -2.5351026634776659 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 10.672270449391783 160.37882157441064 49.712427144642561 ;
 	setAttr ".radi" 2;
-createNode joint -n "joint20" -p "joint19";
+createNode joint -n "Middle_R_Leg01_jnt" -p "Back_Central_R_Leg01_jnt";
 	rename -uid "491B49DD-4B4B-5465-103A-229A66C7CC87";
 	setAttr ".t" -type "double3" 2.1577428964453027 22.872280999828384 -19.033417702822796 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" -2.4288195787584903e-13 24.92867914348782 27.450485383507676 ;
 	setAttr ".radi" 0.5;
-createNode joint -n "joint21" -p "joint19";
+createNode joint -n "Back_R_Leg01_jnt" -p "Back_Central_R_Leg01_jnt";
 	rename -uid "B330941D-4F9D-C936-4873-8DA89BDB8DED";
 	setAttr ".t" -type "double3" -35.415496923945334 -3.1416799686212471e-06 2.609667411945793e-06 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 90.000000000000156 65.071320856512187 -152.54951461649227 ;
 	setAttr ".radi" 0.90053774472119197;
-createNode joint -n "joint22" -p "joint21";
+createNode joint -n "Back_R_Leg02_jnt" -p "Back_R_Leg01_jnt";
 	rename -uid "226AB4BE-439D-B078-CFAB-B8961CCC0399";
 	setAttr ".t" -type "double3" 8.2214000000000098 0.04779999999999518 2.976500000000005 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 89.999999999999972 -7.315275767366092e-14 -90 ;
 	setAttr ".radi" 0.90053774472119197;
-createNode joint -n "joint2" -p "COG_Jnt";
+createNode joint -n "Central_L_Leg01_jnt" -p "COG_Jnt";
 	rename -uid "848D5390-4813-F6EB-165C-DFB46B6F7DFC";
 	setAttr ".t" -type "double3" -29.5 -10.499996185302734 -7.4999942779541016 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
-	setAttr ".jo" -type "double3" -82.316712800870405 69.419235683235883 -82.801762822690407 ;
+	setAttr ".jo" -type "double3" -82.316712800870405 69.419235683235897 -82.801762822690407 ;
 	setAttr ".radi" 2;
-createNode joint -n "joint3" -p "joint2";
+createNode joint -n "Front_L_Leg03_jnt" -p "Central_L_Leg01_jnt";
 	rename -uid "59FEE6B8-4CFF-C238-ADDB-22A95703B17D";
 	setAttr ".t" -type "double3" 45.405701665817801 2.8085477462681628e-15 -4.8849813083506888e-15 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" -49.93122898687902 29.8195822084434 -46.890236430592786 ;
 	setAttr ".radi" 0.88084575965786172;
-createNode joint -n "joint4" -p "joint3";
+createNode joint -n "Front_L_Leg02" -p "Front_L_Leg03_jnt";
 	rename -uid "FECE7101-4143-4C61-ACF1-CEB1794C6109";
 	setAttr ".t" -type "double3" 8.3630180200519959 -7.1054273576010019e-15 -1.4210854715202004e-14 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 0 216.64432762243902 53.168210914054747 ;
 	setAttr ".radi" 0.90493010719503331;
-createNode joint -n "joint5" -p "joint4";
+createNode joint -n "Front_L_Leg01" -p "Front_L_Leg02";
 	rename -uid "E38AABC9-4872-3D3E-29B1-44969F3DF5A0";
 	setAttr ".t" -type "double3" -8.3129882812499929 -2.9730892181396307 -0.0022125244141051326 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 0 -89.999999999999986 0 ;
 	setAttr ".radi" 0.90493010719503331;
-createNode joint -n "joint6" -p "joint2";
+createNode joint -n "Back_Central_L_Leg01_jnt" -p "Central_L_Leg01_jnt";
 	rename -uid "F3F68619-4A46-9FDA-E90E-B4928B32AEDC";
 	setAttr ".t" -type "double3" -33.379420917494159 -19.036544412230697 2.5351026634776779 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 10.672270449391732 160.37882157441064 49.712427144642533 ;
 	setAttr ".radi" 2;
-createNode joint -n "joint9" -p "joint6";
+createNode joint -n "Back_L_Leg01_jnt" -p "Back_Central_L_Leg01_jnt";
 	rename -uid "594011F8-49D6-F6D2-241B-C7AA8E545824";
 	setAttr ".t" -type "double3" -2.1577548713828616 -22.872272838746692 19.033373375509605 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" -8.7683017283700035e-16 24.928679143487834 27.450485383507687 ;
 	setAttr ".radi" 0.5;
-createNode joint -n "joint7" -p "joint6";
+createNode joint -n "Back_L_Leg02_jnt" -p "Back_Central_L_Leg01_jnt";
 	rename -uid "3220195E-404B-ACBE-5322-22823AB48D84";
 	setAttr ".t" -type "double3" 35.415495182470643 7.1054273576010019e-15 3.1974423109204508e-14 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 89.999999999999986 65.07132085651223 -152.54951461649236 ;
 	setAttr ".radi" 0.90053774472119197;
-createNode joint -n "joint8" -p "joint7";
+createNode joint -n "Back_L_Leg03_jnt" -p "Back_L_Leg02_jnt";
 	rename -uid "911147E8-49CA-3796-4487-C2B7E9B3EC34";
 	setAttr ".t" -type "double3" -8.2213783264160014 -0.047786712646505691 -2.9764852523803675 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 90 -1.2722218725854067e-14 -89.999999999999986 ;
 	setAttr ".radi" 0.90053774472119197;
-createNode joint -n "joint10" -p "COG_Jnt";
+createNode joint -n "L_Wing01_jnt" -p "COG_Jnt";
 	rename -uid "718F1D4F-4D3B-295D-6D26-D598A4C48E9E";
 	setAttr ".t" -type "double3" -39.768543243408203 18.498031616210938 13.405985236167908 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 0 -28.148455980566013 0 ;
 	setAttr ".radi" 1.111486640200569;
-createNode joint -n "joint11" -p "joint10";
+createNode joint -n "L_Wing02_jnt" -p "L_Wing01_jnt";
 	rename -uid "129EFC09-44D2-5B97-AF45-2E91DDB5A846";
 	setAttr ".t" -type "double3" -7.1894110373219533 0 10.616872296833179 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 0 -0.62465196455525862 0 ;
 	setAttr ".radi" 1.111486640200569;
-createNode joint -n "joint12" -p "COG_Jnt";
+createNode joint -n "L_SpinnyThing01_jnt" -p "COG_Jnt";
 	rename -uid "839902F6-40F8-29EF-3FB1-EA81DB5AB667";
 	setAttr ".t" -type "double3" -38.537918090820313 21.946334838867188 40.0086669921875 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" -89.999999999999986 0 0 ;
 	setAttr ".radi" 1.2312039715686658;
-createNode joint -n "joint13" -p "joint12";
+createNode joint -n "L_SpinnyThing02_jnt" -p "L_SpinnyThing01_jnt";
 	rename -uid "98E616CD-4950-F19E-3568-5A864646DB3F";
 	setAttr ".t" -type "double3" -8.133026123046875 0.011203765869140625 12.765998840332031 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 90 -1.2722218725854067e-14 -89.999999999999986 ;
 	setAttr ".radi" 1.2312039715686658;
-createNode joint -n "joint26" -p "COG_Jnt";
+createNode joint -n "FrontArm01_jnt" -p "COG_Jnt";
 	rename -uid "019B2F1A-414A-B38B-26FD-EDA762E01D1D";
 	setAttr ".t" -type "double3" 0 0.58582305908203125 -29.297235488891602 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" -89.999999999999986 0 0 ;
 	setAttr ".radi" 0.76531578163291913;
-createNode joint -n "joint27" -p "joint26";
+createNode joint -n "FrontArm02_jnt" -p "FrontArm01_jnt";
 	rename -uid "2C8D7068-45A8-D434-F233-7EB55F6F8155";
 	setAttr ".t" -type "double3" -2.899999856948853 7.6293945241445726e-06 -5.4000015258789134 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 90 1.2722218725854067e-14 89.999999999999986 ;
 	setAttr ".radi" 2;
-createNode joint -n "joint28" -p "joint27";
+createNode joint -n "FrontArm03_jnt" -p "FrontArm02_jnt";
 	rename -uid "9188AE89-4B10-F4AE-5FD1-94AA0349972D";
 	setAttr ".t" -type "double3" 35.527179718017578 16.566974639892607 0.39999985694884543 ;
 	setAttr ".r" -type "double3" 0 90 0 ;
@@ -40173,7 +40173,7 @@ createNode joint -n "joint28" -p "joint27";
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 0 -89.999999999999986 0 ;
 	setAttr ".radi" 2;
-createNode joint -n "joint29" -p "joint28";
+createNode joint -n "FrontArm04_jnt" -p "FrontArm03_jnt";
 	rename -uid "A75B7F08-4802-7C08-DDC8-02A65DE45D83";
 	setAttr ".t" -type "double3" -16.999973297119126 -29.444862365722681 4.9999995231628436 ;
 	setAttr ".r" -type "double3" 0 90 0 ;
@@ -40181,40 +40181,61 @@ createNode joint -n "joint29" -p "joint28";
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 0 -89.999999999999986 0 ;
 	setAttr ".radi" 2;
-createNode joint -n "joint30" -p "COG_Jnt";
+createNode joint -n "FrontHead01_jnt" -p "COG_Jnt";
 	rename -uid "97FB2529-491A-B023-6D74-55808E90992B";
 	setAttr ".t" -type "double3" 0 17.699996948242188 -30.499990463256836 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" -122.7580792964217 -0.284135646847887 90.182817467497912 ;
 	setAttr ".radi" 2;
-createNode joint -n "joint31" -p "joint30";
+createNode joint -n "FrontHead02_jnt" -p "FrontHead01_jnt";
 	rename -uid "F624C422-409A-D854-9FA9-0D9DFA443E1A";
 	setAttr ".t" -type "double3" 64.201082679042116 -6.8833827526759706e-15 4.4408920985006262e-15 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 180 57.242374010177429 90.337868344552234 ;
 	setAttr ".radi" 2;
-createNode joint -n "joint32" -p "COG_Jnt";
+createNode joint -n "R_Wing01_jnt" -p "COG_Jnt";
 	rename -uid "8E94CAA2-4FE5-72EB-717F-79AA578B1C30";
 	setAttr ".t" -type "double3" 39.7685 18.498080078125 13.405983211059571 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" -180 28.148455980566013 8.0095544316149459e-31 ;
 	setAttr ".radi" 1.111486640200569;
-createNode joint -n "joint33" -p "joint32";
+createNode joint -n "R_Wing02_jnt" -p "R_Wing01_jnt";
 	rename -uid "1A02B420-4497-6E49-62F0-D3B291B863B4";
 	setAttr ".t" -type "double3" 7.1894104770846425 1.4210854715202004e-14 -10.616877134712713 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 8.5377364625117713e-07 -0.62465196455496907 7.65051477072926e-17 ;
 	setAttr ".radi" 1.111486640200569;
-createNode joint -n "joint25" -p "COG_Jnt";
+createNode joint -n "Back_Wing01_jnt" -p "COG_Jnt";
 	rename -uid "85F365A3-4E50-472F-F3D1-AB9A88D1512F";
 	setAttr ".t" -type "double3" 38.520000457763672 18.498001098632813 54.500001907348633 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".radi" 2;
+createNode joint -n "L_Wing01_jnt1" -p "COG_Jnt";
+	rename -uid "C8B1151F-426D-2107-AFDB-CDA24F33C79A";
+	setAttr ".t" -type "double3" -39.768543243408203 18.498031616210938 13.405985236167908 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".jo" -type "double3" 0 -28.148455980566013 0 ;
+	setAttr ".radi" 1.111486640200569;
+createNode joint -n "L_Wing02_jnt" -p "L_Wing01_jnt1";
+	rename -uid "C4023016-44F9-E488-F1AA-618712698954";
+	setAttr ".t" -type "double3" -7.1894110373219533 0 10.616872296833179 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".jo" -type "double3" 0 -0.62465196455525862 0 ;
+	setAttr ".radi" 1.111486640200569;
+createNode joint -n "L_Wing02_jnt1" -p "L_Wing01_jnt1";
+	rename -uid "95441413-4560-F673-C655-7895AB4F3DDD";
+	setAttr ".t" -type "double3" -7.1894110373219533 0 10.616872296833179 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".jo" -type "double3" 0 -0.62465196455525862 0 ;
+	setAttr ".radi" 1.111486640200569;
 createNode transform -n "Main_Ctl_Grp";
 	rename -uid "FEA20AFB-4306-E258-4FC8-51A9A9F4C2F5";
 createNode transform -n "Main_Ctl" -p "Main_Ctl_Grp";
@@ -40223,7 +40244,7 @@ createNode nurbsCurve -n "Main_CtlShape" -p "Main_Ctl";
 	rename -uid "D36F6175-4873-4CC9-7768-AB898D07407A";
 	setAttr -k off ".v";
 	setAttr ".tw" yes;
-createNode transform -n "COG_Ctl_Grp";
+createNode transform -n "COG_Ctl_Grp" -p "Main_Ctl";
 	rename -uid "6E309020-452C-1D66-9A78-30A75957F1F2";
 	setAttr ".t" -type "double3" 0 48.367919921875 -14.96971321105957 ;
 createNode transform -n "COG_Ctl" -p "COG_Ctl_Grp";
@@ -40237,7 +40258,7 @@ createNode nurbsCurve -n "COG_CtlShape" -p "COG_Ctl";
 		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
 		11
 		118.3975856115424 7.249761212297508e-15 -118.39758561154241
-		1.025271063039754e-14 1.025271063039754e-14 -167.43947132407283
+		1.0252710630397539e-14 1.0252710630397539e-14 -167.43947132407283
 		-118.3975856115424 7.2497612122975048e-15 -118.39758561154238
 		-167.43947132407288 5.3150232957283225e-31 -8.6800917610348529e-15
 		-118.3975856115424 -7.2497612122975064e-15 118.3975856115424
@@ -40245,23 +40266,741 @@ createNode nurbsCurve -n "COG_CtlShape" -p "COG_Ctl";
 		118.3975856115424 -7.2497612122975048e-15 118.39758561154238
 		167.43947132407288 -1.3981585286625194e-30 2.2833661585299075e-14
 		118.3975856115424 7.249761212297508e-15 -118.39758561154241
-		1.025271063039754e-14 1.025271063039754e-14 -167.43947132407283
+		1.0252710630397539e-14 1.0252710630397539e-14 -167.43947132407283
 		-118.3975856115424 7.2497612122975048e-15 -118.39758561154238
 		;
+createNode transform -n "R_Wing02_ctl_grp1" -p "COG_Ctl";
+	rename -uid "C03929AC-4D13-D58D-24A0-9C9210E0AF0A";
+	setAttr ".t" -type "double3" 54.558924127906586 26.200182410819011 77.192664426214975 ;
+	setAttr ".s" -type "double3" 1.4163791142144257 1.4163791142144257 1.4163791142144257 ;
+createNode transform -n "R_Wing02_ctl" -p "R_Wing02_ctl_grp1";
+	rename -uid "5F8CDC67-4786-E0B9-3036-A3A36A68A30E";
+	setAttr ".rp" -type "double3" 7.1054273576010019e-15 1.4210854715202004e-14 7.1054273576010019e-15 ;
+	setAttr ".sp" -type "double3" 7.1054273576010019e-15 1.4210854715202004e-14 7.1054273576010019e-15 ;
+createNode nurbsCurve -n "R_Wing02_ctlShape" -p "|Main_Ctl_Grp|Main_Ctl|COG_Ctl_Grp|COG_Ctl|R_Wing02_ctl_grp1|R_Wing02_ctl";
+	rename -uid "2115CA5D-4F1D-ABE6-49E5-439F1E3EA640";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		1.1102485377342401e-15 6.9040041066363349 -6.9040041066363358
+		-5.9785641684164466e-16 5.9785641684164486e-16 -9.7637362422846454
+		-1.9557451907834773e-15 -6.9040041066363349 -6.904004106636334
+		-2.1679849565103046e-15 -9.763736242284649 -5.0615381094665336e-16
+		-1.1102485377342401e-15 -6.9040041066363349 6.9040041066363349
+		5.9785641684164506e-16 -9.7804013711463177e-16 9.7637362422846508
+		1.9557451907834773e-15 6.9040041066363349 6.904004106636334
+		2.1679849565103046e-15 9.763736242284649 1.3314772640015786e-15
+		1.1102485377342401e-15 6.9040041066363349 -6.9040041066363358
+		-5.9785641684164466e-16 5.9785641684164486e-16 -9.7637362422846454
+		-1.9557451907834773e-15 -6.9040041066363349 -6.904004106636334
+		;
+createNode transform -n "L_Central_Leg01_ctl_grp1" -p "COG_Ctl";
+	rename -uid "A25F8927-45E7-97D8-992A-E1B37079613F";
+	setAttr ".t" -type "double3" -41.783183869325562 -14.871975296193945 -10.622835252021893 ;
+	setAttr ".r" -type "double3" -82.31671280087042 69.419235683235897 -82.801762822690407 ;
+	setAttr ".s" -type "double3" 1.4163791142144257 1.4163791142144257 1.416379114214426 ;
+createNode transform -n "L_Central_Leg01_ctl" -p "L_Central_Leg01_ctl_grp1";
+	rename -uid "E03F5D33-42C5-3411-79CE-B2A58289220A";
+	setAttr ".rp" -type "double3" -5.3290705182007514e-15 0 3.5527136788005009e-15 ;
+	setAttr ".sp" -type "double3" -5.3290705182007514e-15 0 3.5527136788005009e-15 ;
+createNode nurbsCurve -n "L_Central_Leg01_ctlShape" -p "L_Central_Leg01_ctl";
+	rename -uid "31D78C1E-447A-A7BA-6D2E-FB939221490D";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		-9.9995993144237758 10.494433479604956 0.26063236981545596
+		-14.464089678605722 0.35759842244149409 0.92481504993813046
+		-10.45571247644115 -9.9887129407049731 1.0472536164937942
+		-0.32252070985093212 -14.483771733838106 0.55622521775165978
+		9.9995993144237616 -10.494433479604957 -0.26063236981547494
+		14.464089678605715 -0.35759842244149842 -0.92481504993814956
+		10.455712476441137 9.9887129407049713 -1.0472536164938129
+		0.32252070985092174 14.483771733838102 -0.55622521775167866
+		-9.9995993144237758 10.494433479604956 0.26063236981545596
+		-14.464089678605722 0.35759842244149409 0.92481504993813046
+		-10.45571247644115 -9.9887129407049731 1.0472536164937942
+		;
+createNode transform -n "L_Back_Central_Leg01_ctl_grp" -p "L_Central_Leg01_ctl";
+	rename -uid "A5E3A2AD-4BD0-C930-00C7-BF8EB22A58BC";
+	setAttr ".t" -type "double3" -33.379420917494159 -19.036544412230683 2.5351026634776765 ;
+	setAttr ".r" -type "double3" 10.672270449391759 160.37882157441064 49.712427144642511 ;
+	setAttr ".s" -type "double3" 0.99999999999999989 1 0.99999999999999989 ;
+createNode transform -n "L_Back_Central_Leg01_ctl" -p "L_Back_Central_Leg01_ctl_grp";
+	rename -uid "5E8CB7E7-477D-283A-0137-DFBB768A321B";
+	setAttr ".r" -type "double3" -14.583745051163053 27.254829997617048 -4.4722039662595654e-16 ;
+	setAttr ".rp" -type "double3" 0 7.1054273576010019e-15 3.5527136788005009e-15 ;
+	setAttr ".rpt" -type "double3" 7.5522078195362323e-16 6.6562256199964041e-16 -2.0866655434170974e-15 ;
+	setAttr ".sp" -type "double3" 0 7.1054273576010019e-15 3.5527136788005009e-15 ;
+createNode nurbsCurve -n "L_Back_Central_Leg01_ctlShape" -p "L_Back_Central_Leg01_ctl";
+	rename -uid "420B3C23-4410-3619-A09C-B5BBB95478DB";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		-10.141474930750997 10.283021960049338 1.2660945214183961
+		-13.404927849011294 0.55688730179579249 5.4946187888672808
+		-8.815955835953595 -9.4954643851363727 6.504469889867738
+		0.93728354052348217 -13.985501816286353 3.7040907454310994
+		10.141474930750967 -10.283021960049346 -1.2660945214184172
+		13.404927849011271 -0.55688730179580503 -5.4946187888673039
+		8.8159558359535666 9.4954643851363638 -6.5044698898677602
+		-0.93728354052350649 13.985501816286343 -3.7040907454311203
+		-10.141474930750997 10.283021960049338 1.2660945214183961
+		-13.404927849011294 0.55688730179579249 5.4946187888672808
+		-8.815955835953595 -9.4954643851363727 6.504469889867738
+		;
+createNode transform -n "L_Back_Wheel01_ctl_grp" -p "L_Back_Central_Leg01_ctl";
+	rename -uid "3EA5BCF8-4C2C-D585-5E95-D6A6ED0E6505";
+	setAttr ".t" -type "double3" 31.483615195318755 -4.0837304320080534 15.69593638530008 ;
+	setAttr ".r" -type "double3" -79.088449971152372 84.196532262886677 35.054133722369592 ;
+	setAttr ".s" -type "double3" 1 1.0000000000000002 1.0000000000000002 ;
+createNode transform -n "L_Back_Wheel01_ctl" -p "L_Back_Wheel01_ctl_grp";
+	rename -uid "03858591-448C-40B2-9BAE-5980DDA7E6FD";
+createNode nurbsCurve -n "L_Back_Wheel01_ctlShape" -p "L_Back_Wheel01_ctl";
+	rename -uid "2A8C02F4-4EC0-80F6-4010-818AF7DC5215";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		-7.8339246464310071 7.8339246464310097 -1.2597911659785742e-15
+		-11.078842481591581 3.1383806510185983e-15 -1.7816137526847136e-15
+		-7.8339246464310088 -7.8339246464310062 -1.2597911659785738e-15
+		-3.0343263524743407e-15 -11.078842481591584 -9.2359171548588283e-32
+		7.8339246464310062 -7.8339246464310097 1.259791165978574e-15
+		11.078842481591588 -3.5697724304000061e-15 1.7816137526847148e-15
+		7.8339246464310088 7.8339246464310062 1.2597911659785738e-15
+		3.9708150393726688e-15 11.078842481591584 2.4295803840530155e-31
+		-7.8339246464310071 7.8339246464310097 -1.2597911659785742e-15
+		-11.078842481591581 3.1383806510185983e-15 -1.7816137526847136e-15
+		-7.8339246464310088 -7.8339246464310062 -1.2597911659785738e-15
+		;
+createNode transform -n "L_Back_Wheel02_ctl_grp" -p "L_Back_Wheel01_ctl";
+	rename -uid "B124FB8C-491E-D232-DDF2-5FB70EDD7AD2";
+	setAttr ".t" -type "double3" -8.2213783264160085 -0.047786712646505691 -2.9764852523803693 ;
+	setAttr ".r" -type "double3" 89.999999999999986 -3.1805546814635176e-15 -89.999999999999957 ;
+	setAttr ".s" -type "double3" 0.99999999999999989 1.0000000000000002 1 ;
+createNode transform -n "L_Back_Wheel02_ctl" -p "L_Back_Wheel02_ctl_grp";
+	rename -uid "3445BA4B-4735-C42E-C2C8-0E883960DE37";
+	setAttr ".rp" -type "double3" -7.1054273576010019e-15 0 -7.1054273576010019e-15 ;
+	setAttr ".sp" -type "double3" -7.1054273576010019e-15 0 -7.1054273576010019e-15 ;
+createNode nurbsCurve -n "L_Back_Wheel02_ctlShape" -p "L_Back_Wheel02_ctl";
+	rename -uid "D478F743-4554-1C73-E3EB-3DB646423FC4";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		-14.730280787712838 14.730280787712843 -2.3688098170817625e-15
+		-20.831762867547329 5.90115814163341e-15 -3.3500029699995581e-15
+		-14.730280787712841 -14.730280787712836 -2.3688098170817621e-15
+		-5.7055028214837957e-15 -20.831762867547337 -1.7366474553097116e-31
+		14.730280787712836 -14.730280787712843 2.3688098170817621e-15
+		20.83176286754734 -6.7123124897536979e-15 3.3500029699995593e-15
+		14.730280787712841 14.730280787712836 2.3688098170817621e-15
+		7.4664007028303429e-15 20.831762867547337 4.5683872220706957e-31
+		-14.730280787712838 14.730280787712843 -2.3688098170817625e-15
+		-20.831762867547329 5.90115814163341e-15 -3.3500029699995581e-15
+		-14.730280787712841 -14.730280787712836 -2.3688098170817621e-15
+		;
+createNode transform -n "L_Mid_Wheel01_ctl_grp" -p "L_Back_Central_Leg01_ctl";
+	rename -uid "A55C179A-49C5-0775-8B6D-DF8866173EB8";
+	setAttr ".t" -type "double3" -10.634509358359541 -26.146967790409416 9.6596769625521048 ;
+	setAttr ".r" -type "double3" 1.1021944921683204 -5.6981938384825961 24.087728929391254 ;
+	setAttr ".s" -type "double3" 0.99999999999999989 1 0.99999999999999978 ;
+createNode transform -n "L_Mid_Wheel01_ctl" -p "L_Mid_Wheel01_ctl_grp";
+	rename -uid "BEE05400-4C22-0876-CD29-9D97075B2020";
+	setAttr ".rp" -type "double3" 0 0 7.1054273576010019e-15 ;
+	setAttr ".sp" -type "double3" 0 0 7.1054273576010019e-15 ;
+createNode nurbsCurve -n "L_Mid_Wheel01_ctlShape" -p "L_Mid_Wheel01_ctl";
+	rename -uid "8BB41D96-45AD-62F0-CCAE-C98872ADC7D9";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		-14.730280787712838 14.730280787712843 -2.3688098170817625e-15
+		-20.831762867547329 5.90115814163341e-15 -3.3500029699995581e-15
+		-14.730280787712841 -14.730280787712836 -2.3688098170817621e-15
+		-5.7055028214837957e-15 -20.831762867547337 -1.7366474553097116e-31
+		14.730280787712836 -14.730280787712843 2.3688098170817621e-15
+		20.83176286754734 -6.7123124897536979e-15 3.3500029699995593e-15
+		14.730280787712841 14.730280787712836 2.3688098170817621e-15
+		7.4664007028303429e-15 20.831762867547337 4.5683872220706957e-31
+		-14.730280787712838 14.730280787712843 -2.3688098170817625e-15
+		-20.831762867547329 5.90115814163341e-15 -3.3500029699995581e-15
+		-14.730280787712841 -14.730280787712836 -2.3688098170817621e-15
+		;
+createNode transform -n "L_Front_Wheel01_ctl_grp" -p "L_Central_Leg01_ctl";
+	rename -uid "8F5A44CF-4F4E-5215-9205-F1B512523F2E";
+	setAttr ".t" -type "double3" 45.405701665817801 1.4210854715202004e-14 0 ;
+	setAttr ".r" -type "double3" -49.931228986879013 29.819582208443386 -46.890236430592765 ;
+createNode transform -n "L_Front_Wheel01_ctl" -p "L_Front_Wheel01_ctl_grp";
+	rename -uid "F1C67FB5-489D-66EF-EB25-B5AD29AE862D";
+	setAttr ".rp" -type "double3" -3.5527136788005009e-15 -7.1054273576010019e-15 0 ;
+	setAttr ".sp" -type "double3" -3.5527136788005009e-15 -7.1054273576010019e-15 0 ;
+createNode nurbsCurve -n "L_Front_Wheel01_ctlShape" -p "L_Front_Wheel01_ctl";
+	rename -uid "DFB91AB1-4A07-0F55-17A7-8DA02C494806";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		1.5537865530952568 7.3364813599735959 -6.8864217485359589
+		1.6365083573651713 0.21406965790659352 -10.046742281673517
+		0.76058576082748686 -7.0337411464695254 -7.3218174438739476
+		-0.56087765905507847 -10.161281781465478 -0.30787124867292576
+		-1.5537865530952499 -7.3364813599736021 6.886421748535958
+		-1.6365083573651653 -0.21406965790660107 10.04674228167352
+		-0.7605857608274802 7.0337411464695183 7.3218174438739476
+		0.56087765905508502 10.161281781465471 0.30787124867292642
+		1.5537865530952568 7.3364813599735959 -6.8864217485359589
+		1.6365083573651713 0.21406965790659352 -10.046742281673517
+		0.76058576082748686 -7.0337411464695254 -7.3218174438739476
+		;
+createNode transform -n "L_Front_Wheel02_ctl_grp" -p "L_Front_Wheel01_ctl";
+	rename -uid "3CAA956A-4BC6-5453-1B04-CEA91DC97488";
+	setAttr ".t" -type "double3" 8.363018020052003 -7.1054273576010019e-15 -1.4210854715202004e-14 ;
+	setAttr ".r" -type "double3" 0 216.64432762243902 53.168210914054796 ;
+	setAttr ".s" -type "double3" 0.99999999999999967 0.99999999999999989 1 ;
+createNode transform -n "L_Front_Wheel02_ctl" -p "L_Front_Wheel02_ctl_grp";
+	rename -uid "C7F5A057-48AC-E934-15A1-E7BB95767326";
+	setAttr ".rp" -type "double3" 3.5527136788005009e-15 0 0 ;
+	setAttr ".sp" -type "double3" 3.5527136788005009e-15 0 0 ;
+createNode nurbsCurve -n "L_Front_Wheel02_ctlShape" -p "L_Front_Wheel02_ctl";
+	rename -uid "9B4B9F66-4856-4A3D-FADD-3189796055FB";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		7.1993407995638297 4.4083248330783967e-16 -7.1993407995638306
+		6.2343127662855731e-16 6.2343127662855731e-16 -10.181405398889128
+		-7.1993407995638297 4.4083248330783947e-16 -7.1993407995638288
+		-10.18140539888913 3.2318787470138041e-32 -5.2780585377987579e-16
+		-7.1993407995638297 -4.4083248330783957e-16 7.1993407995638297
+		-1.0198783421887185e-15 -6.234312766285579e-16 10.181405398889131
+		7.1993407995638297 -4.4083248330783947e-16 7.1993407995638288
+		10.18140539888913 -8.5017103074075766e-32 1.3884346594180132e-15
+		7.1993407995638297 4.4083248330783967e-16 -7.1993407995638306
+		6.2343127662855731e-16 6.2343127662855731e-16 -10.181405398889128
+		-7.1993407995638297 4.4083248330783947e-16 -7.1993407995638288
+		;
+createNode transform -n "L_Front_Wheel03_ctl_grp" -p "L_Front_Wheel02_ctl";
+	rename -uid "B75091E5-4DB0-EBC7-98EF-B496DE0B94EC";
+	setAttr ".t" -type "double3" -8.3129882812499893 -2.9730892181396325 -0.0022125244141051326 ;
+	setAttr ".r" -type "double3" 0 -89.999999999999986 0 ;
+	setAttr ".s" -type "double3" 0.99999999999999978 0.99999999999999978 0.99999999999999956 ;
+createNode transform -n "L_Front_Wheel03_ctl" -p "L_Front_Wheel03_ctl_grp";
+	rename -uid "9C0D484A-4F03-0228-EE9E-8EA06FFD4819";
+	setAttr ".rp" -type "double3" 0 1.7763568394002505e-15 -7.1054273576010019e-15 ;
+	setAttr ".sp" -type "double3" 0 1.7763568394002505e-15 -7.1054273576010019e-15 ;
+createNode nurbsCurve -n "L_Front_Wheel03_ctlShape" -p "L_Front_Wheel03_ctl";
+	rename -uid "4D2201E8-4E81-C2D4-6441-C1A6D7625A5C";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		-14.730280787712838 14.730280787712843 -2.3688098170817625e-15
+		-20.831762867547329 5.90115814163341e-15 -3.3500029699995581e-15
+		-14.730280787712841 -14.730280787712836 -2.3688098170817621e-15
+		-5.7055028214837957e-15 -20.831762867547337 -1.7366474553097116e-31
+		14.730280787712836 -14.730280787712843 2.3688098170817621e-15
+		20.83176286754734 -6.7123124897536979e-15 3.3500029699995593e-15
+		14.730280787712841 14.730280787712836 2.3688098170817621e-15
+		7.4664007028303429e-15 20.831762867547337 4.5683872220706957e-31
+		-14.730280787712838 14.730280787712843 -2.3688098170817625e-15
+		-20.831762867547329 5.90115814163341e-15 -3.3500029699995581e-15
+		-14.730280787712841 -14.730280787712836 -2.3688098170817621e-15
+		;
+createNode transform -n "R_Central_Leg01_ctl_grp" -p "COG_Ctl";
+	rename -uid "8DC03E08-401B-F8F1-D8E2-17B29C28716F";
+	setAttr ".t" -type "double3" 41.783183869325562 -14.872008916179148 -10.622824644739342 ;
+	setAttr ".r" -type "double3" 97.683287199129637 -69.419235683235911 82.801762822690421 ;
+	setAttr ".s" -type "double3" 1.416379114214426 1.4163791142144262 1.416379114214426 ;
+createNode transform -n "R_Central_Leg01_ctl" -p "R_Central_Leg01_ctl_grp";
+	rename -uid "034055FD-4BEE-194C-C29F-6CA394C88672";
+	setAttr ".rp" -type "double3" -5.3290705182007514e-15 0 3.5527136788005009e-15 ;
+	setAttr ".sp" -type "double3" -5.3290705182007514e-15 0 3.5527136788005009e-15 ;
+createNode nurbsCurve -n "R_Central_Leg01_ctlShape" -p "R_Central_Leg01_ctl";
+	rename -uid "300E67FA-462F-5E13-8B51-25AF8A0AC85E";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		-9.9995993144237758 10.494433479604956 0.26063236981545596
+		-14.464089678605722 0.35759842244149409 0.92481504993813046
+		-10.45571247644115 -9.9887129407049731 1.0472536164937942
+		-0.32252070985093212 -14.483771733838106 0.55622521775165978
+		9.9995993144237616 -10.494433479604957 -0.26063236981547494
+		14.464089678605715 -0.35759842244149842 -0.92481504993814956
+		10.455712476441137 9.9887129407049713 -1.0472536164938129
+		0.32252070985092174 14.483771733838102 -0.55622521775167866
+		-9.9995993144237758 10.494433479604956 0.26063236981545596
+		-14.464089678605722 0.35759842244149409 0.92481504993813046
+		-10.45571247644115 -9.9887129407049731 1.0472536164937942
+		;
+createNode transform -n "R_Back_Central_Leg01_ctl_grp1" -p "R_Central_Leg01_ctl";
+	rename -uid "0D5766A3-4D61-172B-E79C-649252CB7038";
+	setAttr ".t" -type "double3" 33.379421183574486 19.036543697193739 -2.5351026634776552 ;
+	setAttr ".r" -type "double3" 10.672270449391808 160.37882157441067 49.712427144642511 ;
+	setAttr ".s" -type "double3" 0.99999999999999978 0.99999999999999956 0.99999999999999956 ;
+createNode transform -n "R_Back_Central_Leg01_ctl" -p "R_Back_Central_Leg01_ctl_grp1";
+	rename -uid "AF8B096B-4BF9-5C81-9C13-3CA1CE0716B9";
+	setAttr ".rp" -type "double3" 3.5527136788005009e-15 7.1054273576010019e-15 0 ;
+	setAttr ".sp" -type "double3" 3.5527136788005009e-15 7.1054273576010019e-15 0 ;
+createNode nurbsCurve -n "R_Back_Central_Leg01_ctlShape" -p "R_Back_Central_Leg01_ctl";
+	rename -uid "B5C38FC4-4EE1-62B7-90F4-1FB4A96AC7AB";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		-8.1492489570214222 11.077025536159882 4.5915461934756499
+		-6.0377434760014159 3.7362955735211689 12.640363873099615
+		-0.3894097528694731 -5.7931056630516879 13.284627829192742
+		5.4870349221730459 -11.928984170469247 6.1469369740238058
+		8.1492489570213849 -11.077025536159894 -4.5915461934756365
+		6.0377434760013875 -3.7362955735211867 -12.640363873099606
+		0.38940975286943935 5.793105663051672 -13.284627829192727
+		-5.4870349221730761 11.928984170469233 -6.1469369740237969
+		-8.1492489570214222 11.077025536159882 4.5915461934756499
+		-6.0377434760014159 3.7362955735211689 12.640363873099615
+		-0.3894097528694731 -5.7931056630516879 13.284627829192742
+		;
+createNode transform -n "R_Back_Wheel01_ctl_grp" -p "R_Back_Central_Leg01_ctl";
+	rename -uid "7DED7BF0-4363-3E09-54BE-10BA21E6D1C2";
+	setAttr ".t" -type "double3" -35.415496923945341 -3.1416799615158197e-06 2.6096674048403656e-06 ;
+	setAttr ".r" -type "double3" 90.000000000000185 65.071320856512216 -152.54951461649227 ;
+	setAttr ".s" -type "double3" 1.0000000000000007 1.0000000000000007 1.0000000000000004 ;
+createNode transform -n "R_Back_Wheel01_ctl_grp" -p "|Main_Ctl_Grp|Main_Ctl|COG_Ctl_Grp|COG_Ctl|R_Central_Leg01_ctl_grp|R_Central_Leg01_ctl|R_Back_Central_Leg01_ctl_grp1|R_Back_Central_Leg01_ctl|R_Back_Wheel01_ctl_grp";
+	rename -uid "D83B675F-481F-9D38-1E8A-B5B18811665E";
+createNode nurbsCurve -n "R_Back_Wheel01_ctl_grpShape" -p "|Main_Ctl_Grp|Main_Ctl|COG_Ctl_Grp|COG_Ctl|R_Central_Leg01_ctl_grp|R_Central_Leg01_ctl|R_Back_Central_Leg01_ctl_grp1|R_Back_Central_Leg01_ctl|R_Back_Wheel01_ctl_grp|R_Back_Wheel01_ctl_grp";
+	rename -uid "C07722CA-4E94-FEC7-87F6-4B87D308AE44";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		-7.8339246464310071 7.8339246464310097 -1.2597911659785742e-15
+		-11.078842481591581 3.1383806510185983e-15 -1.7816137526847136e-15
+		-7.8339246464310088 -7.8339246464310062 -1.2597911659785738e-15
+		-3.0343263524743407e-15 -11.078842481591584 -9.2359171548588283e-32
+		7.8339246464310062 -7.8339246464310097 1.259791165978574e-15
+		11.078842481591588 -3.5697724304000061e-15 1.7816137526847148e-15
+		7.8339246464310088 7.8339246464310062 1.2597911659785738e-15
+		3.9708150393726688e-15 11.078842481591584 2.4295803840530155e-31
+		-7.8339246464310071 7.8339246464310097 -1.2597911659785742e-15
+		-11.078842481591581 3.1383806510185983e-15 -1.7816137526847136e-15
+		-7.8339246464310088 -7.8339246464310062 -1.2597911659785738e-15
+		;
+createNode transform -n "R_Back_Wheel02_ctl_grp" -p "|Main_Ctl_Grp|Main_Ctl|COG_Ctl_Grp|COG_Ctl|R_Central_Leg01_ctl_grp|R_Central_Leg01_ctl|R_Back_Central_Leg01_ctl_grp1|R_Back_Central_Leg01_ctl|R_Back_Wheel01_ctl_grp|R_Back_Wheel01_ctl_grp";
+	rename -uid "6F73B369-4600-1F44-909A-189263D5C925";
+	setAttr ".t" -type "double3" 8.2214000000000098 0.047800000000009391 2.976500000000005 ;
+	setAttr ".r" -type "double3" 90 0 -89.999999999999915 ;
+	setAttr ".s" -type "double3" 1 1 0.99999999999999978 ;
+createNode transform -n "R_Back_Wheel02_ctl_grp" -p "|Main_Ctl_Grp|Main_Ctl|COG_Ctl_Grp|COG_Ctl|R_Central_Leg01_ctl_grp|R_Central_Leg01_ctl|R_Back_Central_Leg01_ctl_grp1|R_Back_Central_Leg01_ctl|R_Back_Wheel01_ctl_grp|R_Back_Wheel01_ctl_grp|R_Back_Wheel02_ctl_grp";
+	rename -uid "66B9B0D9-4D45-1EF3-731B-73A1244665DF";
+	setAttr ".rp" -type "double3" -7.1054273576010019e-15 0 -7.1054273576010019e-15 ;
+	setAttr ".sp" -type "double3" -7.1054273576010019e-15 0 -7.1054273576010019e-15 ;
+createNode nurbsCurve -n "R_Back_Wheel02_ctl_grpShape" -p "|Main_Ctl_Grp|Main_Ctl|COG_Ctl_Grp|COG_Ctl|R_Central_Leg01_ctl_grp|R_Central_Leg01_ctl|R_Back_Central_Leg01_ctl_grp1|R_Back_Central_Leg01_ctl|R_Back_Wheel01_ctl_grp|R_Back_Wheel01_ctl_grp|R_Back_Wheel02_ctl_grp|R_Back_Wheel02_ctl_grp";
+	rename -uid "DD696B06-40B8-FFA8-6D0F-DCB7AF927C35";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		-14.730280787712838 14.730280787712843 -2.3688098170817625e-15
+		-20.831762867547329 5.90115814163341e-15 -3.3500029699995581e-15
+		-14.730280787712841 -14.730280787712836 -2.3688098170817621e-15
+		-5.7055028214837957e-15 -20.831762867547337 -1.7366474553097116e-31
+		14.730280787712836 -14.730280787712843 2.3688098170817621e-15
+		20.83176286754734 -6.7123124897536979e-15 3.3500029699995593e-15
+		14.730280787712841 14.730280787712836 2.3688098170817621e-15
+		7.4664007028303429e-15 20.831762867547337 4.5683872220706957e-31
+		-14.730280787712838 14.730280787712843 -2.3688098170817625e-15
+		-20.831762867547329 5.90115814163341e-15 -3.3500029699995581e-15
+		-14.730280787712841 -14.730280787712836 -2.3688098170817621e-15
+		;
+createNode transform -n "R_Mid_Wheel01_ctl_grp" -p "R_Back_Central_Leg01_ctl";
+	rename -uid "564809B4-4B24-459A-50CE-23AE8CA69A95";
+	setAttr ".t" -type "double3" 2.1577428964453329 22.872280999828376 -19.033417702822806 ;
+	setAttr ".r" -type "double3" 0 24.92867914348783 27.450485383507647 ;
+	setAttr ".s" -type "double3" 1.0000000000000007 1.0000000000000002 1.0000000000000004 ;
+createNode transform -n "R_Mid_Wheel01_ctl" -p "R_Mid_Wheel01_ctl_grp";
+	rename -uid "F3BB7555-4E77-D666-213A-0399893F38BF";
+	setAttr ".rp" -type "double3" 0 0 7.1054273576010019e-15 ;
+	setAttr ".sp" -type "double3" 0 0 7.1054273576010019e-15 ;
+createNode nurbsCurve -n "R_Mid_Wheel01_ctlShape" -p "R_Mid_Wheel01_ctl";
+	rename -uid "3FB73C81-4353-2B79-30F9-4582847782BA";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		-14.730280787712838 14.730280787712843 -2.3688098170817625e-15
+		-20.831762867547329 5.90115814163341e-15 -3.3500029699995581e-15
+		-14.730280787712841 -14.730280787712836 -2.3688098170817621e-15
+		-5.7055028214837957e-15 -20.831762867547337 -1.7366474553097116e-31
+		14.730280787712836 -14.730280787712843 2.3688098170817621e-15
+		20.83176286754734 -6.7123124897536979e-15 3.3500029699995593e-15
+		14.730280787712841 14.730280787712836 2.3688098170817621e-15
+		7.4664007028303429e-15 20.831762867547337 4.5683872220706957e-31
+		-14.730280787712838 14.730280787712843 -2.3688098170817625e-15
+		-20.831762867547329 5.90115814163341e-15 -3.3500029699995581e-15
+		-14.730280787712841 -14.730280787712836 -2.3688098170817621e-15
+		;
+createNode transform -n "R_Front_Wheel01_ctl_grp" -p "R_Central_Leg01_ctl";
+	rename -uid "1F99ABFF-465D-8203-25CF-DFB95236930B";
+	setAttr ".t" -type "double3" -45.405683797163256 -4.4994096747075218e-05 -4.9625796805230493e-08 ;
+	setAttr ".r" -type "double3" -49.931228986878949 29.819582208443361 -46.890236430592786 ;
+	setAttr ".s" -type "double3" 0.99999999999999989 0.99999999999999967 0.99999999999999956 ;
+createNode transform -n "R_Front_Wheel01_ctl" -p "R_Front_Wheel01_ctl_grp";
+	rename -uid "2E2E3F9D-4F11-129B-04F8-678A33EF0DCB";
+	setAttr ".rp" -type "double3" -3.5527136788005009e-15 -7.1054273576010019e-15 0 ;
+	setAttr ".sp" -type "double3" -3.5527136788005009e-15 -7.1054273576010019e-15 0 ;
+createNode nurbsCurve -n "R_Front_Wheel01_ctlShape" -p "R_Front_Wheel01_ctl";
+	rename -uid "1BF21019-49C1-BD9F-7F4F-A6A403B610A0";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		1.5537865530952568 7.3364813599735959 -6.8864217485359589
+		1.6365083573651713 0.21406965790659352 -10.046742281673517
+		0.76058576082748686 -7.0337411464695254 -7.3218174438739476
+		-0.56087765905507847 -10.161281781465478 -0.30787124867292576
+		-1.5537865530952499 -7.3364813599736021 6.886421748535958
+		-1.6365083573651653 -0.21406965790660107 10.04674228167352
+		-0.7605857608274802 7.0337411464695183 7.3218174438739476
+		0.56087765905508502 10.161281781465471 0.30787124867292642
+		1.5537865530952568 7.3364813599735959 -6.8864217485359589
+		1.6365083573651713 0.21406965790659352 -10.046742281673517
+		0.76058576082748686 -7.0337411464695254 -7.3218174438739476
+		;
+createNode transform -n "R_Front_Wheel02_ctl_grp" -p "R_Front_Wheel01_ctl";
+	rename -uid "A0D2C1E1-4FB1-1399-E502-96A75C8AA277";
+	setAttr ".t" -type "double3" -8.3630571879584501 3.047466785233155e-05 2.7599595142646649e-06 ;
+	setAttr ".r" -type "double3" 0 216.64432762243908 53.168210914054775 ;
+	setAttr ".s" -type "double3" 1 0.99999999999999956 1 ;
+createNode transform -n "R_Front_Wheel02_ctl" -p "R_Front_Wheel02_ctl_grp";
+	rename -uid "53A02E9B-4600-00B2-CFE8-6DAF1A60DEC3";
+	setAttr ".rp" -type "double3" 3.5527136788005009e-15 0 0 ;
+	setAttr ".sp" -type "double3" 3.5527136788005009e-15 0 0 ;
+createNode nurbsCurve -n "R_Front_Wheel02_ctlShape" -p "R_Front_Wheel02_ctl";
+	rename -uid "51C5BAF8-409A-358E-E06E-AAA14FFAAE90";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		7.1993407995638297 4.4083248330783967e-16 -7.1993407995638306
+		6.2343127662855731e-16 6.2343127662855731e-16 -10.181405398889128
+		-7.1993407995638297 4.4083248330783947e-16 -7.1993407995638288
+		-10.18140539888913 3.2318787470138041e-32 -5.2780585377987579e-16
+		-7.1993407995638297 -4.4083248330783957e-16 7.1993407995638297
+		-1.0198783421887185e-15 -6.234312766285579e-16 10.181405398889131
+		7.1993407995638297 -4.4083248330783947e-16 7.1993407995638288
+		10.18140539888913 -8.5017103074075766e-32 1.3884346594180132e-15
+		7.1993407995638297 4.4083248330783967e-16 -7.1993407995638306
+		6.2343127662855731e-16 6.2343127662855731e-16 -10.181405398889128
+		-7.1993407995638297 4.4083248330783947e-16 -7.1993407995638288
+		;
+createNode transform -n "R_Front_Wheel03_ctl_grp" -p "R_Front_Wheel02_ctl";
+	rename -uid "27B1EEBE-407B-07B8-B011-DF9A87D89111";
+	setAttr ".t" -type "double3" 8.3129999999999988 2.9731000000000058 0.002200000000016189 ;
+	setAttr ".r" -type "double3" 0 -89.999999999999929 0 ;
+	setAttr ".s" -type "double3" 0.99999999999999978 1 0.99999999999999989 ;
+createNode transform -n "R_Front_Wheel03_ctl" -p "R_Front_Wheel03_ctl_grp";
+	rename -uid "90F87F59-4B30-853B-F0FA-D48C3C28D623";
+	setAttr ".rp" -type "double3" 0 1.7763568394002505e-15 -7.1054273576010019e-15 ;
+	setAttr ".sp" -type "double3" 0 1.7763568394002505e-15 -7.1054273576010019e-15 ;
+createNode nurbsCurve -n "R_Front_Wheel03_ctlShape" -p "R_Front_Wheel03_ctl";
+	rename -uid "571E31F1-45B4-DF83-E4A8-FFA13817C29B";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		-14.730280787712838 14.730280787712843 -2.3688098170817625e-15
+		-20.831762867547329 5.90115814163341e-15 -3.3500029699995581e-15
+		-14.730280787712841 -14.730280787712836 -2.3688098170817621e-15
+		-5.7055028214837957e-15 -20.831762867547337 -1.7366474553097116e-31
+		14.730280787712836 -14.730280787712843 2.3688098170817621e-15
+		20.83176286754734 -6.7123124897536979e-15 3.3500029699995593e-15
+		14.730280787712841 14.730280787712836 2.3688098170817621e-15
+		7.4664007028303429e-15 20.831762867547337 4.5683872220706957e-31
+		-14.730280787712838 14.730280787712843 -2.3688098170817625e-15
+		-20.831762867547329 5.90115814163341e-15 -3.3500029699995581e-15
+		-14.730280787712841 -14.730280787712836 -2.3688098170817621e-15
+		;
+createNode transform -n "FrontHead01_ctl_grp" -p "COG_Ctl";
+	rename -uid "D63D2F04-4A4C-7449-5F91-F2950E75C941";
+	setAttr ".t" -type "double3" 0 25.069905999149299 -43.199549475896148 ;
+	setAttr ".r" -type "double3" -122.7580792964217 -0.28413564684788711 90.182817467497912 ;
+	setAttr ".s" -type "double3" 1.4163791142144255 1.4163791142144255 1.4163791142144255 ;
+createNode transform -n "FrontHead01_ctl" -p "FrontHead01_ctl_grp";
+	rename -uid "2AB008CA-4EC1-D7F2-FB35-809CA7B2659C";
+	setAttr ".rp" -type "double3" 1.4210854715202004e-14 1.4210854715202004e-14 3.5527136788005009e-15 ;
+	setAttr ".sp" -type "double3" 1.4210854715202004e-14 1.4210854715202004e-14 3.5527136788005009e-15 ;
+createNode nurbsCurve -n "FrontHead01_ctlShape" -p "FrontHead01_ctl";
+	rename -uid "3F0939C5-4343-1157-7CA0-9ABC72F324C5";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		7.4607631205760274 25.312449549906709 -25.268453553603589
+		6.9443234680625174 0.040950560243073954 -35.734989715700827
+		6.7629740604817332 -25.228572407807345 -25.268453553603585
+		6.944323468062513 -35.694039155457759 8.7898581030622572e-16
+		7.4607631205760194 -25.224457557300486 25.268453553603607
+		8.233669535812556 0.048553812606584083 35.734989715700841
+		9.1453748653528848 25.32238367740781 25.26845355360361
+		8.2336695358125596 35.78354352830744 8.1118158613052075e-15
+		7.4607631205760274 25.312449549906709 -25.268453553603589
+		6.9443234680625174 0.040950560243073954 -35.734989715700827
+		6.7629740604817332 -25.228572407807345 -25.268453553603585
+		;
+createNode transform -n "FrontHead02_ctl_grp" -p "FrontHead01_ctl";
+	rename -uid "D7D09BB5-465D-94FA-C4D2-1C8AE575AD7A";
+	setAttr ".t" -type "double3" 64.201082679042102 7.1054273576010019e-15 1.0658141036401503e-14 ;
+	setAttr ".r" -type "double3" 180 57.242374010177421 90.337868344552234 ;
+	setAttr ".s" -type "double3" 1 0.99999999999999989 1 ;
+createNode transform -n "FrontHead02_ctl" -p "FrontHead02_ctl_grp";
+	rename -uid "291AEA80-46BF-3556-E08B-149FDD867E44";
+	setAttr ".r" -type "double3" 0 0 90 ;
+	setAttr ".s" -type "double3" 0.12441369232006372 0.12441369232006372 0.12441369232006372 ;
+createNode nurbsCurve -n "FrontHead02_ctlShape" -p "FrontHead02_ctl";
+	rename -uid "08989D2F-460F-C166-D18A-E7976F88612F";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		118.3975856115424 7.249761212297508e-15 -118.39758561154241
+		1.0252710630397539e-14 1.0252710630397539e-14 -167.43947132407283
+		-118.3975856115424 7.2497612122975048e-15 -118.39758561154238
+		-167.43947132407288 5.3150232957283225e-31 -8.6800917610348529e-15
+		-118.3975856115424 -7.2497612122975064e-15 118.3975856115424
+		-1.6772526359630372e-14 -1.0252710630397548e-14 167.43947132407291
+		118.3975856115424 -7.2497612122975048e-15 118.39758561154238
+		167.43947132407288 -1.3981585286625194e-30 2.2833661585299075e-14
+		118.3975856115424 7.249761212297508e-15 -118.39758561154241
+		1.0252710630397539e-14 1.0252710630397539e-14 -167.43947132407283
+		-118.3975856115424 7.2497612122975048e-15 -118.39758561154238
+		;
+createNode transform -n "R_Wing01_ctl_grp" -p "COG_Ctl";
+	rename -uid "D96C2D02-4B19-EB99-0696-C8A6961854B6";
+	setAttr ".t" -type "double3" 56.327272803636397 26.200294275722186 18.987954625654016 ;
+	setAttr ".r" -type "double3" 180 28.148455980566013 0 ;
+	setAttr ".s" -type "double3" 1.4163791142144257 1.4163791142144257 1.4163791142144257 ;
+createNode transform -n "R_Wing01_ctl" -p "R_Wing01_ctl_grp";
+	rename -uid "693C5F79-447F-FBA9-2AF5-1FA7D4FCE9E4";
+	setAttr ".rp" -type "double3" 0 1.4210854715202004e-14 0 ;
+	setAttr ".sp" -type "double3" 0 1.4210854715202004e-14 0 ;
+createNode nurbsCurve -n "R_Wing01_ctlShape" -p "R_Wing01_ctl";
+	rename -uid "CD47B142-4395-1FD3-4B5B-ACAD7D8FFE0B";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		9.4486304063631881 9.4486304063631898 -1.5194556564896006e-15
+		8.1820987235210284e-16 13.362381266529626 -2.1488347968321075e-15
+		-9.4486304063631881 9.4486304063631863 -1.5194556564896002e-15
+		-13.36238126652963 6.927082044766037e-16 -1.1139597532356612e-31
+		-9.4486304063631881 -9.4486304063631881 1.5194556564896004e-15
+		-1.3385188704192789e-15 -13.362381266529631 2.1488347968321079e-15
+		9.4486304063631881 -9.4486304063631863 1.5194556564896002e-15
+		13.36238126652963 -1.8222232153561002e-15 2.9303584253807324e-31
+		9.4486304063631881 9.4486304063631898 -1.5194556564896006e-15
+		8.1820987235210284e-16 13.362381266529626 -2.1488347968321075e-15
+		-9.4486304063631881 9.4486304063631863 -1.5194556564896002e-15
+		;
+createNode transform -n "R_Wing02_ctl_grp" -p "R_Wing01_ctl";
+	rename -uid "C03F8232-4810-07F3-F16D-2C83B3F3ABCC";
+	setAttr ".t" -type "double3" 7.1894104770846496 2.8421709430404007e-14 -10.616877134712713 ;
+	setAttr ".r" -type "double3" 0 -0.62465196455497241 0 ;
+createNode transform -n "R_Wing02_ctl" -p "R_Wing02_ctl_grp";
+	rename -uid "823D3035-4640-3FD1-F95E-B792F24A7E70";
+	setAttr ".rp" -type "double3" 7.1054273576010019e-15 -1.4210854715202004e-14 0 ;
+	setAttr ".sp" -type "double3" 7.1054273576010019e-15 -1.4210854715202004e-14 0 ;
+createNode nurbsCurve -n "R_Wing02_ctlShape" -p "|Main_Ctl_Grp|Main_Ctl|COG_Ctl_Grp|COG_Ctl|R_Wing01_ctl_grp|R_Wing01_ctl|R_Wing02_ctl_grp|R_Wing02_ctl";
+	rename -uid "2A7A2491-43D0-6E8D-7F97-A98C1DC79F1D";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		1.1102485377342401e-15 6.9040041066363349 -6.9040041066363358
+		-5.9785641684164466e-16 5.9785641684164486e-16 -9.7637362422846454
+		-1.9557451907834773e-15 -6.9040041066363349 -6.904004106636334
+		-2.1679849565103046e-15 -9.763736242284649 -5.0615381094665336e-16
+		-1.1102485377342401e-15 -6.9040041066363349 6.9040041066363349
+		5.9785641684164506e-16 -9.7804013711463177e-16 9.7637362422846508
+		1.9557451907834773e-15 6.9040041066363349 6.904004106636334
+		2.1679849565103046e-15 9.763736242284649 1.3314772640015786e-15
+		1.1102485377342401e-15 6.9040041066363349 -6.9040041066363358
+		-5.9785641684164466e-16 5.9785641684164486e-16 -9.7637362422846454
+		-1.9557451907834773e-15 -6.9040041066363349 -6.904004106636334
+		;
+createNode transform -n "L_Wing01_ctl_grp" -p "COG_Ctl";
+	rename -uid "F18535A0-4FF8-21DE-FC55-3287FA45DEBC";
+	setAttr ".t" -type "double3" -56.3273340526966 26.200225635279281 18.98795749397517 ;
+	setAttr ".r" -type "double3" 0 -28.148455980566013 0 ;
+	setAttr ".s" -type "double3" 1.4163791142144257 1.4163791142144257 1.4163791142144257 ;
+createNode transform -n "L_Wing01_ctl" -p "L_Wing01_ctl_grp";
+	rename -uid "BD892A54-479A-C760-BA12-CCA6FC016936";
+createNode nurbsCurve -n "L_Wing01_ctlShape" -p "L_Wing01_ctl";
+	rename -uid "018E0CC6-4EB6-EBA6-0CF1-938FA5DA34FE";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		10.321167468556897 10.321167468556897 -1.6597703177292019e-15
+		8.937677476817596e-16 14.596335013557145 -2.3472696937569383e-15
+		-10.321167468556897 10.321167468556895 -1.6597703177292017e-15
+		-14.59633501355715 7.5667658462241313e-16 -1.2168287542112627e-31
+		-10.321167468556897 -10.321167468556897 1.659770317729202e-15
+		-1.4621248611986358e-15 -14.596335013557152 2.3472696937569391e-15
+		10.321167468556897 -10.321167468556895 1.6597703177292017e-15
+		14.59633501355715 -1.9904970521565347e-15 3.2009633936875006e-31
+		10.321167468556897 10.321167468556897 -1.6597703177292019e-15
+		8.937677476817596e-16 14.596335013557145 -2.3472696937569383e-15
+		-10.321167468556897 10.321167468556895 -1.6597703177292017e-15
+		;
+createNode transform -n "L_Wing02_ctl_grp" -p "L_Wing01_ctl";
+	rename -uid "1944EC12-4FFD-98CC-54BF-88814017B77D";
+	setAttr ".t" -type "double3" -7.1894110373219533 0 10.616872296833186 ;
+	setAttr ".r" -type "double3" 0 -0.62465196455525862 0 ;
+createNode transform -n "L_Wing02_ctl" -p "L_Wing02_ctl_grp";
+	rename -uid "A396FADB-4B90-8351-24A8-8D883D1773D5";
+createNode nurbsCurve -n "L_Wing02_ctlShape" -p "L_Wing02_ctl";
+	rename -uid "1D7102CF-4362-806C-B7BF-5AACF981B074";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		1.5073569924297455e-15 9.3733956967327519 -9.3733956967327536
+		-8.1169487710774315e-16 8.1169487710774354e-16 -13.25598331980906
+		-2.6552668961442794e-15 -9.3733956967327519 -9.3733956967327501
+		-2.9434195791398088e-15 -13.255983319809065 -6.8719251613014015e-16
+		-1.5073569924297455e-15 -9.3733956967327519 9.3733956967327519
+		8.1169487710774384e-16 -1.3278609153273923e-15 13.255983319809067
+		2.6552668961442794e-15 9.3733956967327519 9.3733956967327501
+		2.9434195791398088e-15 13.255983319809065 1.8077137649285726e-15
+		1.5073569924297455e-15 9.3733956967327519 -9.3733956967327536
+		-8.1169487710774315e-16 8.1169487710774354e-16 -13.25598331980906
+		-2.6552668961442794e-15 -9.3733956967327519 -9.3733956967327501
+		;
+createNode transform -n "FrontArm01_ctl_grp" -p "COG_Ctl";
+	rename -uid "21E07A3D-4422-9CBA-B178-C2A56904B249";
+	setAttr ".t" -type "double3" 0 0.82974754550897956 -41.495992450687723 ;
+	setAttr ".r" -type "double3" -89.999999999999986 0 0 ;
+	setAttr ".s" -type "double3" 1.4163791142144257 1.4163791142144257 1.4163791142144257 ;
+createNode transform -n "FrontArm01_ctl" -p "FrontArm01_ctl_grp";
+	rename -uid "113F31A4-49A7-4507-29A3-39A12AC972B1";
+createNode nurbsCurve -n "FrontArm01_ctlShape" -p "FrontArm01_ctl";
+	rename -uid "BA768F3C-4EFF-8CD2-EEB3-CDA1A6D45A0E";
+	setAttr -k off ".v";
+	setAttr ".tw" yes;
+createNode transform -n "FrontArm02_ctl_grp" -p "FrontArm01_ctl";
+	rename -uid "BFEFEEE9-4CDB-57C4-1233-36BFC951BCDC";
+	setAttr ".t" -type "double3" -2.899999856948853 7.6293945170391453e-06 -5.4000015258789134 ;
+	setAttr ".r" -type "double3" 89.999999999999986 0 89.999999999999986 ;
+createNode transform -n "FrontArm02_ctl" -p "FrontArm02_ctl_grp";
+	rename -uid "36247737-4624-7E1A-4569-E29C69148B87";
+createNode nurbsCurve -n "FrontArm02_ctlShape" -p "FrontArm02_ctl";
+	rename -uid "B533DFED-4411-E8A7-066A-E8B4F28F2E21";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		4.6939031929866015 4.6939031929866015 -7.5483720400312374e-16
+		4.0647138973498654e-16 6.6381815559880248 -1.067501011285004e-15
+		-4.6939031929866015 4.6939031929866006 -7.5483720400312364e-16
+		-6.6381815559880266 3.4412450407743924e-16 -5.5339440931567007e-32
+		-4.6939031929866015 -4.6939031929866015 7.5483720400312374e-16
+		-6.6495118652356875e-16 -6.6381815559880293 1.0675010112850048e-15
+		4.6939031929866015 -4.6939031929866006 7.5483720400312364e-16
+		6.6381815559880266 -9.0524647499536595e-16 1.455747359979983e-31
+		4.6939031929866015 4.6939031929866015 -7.5483720400312374e-16
+		4.0647138973498654e-16 6.6381815559880248 -1.067501011285004e-15
+		-4.6939031929866015 4.6939031929866006 -7.5483720400312364e-16
+		;
+createNode transform -n "FrontArm03_ctl_grp" -p "FrontArm02_ctl";
+	rename -uid "9C171763-4EA5-68B4-630D-BEBBD2443EC6";
+	setAttr ".t" -type "double3" 35.527179718017571 16.566974639892614 0.39999985694884144 ;
+createNode transform -n "FrontArm03_ctl" -p "FrontArm03_ctl_grp";
+	rename -uid "20302D4A-4323-FB37-3889-C98FD94E013A";
+createNode nurbsCurve -n "FrontArm03_ctlShape" -p "FrontArm03_ctl";
+	rename -uid "7F5F3F68-420E-55B2-4A95-448DF55A4AB0";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		4.6939031929866015 4.6939031929866015 -7.5483720400312374e-16
+		4.0647138973498654e-16 6.6381815559880248 -1.067501011285004e-15
+		-4.6939031929866015 4.6939031929866006 -7.5483720400312364e-16
+		-6.6381815559880266 3.4412450407743924e-16 -5.5339440931567007e-32
+		-4.6939031929866015 -4.6939031929866015 7.5483720400312374e-16
+		-6.6495118652356875e-16 -6.6381815559880293 1.0675010112850048e-15
+		4.6939031929866015 -4.6939031929866006 7.5483720400312364e-16
+		6.6381815559880266 -9.0524647499536595e-16 1.455747359979983e-31
+		4.6939031929866015 4.6939031929866015 -7.5483720400312374e-16
+		4.0647138973498654e-16 6.6381815559880248 -1.067501011285004e-15
+		-4.6939031929866015 4.6939031929866006 -7.5483720400312364e-16
+		;
+createNode transform -n "FrontArm04_ctl_grp" -p "FrontArm03_ctl";
+	rename -uid "1D31C507-4D26-0A31-40CE-DE8BFCD903C6";
+	setAttr ".t" -type "double3" -16.999973297119119 -29.444862365722685 4.9999995231628507 ;
+createNode transform -n "FrontArm04_ctl" -p "FrontArm04_ctl_grp";
+	rename -uid "B1F4157A-45DE-7D4A-4A82-299D36011B79";
+createNode nurbsCurve -n "FrontArm04_ctlShape" -p "FrontArm04_ctl";
+	rename -uid "8EC8488E-4A35-7D9F-DBF8-90805B9F369B";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		4.6939031929866015 4.6939031929866015 -7.5483720400312374e-16
+		4.0647138973498654e-16 6.6381815559880248 -1.067501011285004e-15
+		-4.6939031929866015 4.6939031929866006 -7.5483720400312364e-16
+		-6.6381815559880266 3.4412450407743924e-16 -5.5339440931567007e-32
+		-4.6939031929866015 -4.6939031929866015 7.5483720400312374e-16
+		-6.6495118652356875e-16 -6.6381815559880293 1.0675010112850048e-15
+		4.6939031929866015 -4.6939031929866006 7.5483720400312364e-16
+		6.6381815559880266 -9.0524647499536595e-16 1.455747359979983e-31
+		4.6939031929866015 4.6939031929866015 -7.5483720400312374e-16
+		4.0647138973498654e-16 6.6381815559880248 -1.067501011285004e-15
+		-4.6939031929866015 4.6939031929866006 -7.5483720400312364e-16
+		;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "5A1BBBDB-4873-0998-A0BF-1CAEC2306FB9";
+	rename -uid "929DED72-455D-5C20-1DC9-26BE3E57081E";
 	setAttr -s 2 ".lnk";
 	setAttr -s 2 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "4C773952-46C6-1749-9BA0-64B7655AE7B8";
+	rename -uid "A8D3CF82-4920-4B23-6BCD-0990AF8A5B11";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "D8DE833B-486B-E076-899C-5E990280B30A";
+	rename -uid "90F0C642-4AD7-3252-140F-6FA11DEA2144";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "29FDBEEC-481C-93BE-509D-1F9FAEF41E27";
+	rename -uid "0E2294B7-4BD6-4946-C61E-CAA497EB9B76";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "1E0E5426-4719-2F1F-BB32-E78DB6B7AB27";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "128D93B8-4242-FF54-53C4-44A76AFE151C";
+	rename -uid "ED658BBE-4092-5963-23A6-01B5EE62D984";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "07788AE1-4CA1-0B3D-DD49-8388CC6ED0F2";
 	setAttr ".g" yes;
@@ -40272,43 +41011,42 @@ createNode script -n "uiConfigurationScriptNode";
 	rename -uid "17C2422F-44FA-CD1E-8A5E-088657999780";
 	setAttr ".b" -type "string" (
 		"// Maya Mel UI Configuration File.\n//\n//  This script is machine generated.  Edit at your own risk.\n//\n//\n\nglobal string $gMainPane;\nif (`paneLayout -exists $gMainPane`) {\n\n\tglobal int $gUseScenePanelConfig;\n\tint    $useSceneConfig = $gUseScenePanelConfig;\n\tint    $menusOkayInPanels = `optionVar -q allowMenusInPanels`;\tint    $nVisPanes = `paneLayout -q -nvp $gMainPane`;\n\tint    $nPanes = 0;\n\tstring $editorName;\n\tstring $panelName;\n\tstring $itemFilterName;\n\tstring $panelConfig;\n\n\t//\n\t//  get current state of the UI\n\t//\n\tsceneUIReplacement -update $gMainPane;\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Top View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Top View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"top\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n"
-		+ "            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n"
+		+ "            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n"
 		+ "            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n"
-		+ "            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Side View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Side View\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"side\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n"
+		+ "            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1340\n            -height 849\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Side View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Side View\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"side\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n"
 		+ "            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n"
-		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
+		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1340\n            -height 848\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
 		+ "\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Front View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Front View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"front\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n"
-		+ "            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n"
-		+ "            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n"
+		+ "            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n"
+		+ "            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1340\n            -height 848\n"
 		+ "            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n"
-		+ "            -xray 0\n            -jointXray 1\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n"
+		+ "            -xray 0\n            -jointXray 1\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n"
 		+ "            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n"
-		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1319\n            -height 697\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n"
-		+ "            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n"
-		+ "            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n"
-		+ "\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n"
-		+ "            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
-		+ "\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"graphEditor\" (localizedPanelLabel(\"Graph Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Graph Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 1\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 1\n"
-		+ "                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 1\n                -showCompounds 0\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 1\n                -doNotSelectNewObjects 0\n                -dropIsParent 1\n                -transmitFilters 1\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n"
-		+ "                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 1\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"GraphEd\");\n            animCurveEditor -e \n                -displayKeys 1\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 1\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 1\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -showResults \"off\" \n                -showBufferCurves \"off\" \n                -smoothness \"fine\" \n                -resultSamples 1\n                -resultScreenSamples 0\n                -resultUpdate \"delayed\" \n                -showUpstreamCurves 1\n                -showCurveNames 0\n"
-		+ "                -showActiveCurveNames 0\n                -stackedCurves 0\n                -stackedCurvesMin -1\n                -stackedCurvesMax 1\n                -stackedCurvesSpace 0.2\n                -displayNormalized 0\n                -preSelectionHighlight 0\n                -constrainDrag 0\n                -classicMode 1\n                -valueLinesToggle 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dopeSheetPanel\" (localizedPanelLabel(\"Dope Sheet\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dope Sheet\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n"
-		+ "                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 0\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 1\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 0\n                -showCompounds 1\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 0\n                -doNotSelectNewObjects 1\n                -dropIsParent 1\n                -transmitFilters 0\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n"
-		+ "                -alwaysToggleSelect 0\n                -directSelect 0\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 0\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"DopeSheetEd\");\n            dopeSheetEditor -e \n                -displayKeys 1\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n"
-		+ "                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -outliner \"dopeSheetPanel1OutlineEd\" \n                -showSummary 1\n                -showScene 0\n                -hierarchyBelow 0\n                -showTicks 1\n                -selectionWindow 0 0 0 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"timeEditorPanel\" (localizedPanelLabel(\"Time Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Time Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"clipEditorPanel\" (localizedPanelLabel(\"Trax Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Trax Editor\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\n\t\t\t$editorName = clipEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"sequenceEditorPanel\" (localizedPanelLabel(\"Camera Sequencer\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Camera Sequencer\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = sequenceEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n"
-		+ "                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperGraphPanel\" (localizedPanelLabel(\"Hypergraph Hierarchy\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypergraph Hierarchy\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 0\n                -zoom 1\n                -animateTransition 0\n                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n"
-		+ "                -showExpressions 0\n                -showConstraints 0\n                -showConnectionFromSelected 0\n                -showConnectionToSelected 0\n                -showConstraintLabels 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 1\n                -opaqueContainers 0\n                -freeform 0\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n                -range 0 0 \n                -iconSize \"smallIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperShadePanel\" (localizedPanelLabel(\"Hypershade\")) `;\n\tif (\"\" != $panelName) {\n"
-		+ "\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypershade\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"visorPanel\" (localizedPanelLabel(\"Visor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Visor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"createNodePanel\" (localizedPanelLabel(\"Create Node\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Create Node\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"polyTexturePlacementPanel\" (localizedPanelLabel(\"UV Editor\")) `;\n\tif (\"\" != $panelName) {\n"
-		+ "\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"UV Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"renderWindowPanel\" (localizedPanelLabel(\"Render View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Render View\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"shapePanel\" (localizedPanelLabel(\"Shape Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tshapePanel -edit -l (localizedPanelLabel(\"Shape Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"posePanel\" (localizedPanelLabel(\"Pose Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n"
-		+ "\t\tposePanel -edit -l (localizedPanelLabel(\"Pose Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynRelEdPanel\" (localizedPanelLabel(\"Dynamic Relationships\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"relationshipPanel\" (localizedPanelLabel(\"Relationship Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"referenceEditorPanel\" (localizedPanelLabel(\"Reference Editor\")) `;\n\tif (\"\" != $panelName) {\n"
-		+ "\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"componentEditorPanel\" (localizedPanelLabel(\"Component Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Component Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynPaintScriptedPanelType\" (localizedPanelLabel(\"Paint Effects\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"scriptEditorPanel\" (localizedPanelLabel(\"Script Editor\")) `;\n"
+		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 2688\n            -height 1763\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n"
+		+ "            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n"
+		+ "            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n"
+		+ "\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n"
+		+ "            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n"
+		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"graphEditor\" (localizedPanelLabel(\"Graph Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Graph Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 1\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n"
+		+ "                -showParentContainers 1\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 1\n                -showCompounds 0\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 1\n                -doNotSelectNewObjects 0\n                -dropIsParent 1\n                -transmitFilters 1\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n"
+		+ "                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 1\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"GraphEd\");\n            animCurveEditor -e \n                -displayKeys 1\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 1\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 1\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -showResults \"off\" \n                -showBufferCurves \"off\" \n                -smoothness \"fine\" \n                -resultSamples 1\n                -resultScreenSamples 0\n                -resultUpdate \"delayed\" \n                -showUpstreamCurves 1\n"
+		+ "                -showCurveNames 0\n                -showActiveCurveNames 0\n                -stackedCurves 0\n                -stackedCurvesMin -1\n                -stackedCurvesMax 1\n                -stackedCurvesSpace 0.2\n                -displayNormalized 0\n                -preSelectionHighlight 0\n                -constrainDrag 0\n                -classicMode 1\n                -valueLinesToggle 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dopeSheetPanel\" (localizedPanelLabel(\"Dope Sheet\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dope Sheet\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n"
+		+ "                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 0\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 1\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 0\n                -showCompounds 1\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 0\n                -doNotSelectNewObjects 1\n                -dropIsParent 1\n                -transmitFilters 0\n                -setFilter \"0\" \n                -showSetMembers 0\n"
+		+ "                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 0\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"DopeSheetEd\");\n            dopeSheetEditor -e \n                -displayKeys 1\n                -displayTangents 0\n                -displayActiveKeys 0\n"
+		+ "                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -outliner \"dopeSheetPanel1OutlineEd\" \n                -showSummary 1\n                -showScene 0\n                -hierarchyBelow 0\n                -showTicks 1\n                -selectionWindow 0 0 0 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"timeEditorPanel\" (localizedPanelLabel(\"Time Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Time Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"clipEditorPanel\" (localizedPanelLabel(\"Trax Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n"
+		+ "\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Trax Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = clipEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"sequenceEditorPanel\" (localizedPanelLabel(\"Camera Sequencer\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Camera Sequencer\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = sequenceEditorNameFromPanel($panelName);\n            clipEditor -e \n"
+		+ "                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperGraphPanel\" (localizedPanelLabel(\"Hypergraph Hierarchy\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypergraph Hierarchy\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 0\n                -zoom 1\n                -animateTransition 0\n"
+		+ "                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showConnectionFromSelected 0\n                -showConnectionToSelected 0\n                -showConstraintLabels 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 1\n                -opaqueContainers 0\n                -freeform 0\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n                -range 0 0 \n                -iconSize \"smallIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperShadePanel\" (localizedPanelLabel(\"Hypershade\")) `;\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypershade\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"visorPanel\" (localizedPanelLabel(\"Visor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Visor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"createNodePanel\" (localizedPanelLabel(\"Create Node\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Create Node\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"polyTexturePlacementPanel\" (localizedPanelLabel(\"UV Editor\")) `;\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"UV Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"renderWindowPanel\" (localizedPanelLabel(\"Render View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Render View\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"shapePanel\" (localizedPanelLabel(\"Shape Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tshapePanel -edit -l (localizedPanelLabel(\"Shape Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"posePanel\" (localizedPanelLabel(\"Pose Editor\")) `;\n\tif (\"\" != $panelName) {\n"
+		+ "\t\t$label = `panel -q -label $panelName`;\n\t\tposePanel -edit -l (localizedPanelLabel(\"Pose Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynRelEdPanel\" (localizedPanelLabel(\"Dynamic Relationships\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"relationshipPanel\" (localizedPanelLabel(\"Relationship Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"referenceEditorPanel\" (localizedPanelLabel(\"Reference Editor\")) `;\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"componentEditorPanel\" (localizedPanelLabel(\"Component Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Component Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynPaintScriptedPanelType\" (localizedPanelLabel(\"Paint Effects\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"scriptEditorPanel\" (localizedPanelLabel(\"Script Editor\")) `;\n"
 		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"profilerPanel\" (localizedPanelLabel(\"Profiler Tool\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Profiler Tool\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"contentBrowserPanel\" (localizedPanelLabel(\"Content Browser\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Content Browser\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -highlightConnections 0\n                -copyConnectionsOnPaste 0\n                -connectionStyle \"bezier\" \n                -connectionMinSegment 0.03\n                -connectionOffset 0.03\n                -connectionRoundness 0.8\n                -connectionTension -100\n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n"
-		+ "                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -activeTab 0\n                -editorMode \"default\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap true\n"
-		+ "\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1319\\n    -height 697\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1319\\n    -height 697\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -highlightConnections 0\n                -copyConnectionsOnPaste 0\n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n"
+		+ "                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -activeTab -1\n                -editorMode \"default\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap true\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 2688\\n    -height 1763\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 2688\\n    -height 1763\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
@@ -40325,231 +41063,231 @@ createNode groupId -n "groupId2";
 createNode groupParts -n "groupParts1";
 	rename -uid "7B0CD5BE-4D0A-D39B-17C8-D79EFD5D2479";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 160 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]";
+	setAttr ".ic" -type "componentList" 1 "f[0:159]";
 createNode groupId -n "groupId3";
 	rename -uid "EDCD8641-4ED5-072A-31C4-078F9C7E0AD1";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts2";
 	rename -uid "FBF4B811-4627-8FBC-C6DA-83B7A57F79B5";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 185 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]";
+	setAttr ".ic" -type "componentList" 1 "f[0:184]";
 createNode groupId -n "groupId4";
 	rename -uid "47B66EC4-4A39-D3FF-6E2E-1ABEBC5931C6";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts3";
 	rename -uid "E4435941-4722-BCB6-186A-DB9D28FBE871";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 111 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]";
+	setAttr ".ic" -type "componentList" 1 "f[0:110]";
 createNode groupId -n "groupId5";
 	rename -uid "CAFF0A88-4F47-D899-B3D6-36BB597C1864";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts4";
 	rename -uid "03924912-4973-226A-977A-BF978ED6637E";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 333 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]" "f[185]" "f[186]" "f[187]" "f[188]" "f[189]" "f[190]" "f[191]" "f[192]" "f[193]" "f[194]" "f[195]" "f[196]" "f[197]" "f[198]" "f[199]" "f[200]" "f[201]" "f[202]" "f[203]" "f[204]" "f[205]" "f[206]" "f[207]" "f[208]" "f[209]" "f[210]" "f[211]" "f[212]" "f[213]" "f[214]" "f[215]" "f[216]" "f[217]" "f[218]" "f[219]" "f[220]" "f[221]" "f[222]" "f[223]" "f[224]" "f[225]" "f[226]" "f[227]" "f[228]" "f[229]" "f[230]" "f[231]" "f[232]" "f[233]" "f[234]" "f[235]" "f[236]" "f[237]" "f[238]" "f[239]" "f[240]" "f[241]" "f[242]" "f[243]" "f[244]" "f[245]" "f[246]" "f[247]" "f[248]" "f[249]" "f[250]" "f[251]" "f[252]" "f[253]" "f[254]" "f[255]" "f[256]" "f[257]" "f[258]" "f[259]" "f[260]" "f[261]" "f[262]" "f[263]" "f[264]" "f[265]" "f[266]" "f[267]" "f[268]" "f[269]" "f[270]" "f[271]" "f[272]" "f[273]" "f[274]" "f[275]" "f[276]" "f[277]" "f[278]" "f[279]" "f[280]" "f[281]" "f[282]" "f[283]" "f[284]" "f[285]" "f[286]" "f[287]" "f[288]" "f[289]" "f[290]" "f[291]" "f[292]" "f[293]" "f[294]" "f[295]" "f[296]" "f[297]" "f[298]" "f[299]" "f[300]" "f[301]" "f[302]" "f[303]" "f[304]" "f[305]" "f[306]" "f[307]" "f[308]" "f[309]" "f[310]" "f[311]" "f[312]" "f[313]" "f[314]" "f[315]" "f[316]" "f[317]" "f[318]" "f[319]" "f[320]" "f[321]" "f[322]" "f[323]" "f[324]" "f[325]" "f[326]" "f[327]" "f[328]" "f[329]" "f[330]" "f[331]" "f[332]";
+	setAttr ".ic" -type "componentList" 1 "f[0:332]";
 createNode groupId -n "groupId6";
 	rename -uid "4FED55EF-47CA-DEF7-EA2D-6B884CF75A0D";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts5";
 	rename -uid "0AD29EA3-45ED-DC47-B070-37B0FADA00C5";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 20 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]";
+	setAttr ".ic" -type "componentList" 1 "f[0:19]";
 createNode groupId -n "groupId7";
 	rename -uid "FFC380F9-423C-08C6-201C-8CA677E20254";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts6";
 	rename -uid "238CF9C5-4709-57BE-3C36-A9B9FA9672CA";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 44 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]";
+	setAttr ".ic" -type "componentList" 1 "f[0:43]";
 createNode groupId -n "groupId8";
 	rename -uid "342D7873-4AA0-B99B-869C-E9B864648897";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts7";
 	rename -uid "D4917E79-4F84-1B6A-6281-EEAC13780F23";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 20 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]";
+	setAttr ".ic" -type "componentList" 1 "f[0:19]";
 createNode groupId -n "groupId9";
 	rename -uid "7396F87A-4E58-9C44-3B71-21A1A7C33B41";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts8";
 	rename -uid "E70D322E-4B6E-C15A-6328-858A91B28CA6";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 20 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]";
+	setAttr ".ic" -type "componentList" 1 "f[0:19]";
 createNode groupId -n "groupId10";
 	rename -uid "3C4AAF51-452E-5BEC-D857-35BA0D0179F7";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts9";
 	rename -uid "98F39F95-4D48-133C-F978-FEA4498EE3C3";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 20 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]";
+	setAttr ".ic" -type "componentList" 1 "f[0:19]";
 createNode groupId -n "groupId11";
 	rename -uid "CB4C7AED-473F-D09E-42A5-C0AA5D8D9626";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts10";
 	rename -uid "BA90692E-4E7C-F7AA-A6EB-4C80A1DF6AE1";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 44 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]";
+	setAttr ".ic" -type "componentList" 1 "f[0:43]";
 createNode groupId -n "groupId12";
 	rename -uid "CA26798A-4D46-613C-9FC7-35A2D2BCBD95";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts11";
 	rename -uid "4504110C-4DE7-9FBD-28B7-4393790F76DF";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 16 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]";
+	setAttr ".ic" -type "componentList" 1 "f[0:15]";
 createNode groupId -n "groupId13";
 	rename -uid "55F0279E-4574-041A-F00A-95AE73F12D60";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts12";
 	rename -uid "F5F3253A-43E0-CF6F-0225-37A954090680";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 20 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]";
+	setAttr ".ic" -type "componentList" 1 "f[0:19]";
 createNode groupId -n "groupId14";
 	rename -uid "7874BBEA-4E69-410A-CDDB-1A9047CFFEA1";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts13";
 	rename -uid "A932EF6B-460F-EA14-7D1D-F690BE700AAC";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 20 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]";
+	setAttr ".ic" -type "componentList" 1 "f[0:19]";
 createNode groupId -n "groupId15";
 	rename -uid "851DE6A5-4E28-5461-4E42-1D8880C58C7B";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts14";
 	rename -uid "79906694-4A2E-6CA7-1814-2FB0072BF53A";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 44 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]";
+	setAttr ".ic" -type "componentList" 1 "f[0:43]";
 createNode groupId -n "groupId16";
 	rename -uid "270D934A-4CC3-4930-4413-88A98EB5A32B";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts15";
 	rename -uid "FF9F3E86-4CB2-7392-7517-AABFE3169A0C";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 20 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]";
+	setAttr ".ic" -type "componentList" 1 "f[0:19]";
 createNode groupId -n "groupId17";
 	rename -uid "C061FE07-4B8E-A31F-618E-B99F0A05CF12";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts16";
 	rename -uid "F3FEF891-41BD-F80E-B6B0-09B9FDA0E34B";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 185 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]";
+	setAttr ".ic" -type "componentList" 1 "f[0:184]";
 createNode groupId -n "groupId18";
 	rename -uid "61287CA9-4B19-3A22-567E-36A33EFAED2C";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts17";
 	rename -uid "C72AB572-489F-ABC2-C639-6AA9C445E547";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 111 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]";
+	setAttr ".ic" -type "componentList" 1 "f[0:110]";
 createNode groupId -n "groupId19";
 	rename -uid "80E63577-47C6-C384-1886-DFB6520E7409";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts18";
 	rename -uid "02EB8B74-4817-2BF0-4C87-1C8EC78E3ECC";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 333 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]" "f[185]" "f[186]" "f[187]" "f[188]" "f[189]" "f[190]" "f[191]" "f[192]" "f[193]" "f[194]" "f[195]" "f[196]" "f[197]" "f[198]" "f[199]" "f[200]" "f[201]" "f[202]" "f[203]" "f[204]" "f[205]" "f[206]" "f[207]" "f[208]" "f[209]" "f[210]" "f[211]" "f[212]" "f[213]" "f[214]" "f[215]" "f[216]" "f[217]" "f[218]" "f[219]" "f[220]" "f[221]" "f[222]" "f[223]" "f[224]" "f[225]" "f[226]" "f[227]" "f[228]" "f[229]" "f[230]" "f[231]" "f[232]" "f[233]" "f[234]" "f[235]" "f[236]" "f[237]" "f[238]" "f[239]" "f[240]" "f[241]" "f[242]" "f[243]" "f[244]" "f[245]" "f[246]" "f[247]" "f[248]" "f[249]" "f[250]" "f[251]" "f[252]" "f[253]" "f[254]" "f[255]" "f[256]" "f[257]" "f[258]" "f[259]" "f[260]" "f[261]" "f[262]" "f[263]" "f[264]" "f[265]" "f[266]" "f[267]" "f[268]" "f[269]" "f[270]" "f[271]" "f[272]" "f[273]" "f[274]" "f[275]" "f[276]" "f[277]" "f[278]" "f[279]" "f[280]" "f[281]" "f[282]" "f[283]" "f[284]" "f[285]" "f[286]" "f[287]" "f[288]" "f[289]" "f[290]" "f[291]" "f[292]" "f[293]" "f[294]" "f[295]" "f[296]" "f[297]" "f[298]" "f[299]" "f[300]" "f[301]" "f[302]" "f[303]" "f[304]" "f[305]" "f[306]" "f[307]" "f[308]" "f[309]" "f[310]" "f[311]" "f[312]" "f[313]" "f[314]" "f[315]" "f[316]" "f[317]" "f[318]" "f[319]" "f[320]" "f[321]" "f[322]" "f[323]" "f[324]" "f[325]" "f[326]" "f[327]" "f[328]" "f[329]" "f[330]" "f[331]" "f[332]";
+	setAttr ".ic" -type "componentList" 1 "f[0:332]";
 createNode groupId -n "groupId20";
 	rename -uid "11400E08-4F69-502E-480D-C18FDFECBB7D";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts19";
 	rename -uid "471D623C-423C-1CDA-6DEB-72AAA4B0F35E";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 20 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]";
+	setAttr ".ic" -type "componentList" 1 "f[0:19]";
 createNode groupId -n "groupId21";
 	rename -uid "FD6EC2CD-43E7-979D-E13B-018975F4C27D";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts20";
 	rename -uid "1C17EA64-4F54-336E-C222-7A810DD874B5";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 16 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]";
+	setAttr ".ic" -type "componentList" 1 "f[0:15]";
 createNode groupId -n "groupId22";
 	rename -uid "F585A4C4-4FC5-101D-FF8D-98B64275E341";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts21";
 	rename -uid "8803B562-486F-5C93-53E4-F6BE1459F84F";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 12 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]";
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
 createNode groupId -n "groupId23";
 	rename -uid "B23CC664-4F5B-411B-D40E-E7B37A8634EE";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts22";
 	rename -uid "CD0FBDDA-4A99-0589-B553-E3A9E5F06952";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 60 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]";
+	setAttr ".ic" -type "componentList" 1 "f[0:59]";
 createNode groupId -n "groupId24";
 	rename -uid "5917D80E-4AF5-7DE5-B6F1-1D840392F093";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts23";
 	rename -uid "5268136A-4CFF-D646-3DDB-2B8C47B671A7";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 20 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]";
+	setAttr ".ic" -type "componentList" 1 "f[0:19]";
 createNode groupId -n "groupId25";
 	rename -uid "C77FCA3E-4B82-296C-C2D9-B7B6E45CC732";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts24";
 	rename -uid "AF182F30-49F3-794A-4343-E6946B2D20B0";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 28 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]";
+	setAttr ".ic" -type "componentList" 1 "f[0:27]";
 createNode groupId -n "groupId26";
 	rename -uid "5008D0E9-4FD9-4980-0A2E-8E8BABD68FE6";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts25";
 	rename -uid "8EB5EB8E-490D-ACD8-368A-51A54BC35646";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 12 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]";
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
 createNode groupId -n "groupId27";
 	rename -uid "B5146F96-485E-FD06-4967-45B4602E85F2";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts26";
 	rename -uid "0D157233-407C-677B-928D-078739364049";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 12 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]";
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
 createNode groupId -n "groupId28";
 	rename -uid "3A1A92BA-4DFD-5826-01B4-4B97FFC9725E";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts27";
 	rename -uid "8771E641-4F1B-8CF5-2A09-BD9F7BC5B627";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 22 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]";
+	setAttr ".ic" -type "componentList" 1 "f[0:21]";
 createNode groupId -n "groupId29";
 	rename -uid "6D8E7AAC-4535-124C-ABDF-B69FEFC8533B";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts28";
 	rename -uid "1B119E0F-483E-3820-583D-258BD020465A";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 10 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]";
+	setAttr ".ic" -type "componentList" 1 "f[0:9]";
 createNode groupId -n "groupId30";
 	rename -uid "8E18DE4B-447A-F049-91F7-5AB6C22ED4EC";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts29";
 	rename -uid "DCB44F4C-4FCB-D985-9CE9-238B983CDC07";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 12 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]";
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
 createNode groupId -n "groupId31";
 	rename -uid "9CF88C0A-4793-AAEC-E764-46BFF04AB8C3";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts30";
 	rename -uid "C0A8193A-4A50-BD99-E2BC-8B8F073BCE11";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 12 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]";
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
 createNode groupId -n "groupId32";
 	rename -uid "82D5B5FF-4EDF-9391-31A1-31B3B2FB3EF3";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts31";
 	rename -uid "5FFEA422-4182-3937-F580-D5A569F0490A";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 12 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]";
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
 createNode groupId -n "groupId33";
 	rename -uid "F7D6419A-4F99-9C75-3526-1385BF011C99";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts32";
 	rename -uid "981DEAE4-420D-91D6-C275-BDB6C62216C7";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 12 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]";
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
 createNode groupId -n "groupId34";
 	rename -uid "E35F55AC-408A-1B83-31F8-F3A33FFBF707";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts33";
 	rename -uid "FD1CCCBE-4179-4B3A-790B-3BAB936D21D8";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 24 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]";
+	setAttr ".ic" -type "componentList" 1 "f[0:23]";
 createNode groupId -n "groupId35";
 	rename -uid "5E095EF0-4080-04AC-7473-1FA8AE5F6BF2";
 	setAttr ".ihi" 0;
@@ -40724,21 +41462,21 @@ createNode groupId -n "groupId59";
 createNode groupParts -n "groupParts58";
 	rename -uid "CBD7A1DB-4DFA-0CD7-412E-D1AEF484454C";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 4 "f[0]" "f[1]" "f[2]" "f[3]";
+	setAttr ".ic" -type "componentList" 1 "f[0:3]";
 createNode groupId -n "groupId60";
 	rename -uid "5FE3DBA6-44DD-9E8D-0478-82BF69C484C1";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts59";
 	rename -uid "46A18907-4C10-D7EF-5729-7D88D85DFC78";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 4 "f[0]" "f[1]" "f[2]" "f[3]";
+	setAttr ".ic" -type "componentList" 1 "f[0:3]";
 createNode groupId -n "groupId61";
 	rename -uid "DF01C932-4D57-737B-B536-119F090F37C7";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts60";
 	rename -uid "C732A923-4A52-C819-DD72-A581E59840F8";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 10 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]";
+	setAttr ".ic" -type "componentList" 1 "f[0:9]";
 createNode groupId -n "groupId62";
 	rename -uid "F954294A-4AFD-ED59-EEE6-34BDE403798D";
 	setAttr ".ihi" 0;
@@ -40759,7 +41497,7 @@ createNode groupId -n "groupId64";
 createNode groupParts -n "groupParts63";
 	rename -uid "BCA3B704-41CF-5848-54AD-6A9326C3AFCC";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 10 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]";
+	setAttr ".ic" -type "componentList" 1 "f[0:9]";
 createNode groupId -n "groupId65";
 	rename -uid "81197834-41AD-170F-2AD4-279E7F6EB907";
 	setAttr ".ihi" 0;
@@ -40780,70 +41518,70 @@ createNode groupId -n "groupId67";
 createNode groupParts -n "groupParts66";
 	rename -uid "50953FA9-4DEE-3B19-A2C5-FA8E71F18313";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 12 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]";
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
 createNode groupId -n "groupId68";
 	rename -uid "36B9D794-45BE-0F7F-A3CB-9CB62E69E302";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts67";
 	rename -uid "71E41470-4A55-BB8B-0A3A-F587999DF61B";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 16 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]";
+	setAttr ".ic" -type "componentList" 1 "f[0:15]";
 createNode groupId -n "groupId69";
 	rename -uid "4B279B7D-48C4-EAE0-8730-B0B38DC79A24";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts68";
 	rename -uid "4E71B7F1-4408-8672-D1D9-39A74F8714E3";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 185 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]";
+	setAttr ".ic" -type "componentList" 1 "f[0:184]";
 createNode groupId -n "groupId70";
 	rename -uid "51C20319-4886-E07C-7FB7-4BBCBD2BB8AE";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts69";
 	rename -uid "BA785BDA-4AB3-279F-15A5-309892F3FFAD";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 111 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]";
+	setAttr ".ic" -type "componentList" 1 "f[0:110]";
 createNode groupId -n "groupId71";
 	rename -uid "6B4B7930-4034-D499-1E27-76ABACC581A1";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts70";
 	rename -uid "1EA0D9D6-482B-AFA1-40D8-8BA1427277F4";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 333 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]" "f[185]" "f[186]" "f[187]" "f[188]" "f[189]" "f[190]" "f[191]" "f[192]" "f[193]" "f[194]" "f[195]" "f[196]" "f[197]" "f[198]" "f[199]" "f[200]" "f[201]" "f[202]" "f[203]" "f[204]" "f[205]" "f[206]" "f[207]" "f[208]" "f[209]" "f[210]" "f[211]" "f[212]" "f[213]" "f[214]" "f[215]" "f[216]" "f[217]" "f[218]" "f[219]" "f[220]" "f[221]" "f[222]" "f[223]" "f[224]" "f[225]" "f[226]" "f[227]" "f[228]" "f[229]" "f[230]" "f[231]" "f[232]" "f[233]" "f[234]" "f[235]" "f[236]" "f[237]" "f[238]" "f[239]" "f[240]" "f[241]" "f[242]" "f[243]" "f[244]" "f[245]" "f[246]" "f[247]" "f[248]" "f[249]" "f[250]" "f[251]" "f[252]" "f[253]" "f[254]" "f[255]" "f[256]" "f[257]" "f[258]" "f[259]" "f[260]" "f[261]" "f[262]" "f[263]" "f[264]" "f[265]" "f[266]" "f[267]" "f[268]" "f[269]" "f[270]" "f[271]" "f[272]" "f[273]" "f[274]" "f[275]" "f[276]" "f[277]" "f[278]" "f[279]" "f[280]" "f[281]" "f[282]" "f[283]" "f[284]" "f[285]" "f[286]" "f[287]" "f[288]" "f[289]" "f[290]" "f[291]" "f[292]" "f[293]" "f[294]" "f[295]" "f[296]" "f[297]" "f[298]" "f[299]" "f[300]" "f[301]" "f[302]" "f[303]" "f[304]" "f[305]" "f[306]" "f[307]" "f[308]" "f[309]" "f[310]" "f[311]" "f[312]" "f[313]" "f[314]" "f[315]" "f[316]" "f[317]" "f[318]" "f[319]" "f[320]" "f[321]" "f[322]" "f[323]" "f[324]" "f[325]" "f[326]" "f[327]" "f[328]" "f[329]" "f[330]" "f[331]" "f[332]";
+	setAttr ".ic" -type "componentList" 1 "f[0:332]";
 createNode groupId -n "groupId72";
 	rename -uid "30FE96F9-458B-3495-4F5D-8796BE1496C9";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts71";
 	rename -uid "4069B7B3-4D22-457F-05B8-0AAEBA2C98B7";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 185 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]";
+	setAttr ".ic" -type "componentList" 1 "f[0:184]";
 createNode groupId -n "groupId73";
 	rename -uid "705CEBF9-4F3F-6A4C-90F4-CBB48CABD1EE";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts72";
 	rename -uid "F57830BE-457B-96EE-EE3F-B78C580E0D91";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 111 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]";
+	setAttr ".ic" -type "componentList" 1 "f[0:110]";
 createNode groupId -n "groupId74";
 	rename -uid "93A9CFE9-4E46-2CBA-6305-18AA42B802C0";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts73";
 	rename -uid "157F6FBD-4F5C-083B-BC85-D783E1247643";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 333 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]" "f[185]" "f[186]" "f[187]" "f[188]" "f[189]" "f[190]" "f[191]" "f[192]" "f[193]" "f[194]" "f[195]" "f[196]" "f[197]" "f[198]" "f[199]" "f[200]" "f[201]" "f[202]" "f[203]" "f[204]" "f[205]" "f[206]" "f[207]" "f[208]" "f[209]" "f[210]" "f[211]" "f[212]" "f[213]" "f[214]" "f[215]" "f[216]" "f[217]" "f[218]" "f[219]" "f[220]" "f[221]" "f[222]" "f[223]" "f[224]" "f[225]" "f[226]" "f[227]" "f[228]" "f[229]" "f[230]" "f[231]" "f[232]" "f[233]" "f[234]" "f[235]" "f[236]" "f[237]" "f[238]" "f[239]" "f[240]" "f[241]" "f[242]" "f[243]" "f[244]" "f[245]" "f[246]" "f[247]" "f[248]" "f[249]" "f[250]" "f[251]" "f[252]" "f[253]" "f[254]" "f[255]" "f[256]" "f[257]" "f[258]" "f[259]" "f[260]" "f[261]" "f[262]" "f[263]" "f[264]" "f[265]" "f[266]" "f[267]" "f[268]" "f[269]" "f[270]" "f[271]" "f[272]" "f[273]" "f[274]" "f[275]" "f[276]" "f[277]" "f[278]" "f[279]" "f[280]" "f[281]" "f[282]" "f[283]" "f[284]" "f[285]" "f[286]" "f[287]" "f[288]" "f[289]" "f[290]" "f[291]" "f[292]" "f[293]" "f[294]" "f[295]" "f[296]" "f[297]" "f[298]" "f[299]" "f[300]" "f[301]" "f[302]" "f[303]" "f[304]" "f[305]" "f[306]" "f[307]" "f[308]" "f[309]" "f[310]" "f[311]" "f[312]" "f[313]" "f[314]" "f[315]" "f[316]" "f[317]" "f[318]" "f[319]" "f[320]" "f[321]" "f[322]" "f[323]" "f[324]" "f[325]" "f[326]" "f[327]" "f[328]" "f[329]" "f[330]" "f[331]" "f[332]";
+	setAttr ".ic" -type "componentList" 1 "f[0:332]";
 createNode groupId -n "groupId75";
 	rename -uid "0381D120-4933-C2F9-B867-88A9E83EB4F6";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts74";
 	rename -uid "FA5F3A81-4718-BD8D-CB7D-609184D7FA66";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 136 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]";
+	setAttr ".ic" -type "componentList" 1 "f[0:135]";
 createNode groupId -n "groupId76";
 	rename -uid "AA107050-4FCB-2143-EF6A-38904E82D6DA";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts75";
 	rename -uid "ECFF9B87-48C5-B1C7-6683-2A85405735E3";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 37 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]";
+	setAttr ".ic" -type "componentList" 1 "f[0:36]";
 createNode groupId -n "groupId77";
 	rename -uid "2AA89D61-40AC-68CC-E940-44BE40718184";
 	setAttr ".ihi" 0;
@@ -40857,238 +41595,238 @@ createNode groupId -n "groupId78";
 createNode groupParts -n "groupParts77";
 	rename -uid "1F5DADC7-43D8-55B3-4324-B9A5B4152CE4";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 30 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]";
+	setAttr ".ic" -type "componentList" 1 "f[0:29]";
 createNode groupId -n "groupId79";
 	rename -uid "9977B9B6-46A6-801E-5921-45B820C44228";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts78";
 	rename -uid "863794C6-43BB-D343-60A3-DB845E036F48";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 4 "f[0]" "f[1]" "f[2]" "f[3]";
+	setAttr ".ic" -type "componentList" 1 "f[0:3]";
 createNode groupId -n "groupId80";
 	rename -uid "331B960A-4242-34C2-D2B3-CBA77C88CD7A";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts79";
 	rename -uid "3B368FB9-411B-A337-52AA-A38798F1775C";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 312 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]" "f[185]" "f[186]" "f[187]" "f[188]" "f[189]" "f[190]" "f[191]" "f[192]" "f[193]" "f[194]" "f[195]" "f[196]" "f[197]" "f[198]" "f[199]" "f[200]" "f[201]" "f[202]" "f[203]" "f[204]" "f[205]" "f[206]" "f[207]" "f[208]" "f[209]" "f[210]" "f[211]" "f[212]" "f[213]" "f[214]" "f[215]" "f[216]" "f[217]" "f[218]" "f[219]" "f[220]" "f[221]" "f[222]" "f[223]" "f[224]" "f[225]" "f[226]" "f[227]" "f[228]" "f[229]" "f[230]" "f[231]" "f[232]" "f[233]" "f[234]" "f[235]" "f[236]" "f[237]" "f[238]" "f[239]" "f[240]" "f[241]" "f[242]" "f[243]" "f[244]" "f[245]" "f[246]" "f[247]" "f[248]" "f[249]" "f[250]" "f[251]" "f[252]" "f[253]" "f[254]" "f[255]" "f[256]" "f[257]" "f[258]" "f[259]" "f[260]" "f[261]" "f[262]" "f[263]" "f[264]" "f[265]" "f[266]" "f[267]" "f[268]" "f[269]" "f[270]" "f[271]" "f[272]" "f[273]" "f[274]" "f[275]" "f[276]" "f[277]" "f[278]" "f[279]" "f[280]" "f[281]" "f[282]" "f[283]" "f[284]" "f[285]" "f[286]" "f[287]" "f[288]" "f[289]" "f[290]" "f[291]" "f[292]" "f[293]" "f[294]" "f[295]" "f[296]" "f[297]" "f[298]" "f[299]" "f[300]" "f[301]" "f[302]" "f[303]" "f[304]" "f[305]" "f[306]" "f[307]" "f[308]" "f[309]" "f[310]" "f[311]";
+	setAttr ".ic" -type "componentList" 1 "f[0:311]";
 createNode groupId -n "groupId81";
 	rename -uid "A720290D-4B86-776E-1C0F-EE931118FDD9";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts80";
 	rename -uid "B896EBF5-49A7-28E6-2F04-F68F07DCFA93";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 44 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]";
+	setAttr ".ic" -type "componentList" 1 "f[0:43]";
 createNode groupId -n "groupId82";
 	rename -uid "FECC9ADB-4BAF-4FD0-F54D-E08414403661";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts81";
 	rename -uid "DA796E4F-403F-1E93-2674-0DA3DDD11F96";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 44 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]";
+	setAttr ".ic" -type "componentList" 1 "f[0:43]";
 createNode groupId -n "groupId83";
 	rename -uid "5798E187-4D26-D2CA-0552-A091EC9BF285";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts82";
 	rename -uid "B42B69E8-4E9F-8FF2-E32B-D9BCB690D065";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 27 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]";
+	setAttr ".ic" -type "componentList" 1 "f[0:26]";
 createNode groupId -n "groupId84";
 	rename -uid "F48F41ED-49AA-3F6F-D604-9D9293DBAD7E";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts83";
 	rename -uid "22FAC8DE-453B-A1E2-2E5D-028FFA5D291C";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 27 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]";
+	setAttr ".ic" -type "componentList" 1 "f[0:26]";
 createNode groupId -n "groupId85";
 	rename -uid "81746C57-49D1-0DB3-9612-3B86B63E759E";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts84";
 	rename -uid "FC0A80C2-40AF-151E-8F54-F7A0529DF184";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 23 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]";
+	setAttr ".ic" -type "componentList" 1 "f[0:22]";
 createNode groupId -n "groupId86";
 	rename -uid "BA0E4087-4794-2733-B914-AF87B4595D81";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts85";
 	rename -uid "05BCD95E-4519-AAB4-9139-6B873324289B";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 23 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]";
+	setAttr ".ic" -type "componentList" 1 "f[0:22]";
 createNode groupId -n "groupId87";
 	rename -uid "058CBDF1-494D-67AE-DCA3-87AA3ED3CAB1";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts86";
 	rename -uid "72E66035-47A9-6ED6-057F-BCA96A348618";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 44 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]";
+	setAttr ".ic" -type "componentList" 1 "f[0:43]";
 createNode groupId -n "groupId88";
 	rename -uid "E328D672-4D5F-88FC-8600-44B52C485ECE";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts87";
 	rename -uid "CF115B5D-4A85-4B9B-B1F4-9180AD0966BA";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 44 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]";
+	setAttr ".ic" -type "componentList" 1 "f[0:43]";
 createNode groupId -n "groupId89";
 	rename -uid "6D58A69E-4BAF-7B3F-BCC4-75ACF734C893";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts88";
 	rename -uid "186A5307-44BC-F27F-7C29-288477706F83";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 44 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]";
+	setAttr ".ic" -type "componentList" 1 "f[0:43]";
 createNode groupId -n "groupId90";
 	rename -uid "CF618FD5-4D06-1646-4E9E-42A9FE8D6132";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts89";
 	rename -uid "44E43AF3-4E0C-7CEC-94BB-F59F2B04C702";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 44 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]";
+	setAttr ".ic" -type "componentList" 1 "f[0:43]";
 createNode groupId -n "groupId91";
 	rename -uid "E47827CE-4DBA-86EC-6C57-6D8EBB1D8717";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts90";
 	rename -uid "E48EBB86-4304-7891-4813-DFA0577C298C";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 34 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]";
+	setAttr ".ic" -type "componentList" 1 "f[0:33]";
 createNode groupId -n "groupId92";
 	rename -uid "3E117029-472D-2E72-3399-B0BD37FAADAC";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts91";
 	rename -uid "BE893312-4694-FACA-4344-23A056790103";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 48 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]";
+	setAttr ".ic" -type "componentList" 1 "f[0:47]";
 createNode groupId -n "groupId93";
 	rename -uid "CD1251C8-45B3-471F-5208-2F838BC8FC2D";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts92";
 	rename -uid "5A8F155A-48EC-0F10-ACDC-E89EA73F6FDF";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 85 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]";
+	setAttr ".ic" -type "componentList" 1 "f[0:84]";
 createNode groupId -n "groupId94";
 	rename -uid "1C25ADB1-4F77-5B14-C403-279FAC774337";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts93";
 	rename -uid "486C0648-493C-1D1D-0703-C78B85AD2E78";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 40 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]";
+	setAttr ".ic" -type "componentList" 1 "f[0:39]";
 createNode groupId -n "groupId95";
 	rename -uid "9623E545-48C2-70FC-26C7-E39B4D502176";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts94";
 	rename -uid "CA25A62B-4C09-E541-EACD-17BB28FABF7B";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 2 "f[0]" "f[1]";
+	setAttr ".ic" -type "componentList" 1 "f[0:1]";
 createNode groupId -n "groupId96";
 	rename -uid "E2F35F43-4069-6DD3-94AD-8590A565663D";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts95";
 	rename -uid "033A3E48-4525-3E41-3C42-91AED8EFCB06";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 2 "f[0]" "f[1]";
+	setAttr ".ic" -type "componentList" 1 "f[0:1]";
 createNode groupId -n "groupId97";
 	rename -uid "5EBB6637-47BD-EC5A-7F60-14BA004C2196";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts96";
 	rename -uid "55ADC40C-48C1-740A-E6ED-A0BB3F7C23EB";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 12 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]";
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
 createNode groupId -n "groupId98";
 	rename -uid "2E57DE11-4A92-4149-DEF2-94A0E87B2845";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts97";
 	rename -uid "EAFFCDEF-4B0E-A370-CDE4-D8AF004FBBC2";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 22 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]";
+	setAttr ".ic" -type "componentList" 1 "f[0:21]";
 createNode groupId -n "groupId99";
 	rename -uid "28516593-42D4-A095-8FE4-6EB2D70B53DB";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts98";
 	rename -uid "E146658E-4D37-7C76-5DA2-CA86BEA85155";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 22 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]";
+	setAttr ".ic" -type "componentList" 1 "f[0:21]";
 createNode groupId -n "groupId100";
 	rename -uid "D3DB61E4-43B9-5853-26B0-24838963583C";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts99";
 	rename -uid "19CB4B78-4DB4-446E-70D3-9BA5A6D7C935";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 44 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]";
+	setAttr ".ic" -type "componentList" 1 "f[0:43]";
 createNode groupId -n "groupId101";
 	rename -uid "36DB69E9-41EA-C204-F28A-4FB965E15C5C";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts100";
 	rename -uid "FAC75F0B-4598-17DB-C135-AC8649A514D7";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 24 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]";
+	setAttr ".ic" -type "componentList" 1 "f[0:23]";
 createNode groupId -n "groupId102";
 	rename -uid "15EA260A-4DB9-2DD4-7698-9C8A42100D19";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts101";
 	rename -uid "AF078DE5-489A-B144-76B7-AA941599BA39";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 34 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]";
+	setAttr ".ic" -type "componentList" 1 "f[0:33]";
 createNode groupId -n "groupId103";
 	rename -uid "95A348DC-4B57-0459-74D4-59A1B87F5B65";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts102";
 	rename -uid "D8869F38-4485-2DA3-8DDC-039C145577EE";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 493 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]" "f[185]" "f[186]" "f[187]" "f[188]" "f[189]" "f[190]" "f[191]" "f[192]" "f[193]" "f[194]" "f[195]" "f[196]" "f[197]" "f[198]" "f[199]" "f[200]" "f[201]" "f[202]" "f[203]" "f[204]" "f[205]" "f[206]" "f[207]" "f[208]" "f[209]" "f[210]" "f[211]" "f[212]" "f[213]" "f[214]" "f[215]" "f[216]" "f[217]" "f[218]" "f[219]" "f[220]" "f[221]" "f[222]" "f[223]" "f[224]" "f[225]" "f[226]" "f[227]" "f[228]" "f[229]" "f[230]" "f[231]" "f[232]" "f[233]" "f[234]" "f[235]" "f[236]" "f[237]" "f[238]" "f[239]" "f[240]" "f[241]" "f[242]" "f[243]" "f[244]" "f[245]" "f[246]" "f[247]" "f[248]" "f[249]" "f[250]" "f[251]" "f[252]" "f[253]" "f[254]" "f[255]" "f[256]" "f[257]" "f[258]" "f[259]" "f[260]" "f[261]" "f[262]" "f[263]" "f[264]" "f[265]" "f[266]" "f[267]" "f[268]" "f[269]" "f[270]" "f[271]" "f[272]" "f[273]" "f[274]" "f[275]" "f[276]" "f[277]" "f[278]" "f[279]" "f[280]" "f[281]" "f[282]" "f[283]" "f[284]" "f[285]" "f[286]" "f[287]" "f[288]" "f[289]" "f[290]" "f[291]" "f[292]" "f[293]" "f[294]" "f[295]" "f[296]" "f[297]" "f[298]" "f[299]" "f[300]" "f[301]" "f[302]" "f[303]" "f[304]" "f[305]" "f[306]" "f[307]" "f[308]" "f[309]" "f[310]" "f[311]" "f[312]" "f[313]" "f[314]" "f[315]" "f[316]" "f[317]" "f[318]" "f[319]" "f[320]" "f[321]" "f[322]" "f[323]" "f[324]" "f[325]" "f[326]" "f[327]" "f[328]" "f[329]" "f[330]" "f[331]" "f[332]" "f[333]" "f[334]" "f[335]" "f[336]" "f[337]" "f[338]" "f[339]" "f[340]" "f[341]" "f[342]" "f[343]" "f[344]" "f[345]" "f[346]" "f[347]" "f[348]" "f[349]" "f[350]" "f[351]" "f[352]" "f[353]" "f[354]" "f[355]" "f[356]" "f[357]" "f[358]" "f[359]" "f[360]" "f[361]" "f[362]" "f[363]" "f[364]" "f[365]" "f[366]" "f[367]" "f[368]" "f[369]" "f[370]" "f[371]" "f[372]" "f[373]" "f[374]" "f[375]" "f[376]" "f[377]" "f[378]" "f[379]" "f[380]" "f[381]" "f[382]" "f[383]" "f[384]" "f[385]" "f[386]" "f[387]" "f[388]" "f[389]" "f[390]" "f[391]" "f[392]" "f[393]" "f[394]" "f[395]" "f[396]" "f[397]" "f[398]" "f[399]" "f[400]" "f[401]" "f[402]" "f[403]" "f[404]" "f[405]" "f[406]" "f[407]" "f[408]" "f[409]" "f[410]" "f[411]" "f[412]" "f[413]" "f[414]" "f[415]" "f[416]" "f[417]" "f[418]" "f[419]" "f[420]" "f[421]" "f[422]" "f[423]" "f[424]" "f[425]" "f[426]" "f[427]" "f[428]" "f[429]" "f[430]" "f[431]" "f[432]" "f[433]" "f[434]" "f[435]" "f[436]" "f[437]" "f[438]" "f[439]" "f[440]" "f[441]" "f[442]" "f[443]" "f[444]" "f[445]" "f[446]" "f[447]" "f[448]" "f[449]" "f[450]" "f[451]" "f[452]" "f[453]" "f[454]" "f[455]" "f[456]" "f[457]" "f[458]" "f[459]" "f[460]" "f[461]" "f[462]" "f[463]" "f[464]" "f[465]" "f[466]" "f[467]" "f[468]" "f[469]" "f[470]" "f[471]" "f[472]" "f[473]" "f[474]" "f[475]" "f[476]" "f[477]" "f[478]" "f[479]" "f[480]" "f[481]" "f[482]" "f[483]" "f[484]" "f[485]" "f[486]" "f[487]" "f[488]" "f[489]" "f[490]" "f[491]" "f[492]";
+	setAttr ".ic" -type "componentList" 1 "f[0:492]";
 createNode groupId -n "groupId104";
 	rename -uid "0EFBD0A3-4F49-9743-5403-5B805F37AFB4";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts103";
 	rename -uid "99522CC7-4C3E-99B7-A4C8-7AB920189A7D";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 37 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]";
+	setAttr ".ic" -type "componentList" 1 "f[0:36]";
 createNode groupId -n "groupId105";
 	rename -uid "D9EB2148-4478-05AC-9CDD-7DA96B4EB6C3";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts104";
 	rename -uid "F52892D2-4FB2-FE19-B5D1-47B22C66C801";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 165 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]";
+	setAttr ".ic" -type "componentList" 1 "f[0:164]";
 createNode groupId -n "groupId106";
 	rename -uid "291BF219-4171-4B94-EAFE-55888C8897AA";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts105";
 	rename -uid "54E0A1E3-484B-AD25-F7F8-3999F2762EA8";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 44 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]";
+	setAttr ".ic" -type "componentList" 1 "f[0:43]";
 createNode groupId -n "groupId107";
 	rename -uid "786DE072-436A-1ED8-9044-769B62310441";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts106";
 	rename -uid "2A29435E-454F-4EAD-9BB2-1E9E63DDB4FD";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 44 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]";
+	setAttr ".ic" -type "componentList" 1 "f[0:43]";
 createNode groupId -n "groupId108";
 	rename -uid "D391F0CE-4809-FBFC-4F72-E8B69B300C96";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts107";
 	rename -uid "3BF1D722-4FDD-BAE8-B2A0-AB9C80BA7BF7";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 12 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]";
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
 createNode groupId -n "groupId109";
 	rename -uid "69612AD6-4BD3-ABFB-6445-73BC83380E2C";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts108";
 	rename -uid "CA86E81A-4052-FD1C-34F3-76AB0DEF956D";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 10 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]";
+	setAttr ".ic" -type "componentList" 1 "f[0:9]";
 createNode groupId -n "groupId110";
 	rename -uid "478EACA9-43B3-F637-F33C-C3B3D88FB54C";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts109";
 	rename -uid "8F87894A-49C0-92A8-D446-A0A9160530B3";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 12 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]";
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
 createNode groupId -n "groupId111";
 	rename -uid "AE282061-4276-54F4-39FE-C5BBD3935E26";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts110";
 	rename -uid "73CB5160-4796-EFB2-A50D-F7A6DBD41BF1";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 12 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]";
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
 createNode groupId -n "groupId112";
 	rename -uid "7A4E79F3-4346-5B83-9B9B-CDA0B5EB445A";
 	setAttr ".ihi" 0;
@@ -41109,35 +41847,35 @@ createNode groupId -n "groupId114";
 createNode groupParts -n "groupParts113";
 	rename -uid "3963CFF6-4A19-35AB-E99C-26BE2728B6E3";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 12 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]";
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
 createNode groupId -n "groupId115";
 	rename -uid "1061CDD4-4490-5D17-0C9E-3683EC84E323";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts114";
 	rename -uid "3F950EF3-4926-26ED-9DC6-F6A5010185A6";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 56 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]";
+	setAttr ".ic" -type "componentList" 1 "f[0:55]";
 createNode groupId -n "groupId116";
 	rename -uid "844612A6-4913-0736-C7AE-83A94A58CEA5";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts115";
 	rename -uid "D1B859B7-425E-1BCC-5F0D-6FB5A498AE9B";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 68 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]";
+	setAttr ".ic" -type "componentList" 1 "f[0:67]";
 createNode groupId -n "groupId117";
 	rename -uid "FEC41E49-4D56-838C-9C16-8E863CB4B855";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts116";
 	rename -uid "2A27E870-4801-B30E-EB08-DAB1E627D487";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 68 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]";
+	setAttr ".ic" -type "componentList" 1 "f[0:67]";
 createNode groupId -n "groupId118";
 	rename -uid "27C03D8E-4CEC-613D-6D45-179B63D8053A";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts117";
 	rename -uid "FFC88BA7-4BED-091E-15A5-DC8612C5AD6B";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 68 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]";
+	setAttr ".ic" -type "componentList" 1 "f[0:67]";
 createNode groupId -n "groupId119";
 	rename -uid "6893579B-4E5D-376E-63AD-B19B6D603E67";
 	setAttr ".ihi" 0;
@@ -41214,7 +41952,7 @@ createNode groupId -n "groupId129";
 createNode groupParts -n "groupParts128";
 	rename -uid "0BBC3538-4F7B-FE07-4A5D-59AD7679FFBF";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 68 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]";
+	setAttr ".ic" -type "componentList" 1 "f[0:67]";
 createNode groupId -n "groupId130";
 	rename -uid "0A149FDE-48A4-36B4-5050-DB9528DAD426";
 	setAttr ".ihi" 0;
@@ -41291,7 +42029,7 @@ createNode groupId -n "groupId140";
 createNode groupParts -n "groupParts139";
 	rename -uid "B008834B-4214-D129-9CEA-32AA8C1978EB";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 6 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]";
+	setAttr ".ic" -type "componentList" 1 "f[0:5]";
 createNode groupId -n "groupId141";
 	rename -uid "A4753CF7-40DF-DFDF-8C9F-048A70888453";
 	setAttr ".ihi" 0;
@@ -41340,77 +42078,77 @@ createNode groupId -n "groupId147";
 createNode groupParts -n "groupParts146";
 	rename -uid "1FD0146C-4BE4-0EB6-4212-9EA91720DAC8";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 12 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]";
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
 createNode groupId -n "groupId148";
 	rename -uid "80B70573-493E-7A49-8506-45A37B619CE0";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts147";
 	rename -uid "7B83849C-45B0-9DD1-9FB7-99B9B82C2C0D";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 12 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]";
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
 createNode groupId -n "groupId149";
 	rename -uid "BBED7811-4D03-2843-1318-88A327912F4A";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts148";
 	rename -uid "F93222FF-45BB-23F1-51B4-5F80692C8247";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 68 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]";
+	setAttr ".ic" -type "componentList" 1 "f[0:67]";
 createNode groupId -n "groupId150";
 	rename -uid "0A136BBA-4397-B5CC-9BA5-6F905117C13B";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts149";
 	rename -uid "26A53897-4A77-16F6-E9E2-E692A1273136";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 68 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]";
+	setAttr ".ic" -type "componentList" 1 "f[0:67]";
 createNode groupId -n "groupId151";
 	rename -uid "361B6F89-4FE1-51A5-24BC-98A17673D9F4";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts150";
 	rename -uid "B74D1156-405D-DA8C-3ACE-949BE4DA2B91";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 44 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]";
+	setAttr ".ic" -type "componentList" 1 "f[0:43]";
 createNode groupId -n "groupId152";
 	rename -uid "5726881E-4C51-7FBB-6D6A-1191C6633337";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts151";
 	rename -uid "12B6C114-49D2-F363-A113-0F8C16B4735C";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 44 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]";
+	setAttr ".ic" -type "componentList" 1 "f[0:43]";
 createNode groupId -n "groupId153";
 	rename -uid "08945A8F-4E07-67EA-AB80-52AA34155334";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts152";
 	rename -uid "723CA76E-40CD-A346-AFF3-28915ED22A8D";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 44 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]";
+	setAttr ".ic" -type "componentList" 1 "f[0:43]";
 createNode groupId -n "groupId154";
 	rename -uid "C86F2BE1-4332-2B33-CBD0-B3943DE71FE5";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts153";
 	rename -uid "33E6E182-4F0E-49BE-8C6D-B78280BE083B";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 12 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]";
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
 createNode groupId -n "groupId155";
 	rename -uid "3FA092A3-4497-6CB0-AE14-78BE00678E06";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts154";
 	rename -uid "63CAD8F8-4708-CCF2-49A6-9187636A1F93";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 10 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]";
+	setAttr ".ic" -type "componentList" 1 "f[0:9]";
 createNode groupId -n "groupId156";
 	rename -uid "B9903E42-4081-B50A-1685-35B52EEC1A26";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts155";
 	rename -uid "20AF65D0-4F1F-B67D-72A6-51A795AA41E1";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 12 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]";
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
 createNode groupId -n "groupId157";
 	rename -uid "A1D0DD61-4579-F8FC-F185-57982720E0B6";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts156";
 	rename -uid "9CD2A090-4FDD-B965-4DB4-939C6CDB8C1F";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 12 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]";
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
 createNode groupId -n "groupId158";
 	rename -uid "AD03957C-4AC1-9FDB-5EE9-4193163CB2A2";
 	setAttr ".ihi" 0;
@@ -41431,35 +42169,35 @@ createNode groupId -n "groupId160";
 createNode groupParts -n "groupParts159";
 	rename -uid "AD3EA0D6-46A9-9AED-1702-BA9633DA1373";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 12 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]";
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
 createNode groupId -n "groupId161";
 	rename -uid "AEB02341-465A-4766-6367-B4856C1B69AD";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts160";
 	rename -uid "C2810219-4314-7B70-7F51-EDBFF668F2D2";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 56 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]";
+	setAttr ".ic" -type "componentList" 1 "f[0:55]";
 createNode groupId -n "groupId162";
 	rename -uid "F6EE0356-49BF-DC35-F93B-80963B638B3C";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts161";
 	rename -uid "3E3D2620-475D-31D0-10A6-F984E15EA63D";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 68 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]";
+	setAttr ".ic" -type "componentList" 1 "f[0:67]";
 createNode groupId -n "groupId163";
 	rename -uid "4D7BD2C6-4AB3-6B17-C3DA-A08FBA51A9D4";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts162";
 	rename -uid "525C9086-4E5F-3779-86D5-4C8F46C86433";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 68 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]";
+	setAttr ".ic" -type "componentList" 1 "f[0:67]";
 createNode groupId -n "groupId164";
 	rename -uid "E3AA5C25-4BFD-028C-D2F9-06AFF080382D";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts163";
 	rename -uid "38FCC917-49ED-114D-F2F0-16A70E017DA0";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 68 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]";
+	setAttr ".ic" -type "componentList" 1 "f[0:67]";
 createNode groupId -n "groupId165";
 	rename -uid "0473FBAE-4AA7-E0A8-9456-1CBC31F9FBE5";
 	setAttr ".ihi" 0;
@@ -41536,7 +42274,7 @@ createNode groupId -n "groupId175";
 createNode groupParts -n "groupParts174";
 	rename -uid "76FAEE79-46E9-6563-78DE-E0ABE424AC71";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 68 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]";
+	setAttr ".ic" -type "componentList" 1 "f[0:67]";
 createNode groupId -n "groupId176";
 	rename -uid "8DD09D4F-4B5D-AD4F-46DF-1499C5F19AB8";
 	setAttr ".ihi" 0;
@@ -41613,7 +42351,7 @@ createNode groupId -n "groupId186";
 createNode groupParts -n "groupParts185";
 	rename -uid "B71138A3-4D82-90F2-ED6B-F490C0AEFB2C";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 6 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]";
+	setAttr ".ic" -type "componentList" 1 "f[0:5]";
 createNode groupId -n "groupId187";
 	rename -uid "E7FFE519-4B76-BE61-F9B7-A29964CD78D4";
 	setAttr ".ihi" 0;
@@ -41662,105 +42400,105 @@ createNode groupId -n "groupId193";
 createNode groupParts -n "groupParts192";
 	rename -uid "6C3A0CB7-41EB-9F0B-04DE-8784BD4ABF54";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 12 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]";
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
 createNode groupId -n "groupId194";
 	rename -uid "B4EB1937-4332-744E-29BD-70859AB78584";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts193";
 	rename -uid "576705AC-4E9F-2747-180A-75856E23953F";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 12 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]";
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
 createNode groupId -n "groupId195";
 	rename -uid "5502D3BA-443D-FB17-7FB0-70ADFEF60D69";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts194";
 	rename -uid "002FB929-4762-A115-54E3-DD8B03FF6C26";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 68 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]";
+	setAttr ".ic" -type "componentList" 1 "f[0:67]";
 createNode groupId -n "groupId196";
 	rename -uid "A3C705AB-4511-AA50-A09C-4F80355C6FE6";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts195";
 	rename -uid "F05B22E1-4372-E98F-0F2E-D9B20A6AE9C6";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 68 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]";
+	setAttr ".ic" -type "componentList" 1 "f[0:67]";
 createNode groupId -n "groupId197";
 	rename -uid "FBC187C7-4DB7-3F54-C0D9-BAA88F147871";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts196";
 	rename -uid "938B0BB5-44F7-8D9B-9DED-83A9C44BE193";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 20 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]";
+	setAttr ".ic" -type "componentList" 1 "f[0:19]";
 createNode groupId -n "groupId198";
 	rename -uid "F8F40BC9-4D39-AC14-B655-A183F334E05E";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts197";
 	rename -uid "ECEA8E7C-4515-ABC5-1DD4-529EEEAD1BDB";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 44 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]";
+	setAttr ".ic" -type "componentList" 1 "f[0:43]";
 createNode groupId -n "groupId199";
 	rename -uid "DA5E9A9E-4CAA-F67D-AA92-ECB7F8E47821";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts198";
 	rename -uid "58376700-48E7-3A90-836C-C283DD62E449";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 20 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]";
+	setAttr ".ic" -type "componentList" 1 "f[0:19]";
 createNode groupId -n "groupId200";
 	rename -uid "7C9B04F0-4EC3-587C-9DC4-FDB5FEF3A79C";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts199";
 	rename -uid "A5ECB6D3-4008-8A09-8DF8-2AA940E294ED";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 112 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]";
+	setAttr ".ic" -type "componentList" 1 "f[0:111]";
 createNode groupId -n "groupId201";
 	rename -uid "7E1A5EB8-4E25-0D0A-ADCB-98AE532F78E0";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts200";
 	rename -uid "6FB4B607-4864-D135-15EA-25A763906D63";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 192 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]" "f[185]" "f[186]" "f[187]" "f[188]" "f[189]" "f[190]" "f[191]";
+	setAttr ".ic" -type "componentList" 1 "f[0:191]";
 createNode groupId -n "groupId202";
 	rename -uid "CEAA3F3F-47BF-0772-58DF-D9AE95230259";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts201";
 	rename -uid "F29C51FF-4F38-E5CE-556C-4DA0D4ED33E5";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 20 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]";
+	setAttr ".ic" -type "componentList" 1 "f[0:19]";
 createNode groupId -n "groupId203";
 	rename -uid "1C31817C-4229-9816-8645-32B60DCC9DAE";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts202";
 	rename -uid "602E7871-476A-7405-195E-559F8709E51A";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 20 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]";
+	setAttr ".ic" -type "componentList" 1 "f[0:19]";
 createNode groupId -n "groupId204";
 	rename -uid "BD3EBD7F-482F-D485-424B-63B1E8B844C3";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts203";
 	rename -uid "7451F033-4BF1-7495-FB63-6C98DD3A528E";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 20 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]";
+	setAttr ".ic" -type "componentList" 1 "f[0:19]";
 createNode groupId -n "groupId205";
 	rename -uid "85BAD859-4038-7D71-4CF4-5ABAC4570E56";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts204";
 	rename -uid "89DDD070-4250-FA07-95BF-40B4AD46A497";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 20 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]";
+	setAttr ".ic" -type "componentList" 1 "f[0:19]";
 createNode groupId -n "groupId206";
 	rename -uid "F0F4E740-467A-0B0C-B86B-ACB5B99D1CEF";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts205";
 	rename -uid "BD9E78A0-4F57-3DE9-96B6-06899415B3A0";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 41 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]";
+	setAttr ".ic" -type "componentList" 1 "f[0:40]";
 createNode groupId -n "groupId207";
 	rename -uid "5D074080-4163-7DCC-7566-CCA312458438";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts206";
 	rename -uid "3614BF73-4CA3-E883-670E-64B9ACC6BFB3";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 41 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]";
+	setAttr ".ic" -type "componentList" 1 "f[0:40]";
 createNode groupId -n "groupId208";
 	rename -uid "F8E52E81-45FB-C666-B9DA-E19342FE0A3A";
 	setAttr ".ihi" 0;
@@ -41781,210 +42519,210 @@ createNode groupId -n "groupId210";
 createNode groupParts -n "groupParts209";
 	rename -uid "C8A31881-4C0C-27D3-45A0-51B0DA6862BA";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 12 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]";
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
 createNode groupId -n "groupId211";
 	rename -uid "CD1375CE-44A4-D36A-B287-FDB261F8F8D6";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts210";
 	rename -uid "FFBC5A53-48C0-BD03-2877-848CE3312A11";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 12 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]";
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
 createNode groupId -n "groupId212";
 	rename -uid "D4A26C9F-4EB7-8B4B-FD4C-408B2F4E8ED0";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts211";
 	rename -uid "D9459C52-49E8-7C1B-5EF8-4AA43C82D8DB";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 10 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]";
+	setAttr ".ic" -type "componentList" 1 "f[0:9]";
 createNode groupId -n "groupId213";
 	rename -uid "76BC4030-4862-F3DF-2FDF-8C89C4C5E0D6";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts212";
 	rename -uid "84727818-4BB2-A2A7-A81F-95BA879CE210";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 10 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]";
+	setAttr ".ic" -type "componentList" 1 "f[0:9]";
 createNode groupId -n "groupId214";
 	rename -uid "106AA81C-4677-AFA0-2903-40AD68DD58F5";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts213";
 	rename -uid "DC83DEFB-45DD-07C8-B916-3B8603F8492D";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 10 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]";
+	setAttr ".ic" -type "componentList" 1 "f[0:9]";
 createNode groupId -n "groupId215";
 	rename -uid "CA9F1826-4297-D459-E8B2-C09FDBAF8C1F";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts214";
 	rename -uid "4578A33F-4F93-4109-7ED3-849653AA19C8";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 10 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]";
+	setAttr ".ic" -type "componentList" 1 "f[0:9]";
 createNode groupId -n "groupId216";
 	rename -uid "1C1187DC-4FDF-AEF4-8448-B9A2179ABD07";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts215";
 	rename -uid "58DF8D9D-4257-D2B3-8C16-6B8666CDFC82";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 375 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]" "f[185]" "f[186]" "f[187]" "f[188]" "f[189]" "f[190]" "f[191]" "f[192]" "f[193]" "f[194]" "f[195]" "f[196]" "f[197]" "f[198]" "f[199]" "f[200]" "f[201]" "f[202]" "f[203]" "f[204]" "f[205]" "f[206]" "f[207]" "f[208]" "f[209]" "f[210]" "f[211]" "f[212]" "f[213]" "f[214]" "f[215]" "f[216]" "f[217]" "f[218]" "f[219]" "f[220]" "f[221]" "f[222]" "f[223]" "f[224]" "f[225]" "f[226]" "f[227]" "f[228]" "f[229]" "f[230]" "f[231]" "f[232]" "f[233]" "f[234]" "f[235]" "f[236]" "f[237]" "f[238]" "f[239]" "f[240]" "f[241]" "f[242]" "f[243]" "f[244]" "f[245]" "f[246]" "f[247]" "f[248]" "f[249]" "f[250]" "f[251]" "f[252]" "f[253]" "f[254]" "f[255]" "f[256]" "f[257]" "f[258]" "f[259]" "f[260]" "f[261]" "f[262]" "f[263]" "f[264]" "f[265]" "f[266]" "f[267]" "f[268]" "f[269]" "f[270]" "f[271]" "f[272]" "f[273]" "f[274]" "f[275]" "f[276]" "f[277]" "f[278]" "f[279]" "f[280]" "f[281]" "f[282]" "f[283]" "f[284]" "f[285]" "f[286]" "f[287]" "f[288]" "f[289]" "f[290]" "f[291]" "f[292]" "f[293]" "f[294]" "f[295]" "f[296]" "f[297]" "f[298]" "f[299]" "f[300]" "f[301]" "f[302]" "f[303]" "f[304]" "f[305]" "f[306]" "f[307]" "f[308]" "f[309]" "f[310]" "f[311]" "f[312]" "f[313]" "f[314]" "f[315]" "f[316]" "f[317]" "f[318]" "f[319]" "f[320]" "f[321]" "f[322]" "f[323]" "f[324]" "f[325]" "f[326]" "f[327]" "f[328]" "f[329]" "f[330]" "f[331]" "f[332]" "f[333]" "f[334]" "f[335]" "f[336]" "f[337]" "f[338]" "f[339]" "f[340]" "f[341]" "f[342]" "f[343]" "f[344]" "f[345]" "f[346]" "f[347]" "f[348]" "f[349]" "f[350]" "f[351]" "f[352]" "f[353]" "f[354]" "f[355]" "f[356]" "f[357]" "f[358]" "f[359]" "f[360]" "f[361]" "f[362]" "f[363]" "f[364]" "f[365]" "f[366]" "f[367]" "f[368]" "f[369]" "f[370]" "f[371]" "f[372]" "f[373]" "f[374]";
+	setAttr ".ic" -type "componentList" 1 "f[0:374]";
 createNode groupId -n "groupId217";
 	rename -uid "07E9840D-49AA-4384-ECDD-F69DDAF77703";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts216";
 	rename -uid "7BE0F9AA-4872-B35B-D601-9EB832C3A1A3";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 39 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]";
+	setAttr ".ic" -type "componentList" 1 "f[0:38]";
 createNode groupId -n "groupId218";
 	rename -uid "C70923C8-4EB1-18B7-4BFE-95978B8D440F";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts217";
 	rename -uid "A96E0DB9-47F8-BCB3-239C-C1982D18A687";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 375 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]" "f[185]" "f[186]" "f[187]" "f[188]" "f[189]" "f[190]" "f[191]" "f[192]" "f[193]" "f[194]" "f[195]" "f[196]" "f[197]" "f[198]" "f[199]" "f[200]" "f[201]" "f[202]" "f[203]" "f[204]" "f[205]" "f[206]" "f[207]" "f[208]" "f[209]" "f[210]" "f[211]" "f[212]" "f[213]" "f[214]" "f[215]" "f[216]" "f[217]" "f[218]" "f[219]" "f[220]" "f[221]" "f[222]" "f[223]" "f[224]" "f[225]" "f[226]" "f[227]" "f[228]" "f[229]" "f[230]" "f[231]" "f[232]" "f[233]" "f[234]" "f[235]" "f[236]" "f[237]" "f[238]" "f[239]" "f[240]" "f[241]" "f[242]" "f[243]" "f[244]" "f[245]" "f[246]" "f[247]" "f[248]" "f[249]" "f[250]" "f[251]" "f[252]" "f[253]" "f[254]" "f[255]" "f[256]" "f[257]" "f[258]" "f[259]" "f[260]" "f[261]" "f[262]" "f[263]" "f[264]" "f[265]" "f[266]" "f[267]" "f[268]" "f[269]" "f[270]" "f[271]" "f[272]" "f[273]" "f[274]" "f[275]" "f[276]" "f[277]" "f[278]" "f[279]" "f[280]" "f[281]" "f[282]" "f[283]" "f[284]" "f[285]" "f[286]" "f[287]" "f[288]" "f[289]" "f[290]" "f[291]" "f[292]" "f[293]" "f[294]" "f[295]" "f[296]" "f[297]" "f[298]" "f[299]" "f[300]" "f[301]" "f[302]" "f[303]" "f[304]" "f[305]" "f[306]" "f[307]" "f[308]" "f[309]" "f[310]" "f[311]" "f[312]" "f[313]" "f[314]" "f[315]" "f[316]" "f[317]" "f[318]" "f[319]" "f[320]" "f[321]" "f[322]" "f[323]" "f[324]" "f[325]" "f[326]" "f[327]" "f[328]" "f[329]" "f[330]" "f[331]" "f[332]" "f[333]" "f[334]" "f[335]" "f[336]" "f[337]" "f[338]" "f[339]" "f[340]" "f[341]" "f[342]" "f[343]" "f[344]" "f[345]" "f[346]" "f[347]" "f[348]" "f[349]" "f[350]" "f[351]" "f[352]" "f[353]" "f[354]" "f[355]" "f[356]" "f[357]" "f[358]" "f[359]" "f[360]" "f[361]" "f[362]" "f[363]" "f[364]" "f[365]" "f[366]" "f[367]" "f[368]" "f[369]" "f[370]" "f[371]" "f[372]" "f[373]" "f[374]";
+	setAttr ".ic" -type "componentList" 1 "f[0:374]";
 createNode groupId -n "groupId219";
 	rename -uid "7EFEAB01-4631-DAFD-91B7-0D848AEFFAE2";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts218";
 	rename -uid "C7E11849-482F-769F-4393-9D837DFA209C";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 61 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]";
+	setAttr ".ic" -type "componentList" 1 "f[0:60]";
 createNode groupId -n "groupId220";
 	rename -uid "A4D3B224-4DEC-498C-B316-35B18F407081";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts219";
 	rename -uid "2A79A666-47E9-9F04-D544-80AC44932F16";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 198 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]" "f[185]" "f[186]" "f[187]" "f[188]" "f[189]" "f[190]" "f[191]" "f[192]" "f[193]" "f[194]" "f[195]" "f[196]" "f[197]";
+	setAttr ".ic" -type "componentList" 1 "f[0:197]";
 createNode groupId -n "groupId221";
 	rename -uid "1F2456DC-4FA6-B333-5168-FBB482573987";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts220";
 	rename -uid "529791CE-4B33-CF77-14D0-64BB621F3CDB";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 259 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]" "f[185]" "f[186]" "f[187]" "f[188]" "f[189]" "f[190]" "f[191]" "f[192]" "f[193]" "f[194]" "f[195]" "f[196]" "f[197]" "f[198]" "f[199]" "f[200]" "f[201]" "f[202]" "f[203]" "f[204]" "f[205]" "f[206]" "f[207]" "f[208]" "f[209]" "f[210]" "f[211]" "f[212]" "f[213]" "f[214]" "f[215]" "f[216]" "f[217]" "f[218]" "f[219]" "f[220]" "f[221]" "f[222]" "f[223]" "f[224]" "f[225]" "f[226]" "f[227]" "f[228]" "f[229]" "f[230]" "f[231]" "f[232]" "f[233]" "f[234]" "f[235]" "f[236]" "f[237]" "f[238]" "f[239]" "f[240]" "f[241]" "f[242]" "f[243]" "f[244]" "f[245]" "f[246]" "f[247]" "f[248]" "f[249]" "f[250]" "f[251]" "f[252]" "f[253]" "f[254]" "f[255]" "f[256]" "f[257]" "f[258]";
+	setAttr ".ic" -type "componentList" 1 "f[0:258]";
 createNode groupId -n "groupId222";
 	rename -uid "5441C74A-4C8E-8E62-4096-01981F627415";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts221";
 	rename -uid "0F8A0305-40C4-5752-7F5B-CBA1DF93ABD7";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 2 "f[0]" "f[1]";
+	setAttr ".ic" -type "componentList" 1 "f[0:1]";
 createNode groupId -n "groupId223";
 	rename -uid "2AECEC4E-4E05-3659-2FFB-DBBD2921B86D";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts222";
 	rename -uid "45860182-4767-3B62-8EA1-86BA363CB9CB";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 12 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]";
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
 createNode groupId -n "groupId224";
 	rename -uid "28ED4E36-4AAD-CD78-F617-0980464FD9A4";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts223";
 	rename -uid "D85258DB-4C6C-1622-C0D0-7C9355EA0214";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 26 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]";
+	setAttr ".ic" -type "componentList" 1 "f[0:25]";
 createNode groupId -n "groupId225";
 	rename -uid "0917815D-4A3A-A3E6-5F7B-4AAF394D9E91";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts224";
 	rename -uid "7313004B-487C-9BDD-4010-FDB27E107A34";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 185 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]";
+	setAttr ".ic" -type "componentList" 1 "f[0:184]";
 createNode groupId -n "groupId226";
 	rename -uid "B7D5A0EA-4C98-58CA-C04B-15A53B0B3FC8";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts225";
 	rename -uid "3D5109B6-4332-003B-9B63-3B84D4891AB5";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 111 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]";
+	setAttr ".ic" -type "componentList" 1 "f[0:110]";
 createNode groupId -n "groupId227";
 	rename -uid "F6182E3E-42C8-6AF0-E1D9-4F9BF61A2CA0";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts226";
 	rename -uid "CC86A51F-4967-EA06-754D-9B97984A7D9E";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 333 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]" "f[185]" "f[186]" "f[187]" "f[188]" "f[189]" "f[190]" "f[191]" "f[192]" "f[193]" "f[194]" "f[195]" "f[196]" "f[197]" "f[198]" "f[199]" "f[200]" "f[201]" "f[202]" "f[203]" "f[204]" "f[205]" "f[206]" "f[207]" "f[208]" "f[209]" "f[210]" "f[211]" "f[212]" "f[213]" "f[214]" "f[215]" "f[216]" "f[217]" "f[218]" "f[219]" "f[220]" "f[221]" "f[222]" "f[223]" "f[224]" "f[225]" "f[226]" "f[227]" "f[228]" "f[229]" "f[230]" "f[231]" "f[232]" "f[233]" "f[234]" "f[235]" "f[236]" "f[237]" "f[238]" "f[239]" "f[240]" "f[241]" "f[242]" "f[243]" "f[244]" "f[245]" "f[246]" "f[247]" "f[248]" "f[249]" "f[250]" "f[251]" "f[252]" "f[253]" "f[254]" "f[255]" "f[256]" "f[257]" "f[258]" "f[259]" "f[260]" "f[261]" "f[262]" "f[263]" "f[264]" "f[265]" "f[266]" "f[267]" "f[268]" "f[269]" "f[270]" "f[271]" "f[272]" "f[273]" "f[274]" "f[275]" "f[276]" "f[277]" "f[278]" "f[279]" "f[280]" "f[281]" "f[282]" "f[283]" "f[284]" "f[285]" "f[286]" "f[287]" "f[288]" "f[289]" "f[290]" "f[291]" "f[292]" "f[293]" "f[294]" "f[295]" "f[296]" "f[297]" "f[298]" "f[299]" "f[300]" "f[301]" "f[302]" "f[303]" "f[304]" "f[305]" "f[306]" "f[307]" "f[308]" "f[309]" "f[310]" "f[311]" "f[312]" "f[313]" "f[314]" "f[315]" "f[316]" "f[317]" "f[318]" "f[319]" "f[320]" "f[321]" "f[322]" "f[323]" "f[324]" "f[325]" "f[326]" "f[327]" "f[328]" "f[329]" "f[330]" "f[331]" "f[332]";
+	setAttr ".ic" -type "componentList" 1 "f[0:332]";
 createNode groupId -n "groupId228";
 	rename -uid "1E60FD1A-4FE1-D62B-9FA0-BFA0EA0DA38C";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts227";
 	rename -uid "52951FC8-45BF-8BB3-12B9-DFBC890B606B";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 185 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]";
+	setAttr ".ic" -type "componentList" 1 "f[0:184]";
 createNode groupId -n "groupId229";
 	rename -uid "4376BBE6-4E22-F891-F0B2-B6BFC6D9C106";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts228";
 	rename -uid "E0070C46-4D3E-04A0-DF0A-9F800490357D";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 111 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]";
+	setAttr ".ic" -type "componentList" 1 "f[0:110]";
 createNode groupId -n "groupId230";
 	rename -uid "FBB9624E-492F-B27D-E7FD-0FB21ABD3BBD";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts229";
 	rename -uid "3BF66CA8-4ADE-C8F5-AAB0-79BEA9C6B04B";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 333 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]" "f[185]" "f[186]" "f[187]" "f[188]" "f[189]" "f[190]" "f[191]" "f[192]" "f[193]" "f[194]" "f[195]" "f[196]" "f[197]" "f[198]" "f[199]" "f[200]" "f[201]" "f[202]" "f[203]" "f[204]" "f[205]" "f[206]" "f[207]" "f[208]" "f[209]" "f[210]" "f[211]" "f[212]" "f[213]" "f[214]" "f[215]" "f[216]" "f[217]" "f[218]" "f[219]" "f[220]" "f[221]" "f[222]" "f[223]" "f[224]" "f[225]" "f[226]" "f[227]" "f[228]" "f[229]" "f[230]" "f[231]" "f[232]" "f[233]" "f[234]" "f[235]" "f[236]" "f[237]" "f[238]" "f[239]" "f[240]" "f[241]" "f[242]" "f[243]" "f[244]" "f[245]" "f[246]" "f[247]" "f[248]" "f[249]" "f[250]" "f[251]" "f[252]" "f[253]" "f[254]" "f[255]" "f[256]" "f[257]" "f[258]" "f[259]" "f[260]" "f[261]" "f[262]" "f[263]" "f[264]" "f[265]" "f[266]" "f[267]" "f[268]" "f[269]" "f[270]" "f[271]" "f[272]" "f[273]" "f[274]" "f[275]" "f[276]" "f[277]" "f[278]" "f[279]" "f[280]" "f[281]" "f[282]" "f[283]" "f[284]" "f[285]" "f[286]" "f[287]" "f[288]" "f[289]" "f[290]" "f[291]" "f[292]" "f[293]" "f[294]" "f[295]" "f[296]" "f[297]" "f[298]" "f[299]" "f[300]" "f[301]" "f[302]" "f[303]" "f[304]" "f[305]" "f[306]" "f[307]" "f[308]" "f[309]" "f[310]" "f[311]" "f[312]" "f[313]" "f[314]" "f[315]" "f[316]" "f[317]" "f[318]" "f[319]" "f[320]" "f[321]" "f[322]" "f[323]" "f[324]" "f[325]" "f[326]" "f[327]" "f[328]" "f[329]" "f[330]" "f[331]" "f[332]";
+	setAttr ".ic" -type "componentList" 1 "f[0:332]";
 createNode groupId -n "groupId231";
 	rename -uid "EF9DCE14-47F2-8D94-D22F-F0B33D2B5FB3";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts230";
 	rename -uid "410DE68B-44D2-C617-3596-43AC089B75F5";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 27 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]";
+	setAttr ".ic" -type "componentList" 1 "f[0:26]";
 createNode groupId -n "groupId232";
 	rename -uid "C24A685B-4241-CBC1-E683-23BEE0E32F3D";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts231";
 	rename -uid "DD439D6A-4406-5F2A-5098-F590BFA5DC6D";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 27 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]";
+	setAttr ".ic" -type "componentList" 1 "f[0:26]";
 createNode groupId -n "groupId233";
 	rename -uid "CE4C09CA-4F83-D058-A189-9CAB974371F3";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts232";
 	rename -uid "B84DBFDE-4FBD-9301-D5A6-8C892BD12779";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 23 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]";
+	setAttr ".ic" -type "componentList" 1 "f[0:22]";
 createNode groupId -n "groupId234";
 	rename -uid "31BBEE66-42A9-67B6-4D5B-67BF0E0D2D8E";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts233";
 	rename -uid "FBD12A0B-408E-C3FD-4347-CEB25E3492F9";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 23 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]";
+	setAttr ".ic" -type "componentList" 1 "f[0:22]";
 createNode groupId -n "groupId235";
 	rename -uid "82E222C9-4813-F6DA-18D6-5381DA58563C";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts234";
 	rename -uid "0EC3DC1E-40F6-F5DB-FE2B-FFB2A33F5F1C";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 44 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]";
+	setAttr ".ic" -type "componentList" 1 "f[0:43]";
 createNode groupId -n "groupId236";
 	rename -uid "BEFEE5F4-4F9D-59A3-E1F0-828660B0A5BD";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts235";
 	rename -uid "1FAA2D29-4FBC-FCE6-5F0E-65A46AEC79E0";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 44 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]";
+	setAttr ".ic" -type "componentList" 1 "f[0:43]";
 createNode groupId -n "groupId237";
 	rename -uid "4D141278-4E7E-6E46-F09C-8CB261A9757F";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts236";
 	rename -uid "E5A5B9A7-42FB-1F9D-93EA-95A21B092DA7";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 44 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]";
+	setAttr ".ic" -type "componentList" 1 "f[0:43]";
 createNode groupId -n "groupId238";
 	rename -uid "5707C91C-4D31-69BD-9356-33837CD5BD1B";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts237";
 	rename -uid "AB7ECF15-4D29-C236-6334-329F6FA7CFBD";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 44 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]";
+	setAttr ".ic" -type "componentList" 1 "f[0:43]";
 createNode groupId -n "groupId239";
 	rename -uid "4BEBB692-436A-1E9E-E480-A8B158F2F594";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts238";
 	rename -uid "064C15C4-41ED-FF88-8EB8-27B065756EBA";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 165 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]";
+	setAttr ".ic" -type "componentList" 1 "f[0:164]";
 createNode polyUnite -n "polyUnite1";
 	rename -uid "292B50D8-4435-CF67-4CBC-D08C8B06E6E8";
 	setAttr -s 238 ".ip";
@@ -42006,182 +42744,182 @@ createNode groupId -n "groupId241";
 createNode groupParts -n "groupParts240";
 	rename -uid "85263D0E-494B-3C75-8C07-7B80EE834351";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 160 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]";
+	setAttr ".ic" -type "componentList" 1 "f[0:159]";
 createNode groupId -n "groupId242";
 	rename -uid "3C3C0807-4786-8AF0-228A-B6BE59BC2841";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts241";
 	rename -uid "58122340-48F3-CB15-0CF5-58BC2F26F9E6";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 111 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]";
+	setAttr ".ic" -type "componentList" 1 "f[0:110]";
 createNode groupId -n "groupId243";
 	rename -uid "6BEB355D-44C8-4CF1-CCA7-3EA2D6F4ABE5";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts242";
 	rename -uid "104450B8-4FAE-AADC-D342-F9A553733961";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 185 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]";
+	setAttr ".ic" -type "componentList" 1 "f[0:184]";
 createNode groupId -n "groupId244";
 	rename -uid "103DA84E-483F-C2AF-EBE3-0FA4EB0614FD";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts243";
 	rename -uid "A780B74F-4B6E-A77F-1594-D28015B9038D";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 333 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]" "f[185]" "f[186]" "f[187]" "f[188]" "f[189]" "f[190]" "f[191]" "f[192]" "f[193]" "f[194]" "f[195]" "f[196]" "f[197]" "f[198]" "f[199]" "f[200]" "f[201]" "f[202]" "f[203]" "f[204]" "f[205]" "f[206]" "f[207]" "f[208]" "f[209]" "f[210]" "f[211]" "f[212]" "f[213]" "f[214]" "f[215]" "f[216]" "f[217]" "f[218]" "f[219]" "f[220]" "f[221]" "f[222]" "f[223]" "f[224]" "f[225]" "f[226]" "f[227]" "f[228]" "f[229]" "f[230]" "f[231]" "f[232]" "f[233]" "f[234]" "f[235]" "f[236]" "f[237]" "f[238]" "f[239]" "f[240]" "f[241]" "f[242]" "f[243]" "f[244]" "f[245]" "f[246]" "f[247]" "f[248]" "f[249]" "f[250]" "f[251]" "f[252]" "f[253]" "f[254]" "f[255]" "f[256]" "f[257]" "f[258]" "f[259]" "f[260]" "f[261]" "f[262]" "f[263]" "f[264]" "f[265]" "f[266]" "f[267]" "f[268]" "f[269]" "f[270]" "f[271]" "f[272]" "f[273]" "f[274]" "f[275]" "f[276]" "f[277]" "f[278]" "f[279]" "f[280]" "f[281]" "f[282]" "f[283]" "f[284]" "f[285]" "f[286]" "f[287]" "f[288]" "f[289]" "f[290]" "f[291]" "f[292]" "f[293]" "f[294]" "f[295]" "f[296]" "f[297]" "f[298]" "f[299]" "f[300]" "f[301]" "f[302]" "f[303]" "f[304]" "f[305]" "f[306]" "f[307]" "f[308]" "f[309]" "f[310]" "f[311]" "f[312]" "f[313]" "f[314]" "f[315]" "f[316]" "f[317]" "f[318]" "f[319]" "f[320]" "f[321]" "f[322]" "f[323]" "f[324]" "f[325]" "f[326]" "f[327]" "f[328]" "f[329]" "f[330]" "f[331]" "f[332]";
+	setAttr ".ic" -type "componentList" 1 "f[0:332]";
 createNode groupId -n "groupId245";
 	rename -uid "8882BA99-4BE1-2B4F-FB6B-CC946DEAB77D";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts244";
 	rename -uid "F9A8432F-42E6-0E59-FE6A-D6A4213C2CC3";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 20 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]";
+	setAttr ".ic" -type "componentList" 1 "f[0:19]";
 createNode groupId -n "groupId246";
 	rename -uid "BACC557E-4DFE-3A2D-BE94-DAA1722064FA";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts245";
 	rename -uid "69EA817D-4F3B-D3E5-C1E0-AC9B2B2CFF3A";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 44 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]";
+	setAttr ".ic" -type "componentList" 1 "f[0:43]";
 createNode groupId -n "groupId247";
 	rename -uid "01168C8C-462D-3798-A65B-51A325A12115";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts246";
 	rename -uid "4D4EDB5E-40E7-8230-5ECB-96986A32364F";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 44 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]";
+	setAttr ".ic" -type "componentList" 1 "f[0:43]";
 createNode groupId -n "groupId248";
 	rename -uid "B3CA690C-4DE0-37E8-1D28-46A44C8A0A53";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts247";
 	rename -uid "35A60633-4371-BB88-B12D-41A1B1818BD3";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 20 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]";
+	setAttr ".ic" -type "componentList" 1 "f[0:19]";
 createNode groupId -n "groupId249";
 	rename -uid "ED2F10DE-49E5-1F18-82EB-0BB24A12DB11";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts248";
 	rename -uid "0ECFD220-4BC2-31FF-73F1-28A30507CADA";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 20 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]";
+	setAttr ".ic" -type "componentList" 1 "f[0:19]";
 createNode groupId -n "groupId250";
 	rename -uid "40DD5E6E-4018-4755-E734-63A796D60CC4";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts249";
 	rename -uid "62688602-47AA-2916-3A0A-088976D861B0";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 20 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]";
+	setAttr ".ic" -type "componentList" 1 "f[0:19]";
 createNode groupId -n "groupId251";
 	rename -uid "E2DDE57B-4B15-FF10-315D-40A0643EB20B";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts250";
 	rename -uid "57F764A6-488D-A8EC-2502-0180E23C5720";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 16 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]";
+	setAttr ".ic" -type "componentList" 1 "f[0:15]";
 createNode groupId -n "groupId252";
 	rename -uid "1F4BEE76-44A0-9B8F-B06C-E8A4CA2B4D64";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts251";
 	rename -uid "ABE6C8C0-48A3-15E7-E471-A08FBA7950CE";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 20 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]";
+	setAttr ".ic" -type "componentList" 1 "f[0:19]";
 createNode groupId -n "groupId253";
 	rename -uid "8DF1AC36-47D5-088D-DDA4-3FBDE39A9F28";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts252";
 	rename -uid "26E3C124-4EB0-07E6-9548-F1B61C0C0319";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 44 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]";
+	setAttr ".ic" -type "componentList" 1 "f[0:43]";
 createNode groupId -n "groupId254";
 	rename -uid "34493BA5-4657-CF5C-7490-BD821343A239";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts253";
 	rename -uid "10E47698-4779-D64B-7E7C-F2949CB7699D";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 20 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]";
+	setAttr ".ic" -type "componentList" 1 "f[0:19]";
 createNode groupId -n "groupId255";
 	rename -uid "E246F56E-4F95-F8FA-CDEA-478815EDB8D7";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts254";
 	rename -uid "A3F6DDA6-4059-16D3-BC60-58B4C12D95A3";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 20 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]";
+	setAttr ".ic" -type "componentList" 1 "f[0:19]";
 createNode groupId -n "groupId256";
 	rename -uid "D5A3614D-42BC-74E4-5D2D-28B8C7A169C9";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts255";
 	rename -uid "6A25F933-4030-333D-F793-909C3861D6FB";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 12 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]";
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
 createNode groupId -n "groupId257";
 	rename -uid "511BDC52-46B6-D938-DDA3-2DAFFCDB1164";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts256";
 	rename -uid "8A35192D-4B0A-FA16-4469-40BD9D52E7E3";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 12 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]";
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
 createNode groupId -n "groupId258";
 	rename -uid "BB48397C-4085-62E2-B338-1BA2755CB7F5";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts257";
 	rename -uid "0C50010A-4020-1BAE-2331-E9B164DF93FB";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 28 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]";
+	setAttr ".ic" -type "componentList" 1 "f[0:27]";
 createNode groupId -n "groupId259";
 	rename -uid "FBA3F1BD-4D5F-37C4-BD26-33B3C17D3D95";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts258";
 	rename -uid "B7FF48F9-4D79-367E-055B-53AAE3D17C36";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 20 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]";
+	setAttr ".ic" -type "componentList" 1 "f[0:19]";
 createNode groupId -n "groupId260";
 	rename -uid "B361C34D-4437-35EB-4013-888F240C029D";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts259";
 	rename -uid "572E23AC-4CD6-E1E6-F630-948A61BD067B";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 60 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]";
+	setAttr ".ic" -type "componentList" 1 "f[0:59]";
 createNode groupId -n "groupId261";
 	rename -uid "07F4D693-4D5C-5034-003C-23844B66666A";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts260";
 	rename -uid "9ABD3701-4392-83C6-0088-379F0F466191";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 12 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]";
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
 createNode groupId -n "groupId262";
 	rename -uid "A55AE738-434D-E21C-12BF-07833C66C24E";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts261";
 	rename -uid "2F2FC4BA-479E-80BD-2088-5F91E2FB2244";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 16 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]";
+	setAttr ".ic" -type "componentList" 1 "f[0:15]";
 createNode groupId -n "groupId263";
 	rename -uid "020295D6-4285-FCD0-C3AC-EAAA274A76FF";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts262";
 	rename -uid "CC109C4A-42A0-9EBE-CD3C-5B80F845B3A6";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 20 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]";
+	setAttr ".ic" -type "componentList" 1 "f[0:19]";
 createNode groupId -n "groupId264";
 	rename -uid "5A3E339C-4A98-F4BE-8CD3-2FB2C9576F41";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts263";
 	rename -uid "9174F64B-49F7-2357-A8E4-198E5EF2638C";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 333 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]" "f[185]" "f[186]" "f[187]" "f[188]" "f[189]" "f[190]" "f[191]" "f[192]" "f[193]" "f[194]" "f[195]" "f[196]" "f[197]" "f[198]" "f[199]" "f[200]" "f[201]" "f[202]" "f[203]" "f[204]" "f[205]" "f[206]" "f[207]" "f[208]" "f[209]" "f[210]" "f[211]" "f[212]" "f[213]" "f[214]" "f[215]" "f[216]" "f[217]" "f[218]" "f[219]" "f[220]" "f[221]" "f[222]" "f[223]" "f[224]" "f[225]" "f[226]" "f[227]" "f[228]" "f[229]" "f[230]" "f[231]" "f[232]" "f[233]" "f[234]" "f[235]" "f[236]" "f[237]" "f[238]" "f[239]" "f[240]" "f[241]" "f[242]" "f[243]" "f[244]" "f[245]" "f[246]" "f[247]" "f[248]" "f[249]" "f[250]" "f[251]" "f[252]" "f[253]" "f[254]" "f[255]" "f[256]" "f[257]" "f[258]" "f[259]" "f[260]" "f[261]" "f[262]" "f[263]" "f[264]" "f[265]" "f[266]" "f[267]" "f[268]" "f[269]" "f[270]" "f[271]" "f[272]" "f[273]" "f[274]" "f[275]" "f[276]" "f[277]" "f[278]" "f[279]" "f[280]" "f[281]" "f[282]" "f[283]" "f[284]" "f[285]" "f[286]" "f[287]" "f[288]" "f[289]" "f[290]" "f[291]" "f[292]" "f[293]" "f[294]" "f[295]" "f[296]" "f[297]" "f[298]" "f[299]" "f[300]" "f[301]" "f[302]" "f[303]" "f[304]" "f[305]" "f[306]" "f[307]" "f[308]" "f[309]" "f[310]" "f[311]" "f[312]" "f[313]" "f[314]" "f[315]" "f[316]" "f[317]" "f[318]" "f[319]" "f[320]" "f[321]" "f[322]" "f[323]" "f[324]" "f[325]" "f[326]" "f[327]" "f[328]" "f[329]" "f[330]" "f[331]" "f[332]";
+	setAttr ".ic" -type "componentList" 1 "f[0:332]";
 createNode groupId -n "groupId265";
 	rename -uid "97985E77-47F7-9547-5ED5-5B967C54F68A";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts264";
 	rename -uid "6900304C-41C7-71A2-43A5-8A81DE99D276";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 111 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]";
+	setAttr ".ic" -type "componentList" 1 "f[0:110]";
 createNode groupId -n "groupId266";
 	rename -uid "C0E005C7-4DAF-AD27-CD82-E4BEBB24BDE3";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts265";
 	rename -uid "BF0F5497-40D7-152D-2F6F-EDB9F3906953";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 185 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]";
+	setAttr ".ic" -type "componentList" 1 "f[0:184]";
 createNode groupId -n "groupId267";
 	rename -uid "F2AC6E12-45B2-0314-5778-E5A28D673BA4";
 	setAttr ".ihi" 0;
@@ -42223,49 +42961,49 @@ createNode groupId -n "groupId272";
 createNode groupParts -n "groupParts271";
 	rename -uid "7DD66DE5-4A0B-E07F-EC6A-839E806DBC14";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 24 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]";
+	setAttr ".ic" -type "componentList" 1 "f[0:23]";
 createNode groupId -n "groupId273";
 	rename -uid "C94603D4-408E-7BA4-3493-DBA5991603AB";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts272";
 	rename -uid "9BFCF706-4A10-11C1-0DC6-038447980E87";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 12 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]";
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
 createNode groupId -n "groupId274";
 	rename -uid "005B673C-45C5-C02E-BC76-968789D52E66";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts273";
 	rename -uid "5985E15B-42D6-4192-48C4-1E96865735D4";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 12 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]";
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
 createNode groupId -n "groupId275";
 	rename -uid "8070BD20-4ACA-AC3D-36B0-2588040E80C0";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts274";
 	rename -uid "8BDE4FB9-48D2-E45C-CD70-1A8516FD1207";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 12 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]";
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
 createNode groupId -n "groupId276";
 	rename -uid "9049AD26-4906-320E-CC02-B0AD77D0FB86";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts275";
 	rename -uid "B345C7A2-424F-CF03-9240-9BB737B68B18";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 12 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]";
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
 createNode groupId -n "groupId277";
 	rename -uid "C21BF544-42D7-09E3-380B-E4949B10780F";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts276";
 	rename -uid "D0C2E745-4CD7-C55C-A081-898516EB3EBE";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 10 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]";
+	setAttr ".ic" -type "componentList" 1 "f[0:9]";
 createNode groupId -n "groupId278";
 	rename -uid "2B6FB44D-48E1-9E67-B6C8-FF8AF5AAF308";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts277";
 	rename -uid "B3F15C29-4A3B-06B4-BC62-15B3FD5BB894";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 22 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]";
+	setAttr ".ic" -type "componentList" 1 "f[0:21]";
 createNode groupId -n "groupId279";
 	rename -uid "B7EE38C1-44D6-6D0E-C68A-A9A555F5D062";
 	setAttr ".ihi" 0;
@@ -42363,7 +43101,7 @@ createNode groupId -n "groupId292";
 createNode groupParts -n "groupParts291";
 	rename -uid "9173B6BA-4941-CED1-8A05-8AAC3326BFFC";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 10 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]";
+	setAttr ".ic" -type "componentList" 1 "f[0:9]";
 createNode groupId -n "groupId293";
 	rename -uid "7C61B9BC-450E-ED02-73C4-C38EDDF0109D";
 	setAttr ".ihi" 0;
@@ -42384,21 +43122,21 @@ createNode groupId -n "groupId295";
 createNode groupParts -n "groupParts294";
 	rename -uid "CCB61754-42D2-E7D9-FE28-459661D7B4B7";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 10 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]";
+	setAttr ".ic" -type "componentList" 1 "f[0:9]";
 createNode groupId -n "groupId296";
 	rename -uid "C6DCD283-49AE-0BD8-23C1-CABAD84F9124";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts295";
 	rename -uid "4DA5C6F1-4212-6865-BD0F-CA95F315AE1E";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 4 "f[0]" "f[1]" "f[2]" "f[3]";
+	setAttr ".ic" -type "componentList" 1 "f[0:3]";
 createNode groupId -n "groupId297";
 	rename -uid "E4C4BFC7-447A-8A9C-A24D-2FA985954972";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts296";
 	rename -uid "DEEBD26A-42A2-BDB5-9928-87A3E7141180";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 4 "f[0]" "f[1]" "f[2]" "f[3]";
+	setAttr ".ic" -type "componentList" 1 "f[0:3]";
 createNode groupId -n "groupId298";
 	rename -uid "3525D86D-4AF1-A474-1688-1AAD3E682111";
 	setAttr ".ihi" 0;
@@ -42454,70 +43192,70 @@ createNode groupId -n "groupId305";
 createNode groupParts -n "groupParts304";
 	rename -uid "E73DBD3A-4B16-AF18-FF1D-AEAB64A2F936";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 37 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]";
+	setAttr ".ic" -type "componentList" 1 "f[0:36]";
 createNode groupId -n "groupId306";
 	rename -uid "E26FC8FB-41E1-38E0-9999-BDAD852A5218";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts305";
 	rename -uid "18713D1E-44E7-90AA-43C7-8EB205957136";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 136 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]";
+	setAttr ".ic" -type "componentList" 1 "f[0:135]";
 createNode groupId -n "groupId307";
 	rename -uid "C671E46B-4811-B8CC-FCE6-B88E469F451C";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts306";
 	rename -uid "0849E006-4F07-8A9C-B3AF-F8A29E2262C1";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 333 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]" "f[185]" "f[186]" "f[187]" "f[188]" "f[189]" "f[190]" "f[191]" "f[192]" "f[193]" "f[194]" "f[195]" "f[196]" "f[197]" "f[198]" "f[199]" "f[200]" "f[201]" "f[202]" "f[203]" "f[204]" "f[205]" "f[206]" "f[207]" "f[208]" "f[209]" "f[210]" "f[211]" "f[212]" "f[213]" "f[214]" "f[215]" "f[216]" "f[217]" "f[218]" "f[219]" "f[220]" "f[221]" "f[222]" "f[223]" "f[224]" "f[225]" "f[226]" "f[227]" "f[228]" "f[229]" "f[230]" "f[231]" "f[232]" "f[233]" "f[234]" "f[235]" "f[236]" "f[237]" "f[238]" "f[239]" "f[240]" "f[241]" "f[242]" "f[243]" "f[244]" "f[245]" "f[246]" "f[247]" "f[248]" "f[249]" "f[250]" "f[251]" "f[252]" "f[253]" "f[254]" "f[255]" "f[256]" "f[257]" "f[258]" "f[259]" "f[260]" "f[261]" "f[262]" "f[263]" "f[264]" "f[265]" "f[266]" "f[267]" "f[268]" "f[269]" "f[270]" "f[271]" "f[272]" "f[273]" "f[274]" "f[275]" "f[276]" "f[277]" "f[278]" "f[279]" "f[280]" "f[281]" "f[282]" "f[283]" "f[284]" "f[285]" "f[286]" "f[287]" "f[288]" "f[289]" "f[290]" "f[291]" "f[292]" "f[293]" "f[294]" "f[295]" "f[296]" "f[297]" "f[298]" "f[299]" "f[300]" "f[301]" "f[302]" "f[303]" "f[304]" "f[305]" "f[306]" "f[307]" "f[308]" "f[309]" "f[310]" "f[311]" "f[312]" "f[313]" "f[314]" "f[315]" "f[316]" "f[317]" "f[318]" "f[319]" "f[320]" "f[321]" "f[322]" "f[323]" "f[324]" "f[325]" "f[326]" "f[327]" "f[328]" "f[329]" "f[330]" "f[331]" "f[332]";
+	setAttr ".ic" -type "componentList" 1 "f[0:332]";
 createNode groupId -n "groupId308";
 	rename -uid "299777BF-428E-5520-187B-B9BFD033DCF0";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts307";
 	rename -uid "864888E4-4BFF-D21A-ACDC-009D4957FA6D";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 111 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]";
+	setAttr ".ic" -type "componentList" 1 "f[0:110]";
 createNode groupId -n "groupId309";
 	rename -uid "290AC8C3-47A9-A4BB-D4ED-CF89237FCC54";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts308";
 	rename -uid "56303C00-4A5F-0714-6DE4-33B687891668";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 185 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]";
+	setAttr ".ic" -type "componentList" 1 "f[0:184]";
 createNode groupId -n "groupId310";
 	rename -uid "8F7F43CC-44AB-8F4D-4F79-C09A52C4559C";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts309";
 	rename -uid "83B142D1-4C81-53A1-B228-7F83FCC3A8CF";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 333 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]" "f[185]" "f[186]" "f[187]" "f[188]" "f[189]" "f[190]" "f[191]" "f[192]" "f[193]" "f[194]" "f[195]" "f[196]" "f[197]" "f[198]" "f[199]" "f[200]" "f[201]" "f[202]" "f[203]" "f[204]" "f[205]" "f[206]" "f[207]" "f[208]" "f[209]" "f[210]" "f[211]" "f[212]" "f[213]" "f[214]" "f[215]" "f[216]" "f[217]" "f[218]" "f[219]" "f[220]" "f[221]" "f[222]" "f[223]" "f[224]" "f[225]" "f[226]" "f[227]" "f[228]" "f[229]" "f[230]" "f[231]" "f[232]" "f[233]" "f[234]" "f[235]" "f[236]" "f[237]" "f[238]" "f[239]" "f[240]" "f[241]" "f[242]" "f[243]" "f[244]" "f[245]" "f[246]" "f[247]" "f[248]" "f[249]" "f[250]" "f[251]" "f[252]" "f[253]" "f[254]" "f[255]" "f[256]" "f[257]" "f[258]" "f[259]" "f[260]" "f[261]" "f[262]" "f[263]" "f[264]" "f[265]" "f[266]" "f[267]" "f[268]" "f[269]" "f[270]" "f[271]" "f[272]" "f[273]" "f[274]" "f[275]" "f[276]" "f[277]" "f[278]" "f[279]" "f[280]" "f[281]" "f[282]" "f[283]" "f[284]" "f[285]" "f[286]" "f[287]" "f[288]" "f[289]" "f[290]" "f[291]" "f[292]" "f[293]" "f[294]" "f[295]" "f[296]" "f[297]" "f[298]" "f[299]" "f[300]" "f[301]" "f[302]" "f[303]" "f[304]" "f[305]" "f[306]" "f[307]" "f[308]" "f[309]" "f[310]" "f[311]" "f[312]" "f[313]" "f[314]" "f[315]" "f[316]" "f[317]" "f[318]" "f[319]" "f[320]" "f[321]" "f[322]" "f[323]" "f[324]" "f[325]" "f[326]" "f[327]" "f[328]" "f[329]" "f[330]" "f[331]" "f[332]";
+	setAttr ".ic" -type "componentList" 1 "f[0:332]";
 createNode groupId -n "groupId311";
 	rename -uid "B46D376F-4639-CF21-5E8E-E480ECB9B138";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts310";
 	rename -uid "984594E6-469D-CD92-7594-B1B3C5722641";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 111 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]";
+	setAttr ".ic" -type "componentList" 1 "f[0:110]";
 createNode groupId -n "groupId312";
 	rename -uid "DDFD9AA2-48A9-3638-EDA5-2AB19B7BCE57";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts311";
 	rename -uid "3093B79B-49A2-FBA1-052D-CEACE20FA0D1";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 185 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]";
+	setAttr ".ic" -type "componentList" 1 "f[0:184]";
 createNode groupId -n "groupId313";
 	rename -uid "FAAFC9BE-44D6-D009-8BAB-A9828584BE66";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts312";
 	rename -uid "50082AAB-40C6-BB4C-639F-5AB74707B746";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 16 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]";
+	setAttr ".ic" -type "componentList" 1 "f[0:15]";
 createNode groupId -n "groupId314";
 	rename -uid "48A6AA4C-4AA1-42AE-2EEA-FCB55046A558";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts313";
 	rename -uid "5690223E-4E64-01CA-FAFF-CDB1F3CD4675";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 12 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]";
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
 createNode groupId -n "groupId315";
 	rename -uid "7019F7EB-4665-F977-0197-6BB34176DD14";
 	setAttr ".ihi" 0;
@@ -42538,182 +43276,182 @@ createNode groupId -n "groupId317";
 createNode groupParts -n "groupParts316";
 	rename -uid "9F21E9F1-4769-44AD-3469-B3BC114C7288";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 44 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]";
+	setAttr ".ic" -type "componentList" 1 "f[0:43]";
 createNode groupId -n "groupId318";
 	rename -uid "1BE41017-4802-29E7-AB98-EC91516ECF1E";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts317";
 	rename -uid "E58E3BEE-418C-1F38-3030-0F965C476649";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 44 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]";
+	setAttr ".ic" -type "componentList" 1 "f[0:43]";
 createNode groupId -n "groupId319";
 	rename -uid "F5C4A1EC-4F61-D0FF-E0A0-858B2B1390BE";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts318";
 	rename -uid "B5C9B52F-4D7C-2E48-9E7F-F8B93D14EEDD";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 44 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]";
+	setAttr ".ic" -type "componentList" 1 "f[0:43]";
 createNode groupId -n "groupId320";
 	rename -uid "AF2B6A67-4364-A6EB-AD25-54B67B692CC5";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts319";
 	rename -uid "6B821FB4-45C0-1014-9B11-DA9FB82EE2E0";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 23 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]";
+	setAttr ".ic" -type "componentList" 1 "f[0:22]";
 createNode groupId -n "groupId321";
 	rename -uid "DDE03EE3-4C0C-D9D2-41FF-CCAA6CF6BFFA";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts320";
 	rename -uid "D2798494-483C-644F-6931-3B85DA9A12BE";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 23 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]";
+	setAttr ".ic" -type "componentList" 1 "f[0:22]";
 createNode groupId -n "groupId322";
 	rename -uid "E1411C05-4420-FFE2-A62E-8CAC3BA73A5E";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts321";
 	rename -uid "F362D631-42D1-8C85-BDBE-5BA943AFFDCA";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 27 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]";
+	setAttr ".ic" -type "componentList" 1 "f[0:26]";
 createNode groupId -n "groupId323";
 	rename -uid "676F9029-4AB0-1428-50D5-739369D97143";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts322";
 	rename -uid "7E4E27AC-42EF-EDDA-7BE9-BEAAD672CB05";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 27 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]";
+	setAttr ".ic" -type "componentList" 1 "f[0:26]";
 createNode groupId -n "groupId324";
 	rename -uid "F37E0CB7-4ADB-DDC8-1A33-A0B737CC7AFC";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts323";
 	rename -uid "B6E0E15C-46BD-2202-FCD6-5DAB317148F7";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 44 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]";
+	setAttr ".ic" -type "componentList" 1 "f[0:43]";
 createNode groupId -n "groupId325";
 	rename -uid "4F33387E-4FBD-FE59-E30F-BBAF00BA88AE";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts324";
 	rename -uid "7C60317A-4652-7D64-C45C-F2B2A6DE22D7";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 44 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]";
+	setAttr ".ic" -type "componentList" 1 "f[0:43]";
 createNode groupId -n "groupId326";
 	rename -uid "13CB435B-4076-9DBE-A48C-6F833F1C3769";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts325";
 	rename -uid "D43AC02B-4835-50A6-CFDE-C487FC0AB5CB";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 312 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]" "f[185]" "f[186]" "f[187]" "f[188]" "f[189]" "f[190]" "f[191]" "f[192]" "f[193]" "f[194]" "f[195]" "f[196]" "f[197]" "f[198]" "f[199]" "f[200]" "f[201]" "f[202]" "f[203]" "f[204]" "f[205]" "f[206]" "f[207]" "f[208]" "f[209]" "f[210]" "f[211]" "f[212]" "f[213]" "f[214]" "f[215]" "f[216]" "f[217]" "f[218]" "f[219]" "f[220]" "f[221]" "f[222]" "f[223]" "f[224]" "f[225]" "f[226]" "f[227]" "f[228]" "f[229]" "f[230]" "f[231]" "f[232]" "f[233]" "f[234]" "f[235]" "f[236]" "f[237]" "f[238]" "f[239]" "f[240]" "f[241]" "f[242]" "f[243]" "f[244]" "f[245]" "f[246]" "f[247]" "f[248]" "f[249]" "f[250]" "f[251]" "f[252]" "f[253]" "f[254]" "f[255]" "f[256]" "f[257]" "f[258]" "f[259]" "f[260]" "f[261]" "f[262]" "f[263]" "f[264]" "f[265]" "f[266]" "f[267]" "f[268]" "f[269]" "f[270]" "f[271]" "f[272]" "f[273]" "f[274]" "f[275]" "f[276]" "f[277]" "f[278]" "f[279]" "f[280]" "f[281]" "f[282]" "f[283]" "f[284]" "f[285]" "f[286]" "f[287]" "f[288]" "f[289]" "f[290]" "f[291]" "f[292]" "f[293]" "f[294]" "f[295]" "f[296]" "f[297]" "f[298]" "f[299]" "f[300]" "f[301]" "f[302]" "f[303]" "f[304]" "f[305]" "f[306]" "f[307]" "f[308]" "f[309]" "f[310]" "f[311]";
+	setAttr ".ic" -type "componentList" 1 "f[0:311]";
 createNode groupId -n "groupId327";
 	rename -uid "A3A9C635-4122-5B34-E30E-F08E6C35E7CA";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts326";
 	rename -uid "4F2B3217-4FAC-BAC9-14A0-2F8C297F4796";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 4 "f[0]" "f[1]" "f[2]" "f[3]";
+	setAttr ".ic" -type "componentList" 1 "f[0:3]";
 createNode groupId -n "groupId328";
 	rename -uid "6EA074E6-475E-CDDB-184D-699BB439B7FA";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts327";
 	rename -uid "734A1243-48D8-9CD3-EF77-27A75F43F758";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 30 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]";
+	setAttr ".ic" -type "componentList" 1 "f[0:29]";
 createNode groupId -n "groupId329";
 	rename -uid "5E587922-48A0-D325-F3DA-E6B9E2914C61";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts328";
 	rename -uid "909C1E24-472E-63DE-10C0-6CAF1D66D0A6";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 34 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]";
+	setAttr ".ic" -type "componentList" 1 "f[0:33]";
 createNode groupId -n "groupId330";
 	rename -uid "547868B7-4925-3803-F411-569B72939B8B";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts329";
 	rename -uid "9692337F-4ABE-6F86-8B1C-00AFD5F85F5D";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 24 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]";
+	setAttr ".ic" -type "componentList" 1 "f[0:23]";
 createNode groupId -n "groupId331";
 	rename -uid "C12FB929-43C6-9EBF-F098-0BBC745B90FB";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts330";
 	rename -uid "47F882E1-4178-C35B-BCC4-7CB01D82FD7F";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 44 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]";
+	setAttr ".ic" -type "componentList" 1 "f[0:43]";
 createNode groupId -n "groupId332";
 	rename -uid "BE2D1A3D-4B5B-A592-0599-B096BF6B8D7C";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts331";
 	rename -uid "0034E058-47D2-4721-EC4D-43A8E62367CF";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 22 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]";
+	setAttr ".ic" -type "componentList" 1 "f[0:21]";
 createNode groupId -n "groupId333";
 	rename -uid "0258D87E-4C50-A163-71FC-4EAC096C8481";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts332";
 	rename -uid "B55867D3-4620-F897-8079-64AE4739DD1D";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 22 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]";
+	setAttr ".ic" -type "componentList" 1 "f[0:21]";
 createNode groupId -n "groupId334";
 	rename -uid "45B8B64B-4FFB-75C6-0F73-2C95DFAF7AD6";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts333";
 	rename -uid "1E0EB6EA-4505-7857-AF82-DE9B68B0BBB7";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 12 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]";
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
 createNode groupId -n "groupId335";
 	rename -uid "28743913-4835-5E67-4A50-D781B470018C";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts334";
 	rename -uid "E228D7DB-4B97-C185-B8D0-8D9307E389C9";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 2 "f[0]" "f[1]";
+	setAttr ".ic" -type "componentList" 1 "f[0:1]";
 createNode groupId -n "groupId336";
 	rename -uid "81AA17ED-42F8-DFA2-A72A-8CAB9D3D4D1A";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts335";
 	rename -uid "AE35AF54-4CBD-20C4-9F25-C7857008AF1A";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 2 "f[0]" "f[1]";
+	setAttr ".ic" -type "componentList" 1 "f[0:1]";
 createNode groupId -n "groupId337";
 	rename -uid "0EED2424-4E36-30D5-A7F0-38BB095D5DEC";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts336";
 	rename -uid "244FE514-4055-05FE-E618-9FAFD7767653";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 40 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]";
+	setAttr ".ic" -type "componentList" 1 "f[0:39]";
 createNode groupId -n "groupId338";
 	rename -uid "73B32665-4F15-5D24-5ED9-BDA6CFBC58E0";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts337";
 	rename -uid "6C377C31-4B64-AA2E-8CBC-87B9DE7E6252";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 85 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]";
+	setAttr ".ic" -type "componentList" 1 "f[0:84]";
 createNode groupId -n "groupId339";
 	rename -uid "3D3BCCC7-4BC7-FF0C-D4E4-1EB88850D3E7";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts338";
 	rename -uid "CBD38FA9-425E-6378-B891-A49B7ABF662E";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 48 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]";
+	setAttr ".ic" -type "componentList" 1 "f[0:47]";
 createNode groupId -n "groupId340";
 	rename -uid "05C431CC-4A25-EBCC-287E-98A2BB79EB64";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts339";
 	rename -uid "6E64DB0F-4DAC-8E84-7616-C1B31CE72EB5";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 34 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]";
+	setAttr ".ic" -type "componentList" 1 "f[0:33]";
 createNode groupId -n "groupId341";
 	rename -uid "8CB9B523-4B70-8F14-14E8-AA81C8E47016";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts340";
 	rename -uid "5CD444DC-4589-4A46-C58E-F685D1F48E57";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 44 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]";
+	setAttr ".ic" -type "componentList" 1 "f[0:43]";
 createNode groupId -n "groupId342";
 	rename -uid "82D443EF-4C43-0967-D55D-378D5DF7C680";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts341";
 	rename -uid "E8B2F281-45D0-09E7-B82D-449BAB2F49B7";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 12 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]";
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
 createNode groupId -n "groupId343";
 	rename -uid "92382D5E-46F2-70D8-2945-4F99F22F40E1";
 	setAttr ".ihi" 0;
@@ -42734,63 +43472,63 @@ createNode groupId -n "groupId345";
 createNode groupParts -n "groupParts344";
 	rename -uid "3A9C8455-4079-21E2-4AA5-3084D56331D5";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 12 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]";
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
 createNode groupId -n "groupId346";
 	rename -uid "D9DC2EC7-4B91-83D7-6DD4-8E94192DBFB3";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts345";
 	rename -uid "0B618E77-4522-0C2A-1D71-2DA18D719159";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 12 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]";
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
 createNode groupId -n "groupId347";
 	rename -uid "F85C3F1D-42E7-B2C4-8927-6AA47C876779";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts346";
 	rename -uid "559EA463-488F-A355-F851-B8A95E6AA86C";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 10 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]";
+	setAttr ".ic" -type "componentList" 1 "f[0:9]";
 createNode groupId -n "groupId348";
 	rename -uid "62DE451B-4363-D222-9CF4-E3B3A2F48147";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts347";
 	rename -uid "DFC88E38-4655-ED7A-2169-13B62988E2D6";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 12 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]";
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
 createNode groupId -n "groupId349";
 	rename -uid "FA48959D-47CF-7436-5603-C79477B862AB";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts348";
 	rename -uid "5869DA78-41BC-7E14-B68E-B285F0A3A51C";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 44 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]";
+	setAttr ".ic" -type "componentList" 1 "f[0:43]";
 createNode groupId -n "groupId350";
 	rename -uid "32A4E522-42EC-A5F4-6089-47931D360FD3";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts349";
 	rename -uid "AB1E0BB2-4425-10F5-CADC-8290A41A1C9B";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 44 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]";
+	setAttr ".ic" -type "componentList" 1 "f[0:43]";
 createNode groupId -n "groupId351";
 	rename -uid "D2831A52-43B6-DC85-F172-418D2D8AF57E";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts350";
 	rename -uid "147CE7BC-4E44-32B4-33D7-E2A3CE19D54B";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 165 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]";
+	setAttr ".ic" -type "componentList" 1 "f[0:164]";
 createNode groupId -n "groupId352";
 	rename -uid "8EE382DF-43BA-1780-EB31-FD8B9D9A7869";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts351";
 	rename -uid "BCB79243-4A64-1000-FBC5-A083026A1A5B";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 37 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]";
+	setAttr ".ic" -type "componentList" 1 "f[0:36]";
 createNode groupId -n "groupId353";
 	rename -uid "46CF42D9-4416-0CD1-2446-5194530A2BD0";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts352";
 	rename -uid "CAB68A45-4CCC-BB0A-D867-EC9EC357BABD";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 493 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]" "f[185]" "f[186]" "f[187]" "f[188]" "f[189]" "f[190]" "f[191]" "f[192]" "f[193]" "f[194]" "f[195]" "f[196]" "f[197]" "f[198]" "f[199]" "f[200]" "f[201]" "f[202]" "f[203]" "f[204]" "f[205]" "f[206]" "f[207]" "f[208]" "f[209]" "f[210]" "f[211]" "f[212]" "f[213]" "f[214]" "f[215]" "f[216]" "f[217]" "f[218]" "f[219]" "f[220]" "f[221]" "f[222]" "f[223]" "f[224]" "f[225]" "f[226]" "f[227]" "f[228]" "f[229]" "f[230]" "f[231]" "f[232]" "f[233]" "f[234]" "f[235]" "f[236]" "f[237]" "f[238]" "f[239]" "f[240]" "f[241]" "f[242]" "f[243]" "f[244]" "f[245]" "f[246]" "f[247]" "f[248]" "f[249]" "f[250]" "f[251]" "f[252]" "f[253]" "f[254]" "f[255]" "f[256]" "f[257]" "f[258]" "f[259]" "f[260]" "f[261]" "f[262]" "f[263]" "f[264]" "f[265]" "f[266]" "f[267]" "f[268]" "f[269]" "f[270]" "f[271]" "f[272]" "f[273]" "f[274]" "f[275]" "f[276]" "f[277]" "f[278]" "f[279]" "f[280]" "f[281]" "f[282]" "f[283]" "f[284]" "f[285]" "f[286]" "f[287]" "f[288]" "f[289]" "f[290]" "f[291]" "f[292]" "f[293]" "f[294]" "f[295]" "f[296]" "f[297]" "f[298]" "f[299]" "f[300]" "f[301]" "f[302]" "f[303]" "f[304]" "f[305]" "f[306]" "f[307]" "f[308]" "f[309]" "f[310]" "f[311]" "f[312]" "f[313]" "f[314]" "f[315]" "f[316]" "f[317]" "f[318]" "f[319]" "f[320]" "f[321]" "f[322]" "f[323]" "f[324]" "f[325]" "f[326]" "f[327]" "f[328]" "f[329]" "f[330]" "f[331]" "f[332]" "f[333]" "f[334]" "f[335]" "f[336]" "f[337]" "f[338]" "f[339]" "f[340]" "f[341]" "f[342]" "f[343]" "f[344]" "f[345]" "f[346]" "f[347]" "f[348]" "f[349]" "f[350]" "f[351]" "f[352]" "f[353]" "f[354]" "f[355]" "f[356]" "f[357]" "f[358]" "f[359]" "f[360]" "f[361]" "f[362]" "f[363]" "f[364]" "f[365]" "f[366]" "f[367]" "f[368]" "f[369]" "f[370]" "f[371]" "f[372]" "f[373]" "f[374]" "f[375]" "f[376]" "f[377]" "f[378]" "f[379]" "f[380]" "f[381]" "f[382]" "f[383]" "f[384]" "f[385]" "f[386]" "f[387]" "f[388]" "f[389]" "f[390]" "f[391]" "f[392]" "f[393]" "f[394]" "f[395]" "f[396]" "f[397]" "f[398]" "f[399]" "f[400]" "f[401]" "f[402]" "f[403]" "f[404]" "f[405]" "f[406]" "f[407]" "f[408]" "f[409]" "f[410]" "f[411]" "f[412]" "f[413]" "f[414]" "f[415]" "f[416]" "f[417]" "f[418]" "f[419]" "f[420]" "f[421]" "f[422]" "f[423]" "f[424]" "f[425]" "f[426]" "f[427]" "f[428]" "f[429]" "f[430]" "f[431]" "f[432]" "f[433]" "f[434]" "f[435]" "f[436]" "f[437]" "f[438]" "f[439]" "f[440]" "f[441]" "f[442]" "f[443]" "f[444]" "f[445]" "f[446]" "f[447]" "f[448]" "f[449]" "f[450]" "f[451]" "f[452]" "f[453]" "f[454]" "f[455]" "f[456]" "f[457]" "f[458]" "f[459]" "f[460]" "f[461]" "f[462]" "f[463]" "f[464]" "f[465]" "f[466]" "f[467]" "f[468]" "f[469]" "f[470]" "f[471]" "f[472]" "f[473]" "f[474]" "f[475]" "f[476]" "f[477]" "f[478]" "f[479]" "f[480]" "f[481]" "f[482]" "f[483]" "f[484]" "f[485]" "f[486]" "f[487]" "f[488]" "f[489]" "f[490]" "f[491]" "f[492]";
+	setAttr ".ic" -type "componentList" 1 "f[0:492]";
 createNode groupId -n "groupId354";
 	rename -uid "FCF84C31-47A9-94E8-1C50-1DAA8F70CB75";
 	setAttr ".ihi" 0;
@@ -42860,28 +43598,28 @@ createNode groupId -n "groupId363";
 createNode groupParts -n "groupParts362";
 	rename -uid "6599087F-4B92-1D7F-264B-2A80A4CE5C7D";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 68 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]";
+	setAttr ".ic" -type "componentList" 1 "f[0:67]";
 createNode groupId -n "groupId364";
 	rename -uid "0A05EDE4-49CA-F785-D1A0-EE8C376205AA";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts363";
 	rename -uid "CEC84677-4818-466F-474C-6085D142DB2E";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 68 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]";
+	setAttr ".ic" -type "componentList" 1 "f[0:67]";
 createNode groupId -n "groupId365";
 	rename -uid "8BEDFD3B-46B5-82E9-0B92-8583FBC2225B";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts364";
 	rename -uid "972216DA-4964-EAFF-8E71-02A9F089E149";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 68 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]";
+	setAttr ".ic" -type "componentList" 1 "f[0:67]";
 createNode groupId -n "groupId366";
 	rename -uid "05E76101-40C0-84BB-1AA4-5A8E54659C02";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts365";
 	rename -uid "03ED76A3-4365-0C5C-4504-519C9DEFD876";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 56 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]";
+	setAttr ".ic" -type "componentList" 1 "f[0:55]";
 createNode groupId -n "groupId367";
 	rename -uid "4BA44FA9-4161-8BA3-BF6D-6D98372C9248";
 	setAttr ".ihi" 0;
@@ -42958,7 +43696,7 @@ createNode groupId -n "groupId377";
 createNode groupParts -n "groupParts376";
 	rename -uid "89899040-4682-44A2-910D-E7B6135114B6";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 68 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]";
+	setAttr ".ic" -type "componentList" 1 "f[0:67]";
 createNode groupId -n "groupId378";
 	rename -uid "7A5A59D5-4A38-7C18-196E-ECBFFF04E880";
 	setAttr ".ihi" 0;
@@ -42972,42 +43710,42 @@ createNode groupId -n "groupId379";
 createNode groupParts -n "groupParts378";
 	rename -uid "D784EC81-49D6-274B-A72F-80B8104BD22C";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 44 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]";
+	setAttr ".ic" -type "componentList" 1 "f[0:43]";
 createNode groupId -n "groupId380";
 	rename -uid "82C738FD-41E9-606F-1E0D-458A955E19E6";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts379";
 	rename -uid "8142B389-4849-3607-7645-969304D5C12C";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 44 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]";
+	setAttr ".ic" -type "componentList" 1 "f[0:43]";
 createNode groupId -n "groupId381";
 	rename -uid "C79BB68E-4FDD-B58C-8AB8-29ABF461852C";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts380";
 	rename -uid "3CA04D1B-4A44-DAE5-30F8-239409A202FE";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 68 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]";
+	setAttr ".ic" -type "componentList" 1 "f[0:67]";
 createNode groupId -n "groupId382";
 	rename -uid "3163E4B7-428C-4A5F-488F-6DA1E253AB82";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts381";
 	rename -uid "7B450D68-4DF9-51C6-7F76-5EBE69AD5D53";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 68 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]";
+	setAttr ".ic" -type "componentList" 1 "f[0:67]";
 createNode groupId -n "groupId383";
 	rename -uid "C39CCAF7-430B-D3D5-A0D0-C1BE87A49485";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts382";
 	rename -uid "EE32DF15-495D-F903-08B7-FDA10C56647F";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 12 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]";
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
 createNode groupId -n "groupId384";
 	rename -uid "27CEAA22-4889-92F8-F1E9-42A29D37408D";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts383";
 	rename -uid "B9A12ACA-4234-F20D-27CF-92AFC67C81D9";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 12 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]";
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
 createNode groupId -n "groupId385";
 	rename -uid "EDB81258-44B9-1BBF-779D-6EA5386DA984";
 	setAttr ".ihi" 0;
@@ -43056,42 +43794,42 @@ createNode groupId -n "groupId391";
 createNode groupParts -n "groupParts390";
 	rename -uid "F779D3C1-4753-DCBC-F9EE-4BAA07607D12";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 6 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]";
+	setAttr ".ic" -type "componentList" 1 "f[0:5]";
 createNode groupId -n "groupId392";
 	rename -uid "EE427670-4323-CFBF-D58C-7280AE97F23D";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts391";
 	rename -uid "F0084218-4EAC-4883-2628-B2AAF3C5DB46";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 68 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]";
+	setAttr ".ic" -type "componentList" 1 "f[0:67]";
 createNode groupId -n "groupId393";
 	rename -uid "EFE411B4-48EC-025A-832D-3DB83D6458A7";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts392";
 	rename -uid "0FCEE0C9-40FA-1221-DBA1-0A94F69D341B";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 68 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]";
+	setAttr ".ic" -type "componentList" 1 "f[0:67]";
 createNode groupId -n "groupId394";
 	rename -uid "732DE988-48D3-5BA0-7571-0CA61B28BD8A";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts393";
 	rename -uid "80EBC702-46FC-3C68-44BC-9C847E167AF9";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 68 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]";
+	setAttr ".ic" -type "componentList" 1 "f[0:67]";
 createNode groupId -n "groupId395";
 	rename -uid "D2CF72F3-4D55-20CA-8532-2798BA10B61A";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts394";
 	rename -uid "8905FEF3-41F7-A48E-B474-0DBAC32E5C32";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 56 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]";
+	setAttr ".ic" -type "componentList" 1 "f[0:55]";
 createNode groupId -n "groupId396";
 	rename -uid "41D2B41E-4DA3-488F-032B-798866610DB1";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts395";
 	rename -uid "AC50927C-45F0-70B3-595A-EEA61C54575E";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 12 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]";
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
 createNode groupId -n "groupId397";
 	rename -uid "C88D9F42-40C7-C48C-43C7-45A7C21B7286";
 	setAttr ".ihi" 0;
@@ -43112,35 +43850,35 @@ createNode groupId -n "groupId399";
 createNode groupParts -n "groupParts398";
 	rename -uid "C7739498-4B0E-6C15-57F4-029AE0677439";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 12 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]";
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
 createNode groupId -n "groupId400";
 	rename -uid "1D4C4E15-40F4-F5B4-5FFF-E6B99CACDA33";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts399";
 	rename -uid "A2C3974B-4071-B107-7B87-58996FCD3ED4";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 12 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]";
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
 createNode groupId -n "groupId401";
 	rename -uid "9796914C-4F53-2BCA-9E91-69B84A991DE5";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts400";
 	rename -uid "C9FDF244-438B-43F1-1127-25BC12423D83";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 10 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]";
+	setAttr ".ic" -type "componentList" 1 "f[0:9]";
 createNode groupId -n "groupId402";
 	rename -uid "0EDC3A4F-424E-1782-1491-6C84EC526697";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts401";
 	rename -uid "C2ED2A20-420E-C816-44C3-07A87A3D12E6";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 12 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]";
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
 createNode groupId -n "groupId403";
 	rename -uid "28B3C13B-4718-C091-E9BD-C8A3FA6110FC";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts402";
 	rename -uid "B736F1DC-4756-819C-9432-339B1C505964";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 44 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]";
+	setAttr ".ic" -type "componentList" 1 "f[0:43]";
 createNode groupId -n "groupId404";
 	rename -uid "5F2798EF-4213-82D2-D87B-4593BA856DB4";
 	setAttr ".ihi" 0;
@@ -43161,7 +43899,7 @@ createNode groupId -n "groupId406";
 createNode groupParts -n "groupParts405";
 	rename -uid "81C74445-4E92-3DBD-EEF9-6F85E512B6F8";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 68 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]";
+	setAttr ".ic" -type "componentList" 1 "f[0:67]";
 createNode groupId -n "groupId407";
 	rename -uid "11AD80C8-4CC9-FBB5-533E-B0A7DE202F84";
 	setAttr ".ihi" 0;
@@ -43259,7 +43997,7 @@ createNode groupId -n "groupId420";
 createNode groupParts -n "groupParts419";
 	rename -uid "25302360-4489-2F86-EA17-0BA0FA904732";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 6 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]";
+	setAttr ".ic" -type "componentList" 1 "f[0:5]";
 createNode groupId -n "groupId421";
 	rename -uid "68282533-46C8-5143-86AC-94A8AC24B1B4";
 	setAttr ".ihi" 0;
@@ -43322,70 +44060,70 @@ createNode groupId -n "groupId429";
 createNode groupParts -n "groupParts428";
 	rename -uid "32296CD9-48A8-75DA-8476-3489A83EA8B7";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 20 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]";
+	setAttr ".ic" -type "componentList" 1 "f[0:19]";
 createNode groupId -n "groupId430";
 	rename -uid "5017221F-48F8-B91A-6667-DF8B06D148AB";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts429";
 	rename -uid "D154E127-43B8-8660-0E58-28B56F11599D";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 192 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]" "f[185]" "f[186]" "f[187]" "f[188]" "f[189]" "f[190]" "f[191]";
+	setAttr ".ic" -type "componentList" 1 "f[0:191]";
 createNode groupId -n "groupId431";
 	rename -uid "11AB7F90-410B-534D-FCE7-8C8CAA7FF6B0";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts430";
 	rename -uid "5171F154-4FCB-CBA7-8E36-39AFB7240F5E";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 112 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]";
+	setAttr ".ic" -type "componentList" 1 "f[0:111]";
 createNode groupId -n "groupId432";
 	rename -uid "0E21AEAE-407F-C484-584B-9DB526147F7A";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts431";
 	rename -uid "1E9596BF-462A-3666-3EBB-7499CB147C2B";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 20 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]";
+	setAttr ".ic" -type "componentList" 1 "f[0:19]";
 createNode groupId -n "groupId433";
 	rename -uid "57B29F5A-4A0F-3C42-FD30-B4A92D8C5880";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts432";
 	rename -uid "E09B1F2F-4C4A-EFBA-DB7C-B8A920217A82";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 44 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]";
+	setAttr ".ic" -type "componentList" 1 "f[0:43]";
 createNode groupId -n "groupId434";
 	rename -uid "4C7E9307-40B2-C3CD-B15F-83B904385356";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts433";
 	rename -uid "65C2701F-4926-0281-ACBE-DA8BF6710E03";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 20 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]";
+	setAttr ".ic" -type "componentList" 1 "f[0:19]";
 createNode groupId -n "groupId435";
 	rename -uid "AFA32A08-471D-661C-A691-85907A2B0C47";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts434";
 	rename -uid "9B8C6114-400B-916E-F46D-5281684059E7";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 68 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]";
+	setAttr ".ic" -type "componentList" 1 "f[0:67]";
 createNode groupId -n "groupId436";
 	rename -uid "FD89BB09-474C-5E65-B5E2-3299C9EF24E9";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts435";
 	rename -uid "36759BD1-49FC-1412-1CFB-84A490892454";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 68 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]";
+	setAttr ".ic" -type "componentList" 1 "f[0:67]";
 createNode groupId -n "groupId437";
 	rename -uid "7EB51F4B-4D58-7C14-703B-E98ACD78B0FA";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts436";
 	rename -uid "FC0C0923-4189-49CB-EE11-A7A66BFFFA4C";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 12 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]";
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
 createNode groupId -n "groupId438";
 	rename -uid "33E806B7-4A34-6076-2FB1-EB98A7C18073";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts437";
 	rename -uid "9FF6FC27-4B85-32E5-A2FE-059908EEB32A";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 12 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]";
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
 createNode groupId -n "groupId439";
 	rename -uid "8CDA58EF-4187-72E6-0000-BAB5AF9F7DBD";
 	setAttr ".ihi" 0;
@@ -43413,35 +44151,35 @@ createNode groupId -n "groupId442";
 createNode groupParts -n "groupParts441";
 	rename -uid "F6FF2CD3-4E82-27A2-010C-D4A76C08304B";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 10 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]";
+	setAttr ".ic" -type "componentList" 1 "f[0:9]";
 createNode groupId -n "groupId443";
 	rename -uid "133E942F-4B63-CECB-5D7B-08A6D0915D54";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts442";
 	rename -uid "93E590FD-492B-1C1B-8EB4-7A9AEFE12185";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 10 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]";
+	setAttr ".ic" -type "componentList" 1 "f[0:9]";
 createNode groupId -n "groupId444";
 	rename -uid "1D24FE94-4843-383D-FA5B-4EAE791D7EB2";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts443";
 	rename -uid "EC4748EF-452A-8C36-0871-B0A8213B4147";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 10 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]";
+	setAttr ".ic" -type "componentList" 1 "f[0:9]";
 createNode groupId -n "groupId445";
 	rename -uid "3AABC2DE-4BCE-3761-892E-B6A8360742D6";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts444";
 	rename -uid "72C0BE7E-4421-719E-137C-23AF24063482";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 12 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]";
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
 createNode groupId -n "groupId446";
 	rename -uid "828A5FE7-4849-02E3-808B-B09685950932";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts445";
 	rename -uid "F9361AAA-484B-91BB-657F-0694F0955EA0";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 12 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]";
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
 createNode groupId -n "groupId447";
 	rename -uid "78D5250B-4329-6B92-CA7E-4BAF7C2BB8B2";
 	setAttr ".ihi" 0;
@@ -43462,210 +44200,210 @@ createNode groupId -n "groupId449";
 createNode groupParts -n "groupParts448";
 	rename -uid "5F42BF20-4D34-70D1-536B-8E82A934A02A";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 41 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]";
+	setAttr ".ic" -type "componentList" 1 "f[0:40]";
 createNode groupId -n "groupId450";
 	rename -uid "B0FA36ED-48B2-DA70-7688-AEBD50250177";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts449";
 	rename -uid "EE08FE91-43F1-5C9F-9081-B1964855352D";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 41 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]";
+	setAttr ".ic" -type "componentList" 1 "f[0:40]";
 createNode groupId -n "groupId451";
 	rename -uid "14CCFDE7-4932-8B0C-A71C-24854D90A06E";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts450";
 	rename -uid "F29AE2A7-4BE6-79C3-464B-069A2732E514";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 20 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]";
+	setAttr ".ic" -type "componentList" 1 "f[0:19]";
 createNode groupId -n "groupId452";
 	rename -uid "5EEB9A20-4CFD-67BE-A314-5781838AC2E4";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts451";
 	rename -uid "A99C4364-4930-3155-76B6-3CAB9AACD0CE";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 20 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]";
+	setAttr ".ic" -type "componentList" 1 "f[0:19]";
 createNode groupId -n "groupId453";
 	rename -uid "4D4350BD-45B1-BFA4-1B02-42B26E6465FE";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts452";
 	rename -uid "AF7FCFC1-4F0E-D29D-4878-AFA844561D11";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 20 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]";
+	setAttr ".ic" -type "componentList" 1 "f[0:19]";
 createNode groupId -n "groupId454";
 	rename -uid "DA4F9FAC-47F1-D56F-B4AF-0A9451A6CCF7";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts453";
 	rename -uid "8F559BDF-418B-157B-52F7-CF8197482929";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 333 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]" "f[185]" "f[186]" "f[187]" "f[188]" "f[189]" "f[190]" "f[191]" "f[192]" "f[193]" "f[194]" "f[195]" "f[196]" "f[197]" "f[198]" "f[199]" "f[200]" "f[201]" "f[202]" "f[203]" "f[204]" "f[205]" "f[206]" "f[207]" "f[208]" "f[209]" "f[210]" "f[211]" "f[212]" "f[213]" "f[214]" "f[215]" "f[216]" "f[217]" "f[218]" "f[219]" "f[220]" "f[221]" "f[222]" "f[223]" "f[224]" "f[225]" "f[226]" "f[227]" "f[228]" "f[229]" "f[230]" "f[231]" "f[232]" "f[233]" "f[234]" "f[235]" "f[236]" "f[237]" "f[238]" "f[239]" "f[240]" "f[241]" "f[242]" "f[243]" "f[244]" "f[245]" "f[246]" "f[247]" "f[248]" "f[249]" "f[250]" "f[251]" "f[252]" "f[253]" "f[254]" "f[255]" "f[256]" "f[257]" "f[258]" "f[259]" "f[260]" "f[261]" "f[262]" "f[263]" "f[264]" "f[265]" "f[266]" "f[267]" "f[268]" "f[269]" "f[270]" "f[271]" "f[272]" "f[273]" "f[274]" "f[275]" "f[276]" "f[277]" "f[278]" "f[279]" "f[280]" "f[281]" "f[282]" "f[283]" "f[284]" "f[285]" "f[286]" "f[287]" "f[288]" "f[289]" "f[290]" "f[291]" "f[292]" "f[293]" "f[294]" "f[295]" "f[296]" "f[297]" "f[298]" "f[299]" "f[300]" "f[301]" "f[302]" "f[303]" "f[304]" "f[305]" "f[306]" "f[307]" "f[308]" "f[309]" "f[310]" "f[311]" "f[312]" "f[313]" "f[314]" "f[315]" "f[316]" "f[317]" "f[318]" "f[319]" "f[320]" "f[321]" "f[322]" "f[323]" "f[324]" "f[325]" "f[326]" "f[327]" "f[328]" "f[329]" "f[330]" "f[331]" "f[332]";
+	setAttr ".ic" -type "componentList" 1 "f[0:332]";
 createNode groupId -n "groupId455";
 	rename -uid "E3DA5C91-40BF-BCD5-AA79-138FA253BDE6";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts454";
 	rename -uid "E8B14B82-4153-F181-7FC4-95A54FFCEF5B";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 111 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]";
+	setAttr ".ic" -type "componentList" 1 "f[0:110]";
 createNode groupId -n "groupId456";
 	rename -uid "71A33A7C-4F77-A14C-D880-70B98C72CC38";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts455";
 	rename -uid "691BA31F-490B-7ADC-F8FF-5DB11C79F9C0";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 185 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]";
+	setAttr ".ic" -type "componentList" 1 "f[0:184]";
 createNode groupId -n "groupId457";
 	rename -uid "DC48C2F4-49BD-5AEB-D6DB-A99887565E1A";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts456";
 	rename -uid "106DBB0D-469D-93C2-CD62-B4BC72A38320";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 26 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]";
+	setAttr ".ic" -type "componentList" 1 "f[0:25]";
 createNode groupId -n "groupId458";
 	rename -uid "BAD2B309-45D1-1E31-2BC3-61BE94AEF6A4";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts457";
 	rename -uid "ED29CF0F-4FFE-8014-F941-8E8FFC59D40F";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 12 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]";
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
 createNode groupId -n "groupId459";
 	rename -uid "4B5C8FE9-490D-359D-3AC4-9E9E3ADF9441";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts458";
 	rename -uid "1C5D2AC5-432E-2155-F942-6480BA209890";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 2 "f[0]" "f[1]";
+	setAttr ".ic" -type "componentList" 1 "f[0:1]";
 createNode groupId -n "groupId460";
 	rename -uid "F5352733-439D-D2A9-7901-4FBAC8723F44";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts459";
 	rename -uid "FEBC1749-4B5F-AA99-D4FC-C9B86068C446";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 259 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]" "f[185]" "f[186]" "f[187]" "f[188]" "f[189]" "f[190]" "f[191]" "f[192]" "f[193]" "f[194]" "f[195]" "f[196]" "f[197]" "f[198]" "f[199]" "f[200]" "f[201]" "f[202]" "f[203]" "f[204]" "f[205]" "f[206]" "f[207]" "f[208]" "f[209]" "f[210]" "f[211]" "f[212]" "f[213]" "f[214]" "f[215]" "f[216]" "f[217]" "f[218]" "f[219]" "f[220]" "f[221]" "f[222]" "f[223]" "f[224]" "f[225]" "f[226]" "f[227]" "f[228]" "f[229]" "f[230]" "f[231]" "f[232]" "f[233]" "f[234]" "f[235]" "f[236]" "f[237]" "f[238]" "f[239]" "f[240]" "f[241]" "f[242]" "f[243]" "f[244]" "f[245]" "f[246]" "f[247]" "f[248]" "f[249]" "f[250]" "f[251]" "f[252]" "f[253]" "f[254]" "f[255]" "f[256]" "f[257]" "f[258]";
+	setAttr ".ic" -type "componentList" 1 "f[0:258]";
 createNode groupId -n "groupId461";
 	rename -uid "90AA554B-495A-9A5E-C4CB-9D93012D5DA7";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts460";
 	rename -uid "01D74F55-4929-8FA3-C2A6-8E8BE09D4E43";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 198 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]" "f[185]" "f[186]" "f[187]" "f[188]" "f[189]" "f[190]" "f[191]" "f[192]" "f[193]" "f[194]" "f[195]" "f[196]" "f[197]";
+	setAttr ".ic" -type "componentList" 1 "f[0:197]";
 createNode groupId -n "groupId462";
 	rename -uid "4925BBF5-46CF-A0C1-B8AE-00B50C5231B2";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts461";
 	rename -uid "536DDD30-4937-88FF-9880-03836745FE45";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 61 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]";
+	setAttr ".ic" -type "componentList" 1 "f[0:60]";
 createNode groupId -n "groupId463";
 	rename -uid "962E0FCB-4074-9AD6-1CD0-21A6AFCB5B2D";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts462";
 	rename -uid "11364D5A-454B-0A97-6879-6889330D514E";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 375 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]" "f[185]" "f[186]" "f[187]" "f[188]" "f[189]" "f[190]" "f[191]" "f[192]" "f[193]" "f[194]" "f[195]" "f[196]" "f[197]" "f[198]" "f[199]" "f[200]" "f[201]" "f[202]" "f[203]" "f[204]" "f[205]" "f[206]" "f[207]" "f[208]" "f[209]" "f[210]" "f[211]" "f[212]" "f[213]" "f[214]" "f[215]" "f[216]" "f[217]" "f[218]" "f[219]" "f[220]" "f[221]" "f[222]" "f[223]" "f[224]" "f[225]" "f[226]" "f[227]" "f[228]" "f[229]" "f[230]" "f[231]" "f[232]" "f[233]" "f[234]" "f[235]" "f[236]" "f[237]" "f[238]" "f[239]" "f[240]" "f[241]" "f[242]" "f[243]" "f[244]" "f[245]" "f[246]" "f[247]" "f[248]" "f[249]" "f[250]" "f[251]" "f[252]" "f[253]" "f[254]" "f[255]" "f[256]" "f[257]" "f[258]" "f[259]" "f[260]" "f[261]" "f[262]" "f[263]" "f[264]" "f[265]" "f[266]" "f[267]" "f[268]" "f[269]" "f[270]" "f[271]" "f[272]" "f[273]" "f[274]" "f[275]" "f[276]" "f[277]" "f[278]" "f[279]" "f[280]" "f[281]" "f[282]" "f[283]" "f[284]" "f[285]" "f[286]" "f[287]" "f[288]" "f[289]" "f[290]" "f[291]" "f[292]" "f[293]" "f[294]" "f[295]" "f[296]" "f[297]" "f[298]" "f[299]" "f[300]" "f[301]" "f[302]" "f[303]" "f[304]" "f[305]" "f[306]" "f[307]" "f[308]" "f[309]" "f[310]" "f[311]" "f[312]" "f[313]" "f[314]" "f[315]" "f[316]" "f[317]" "f[318]" "f[319]" "f[320]" "f[321]" "f[322]" "f[323]" "f[324]" "f[325]" "f[326]" "f[327]" "f[328]" "f[329]" "f[330]" "f[331]" "f[332]" "f[333]" "f[334]" "f[335]" "f[336]" "f[337]" "f[338]" "f[339]" "f[340]" "f[341]" "f[342]" "f[343]" "f[344]" "f[345]" "f[346]" "f[347]" "f[348]" "f[349]" "f[350]" "f[351]" "f[352]" "f[353]" "f[354]" "f[355]" "f[356]" "f[357]" "f[358]" "f[359]" "f[360]" "f[361]" "f[362]" "f[363]" "f[364]" "f[365]" "f[366]" "f[367]" "f[368]" "f[369]" "f[370]" "f[371]" "f[372]" "f[373]" "f[374]";
+	setAttr ".ic" -type "componentList" 1 "f[0:374]";
 createNode groupId -n "groupId464";
 	rename -uid "AC47AF66-44A6-23A9-9B6E-E6B03F4BA466";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts463";
 	rename -uid "10D89C72-46D4-3A78-3580-AB8195116ACF";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 39 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]";
+	setAttr ".ic" -type "componentList" 1 "f[0:38]";
 createNode groupId -n "groupId465";
 	rename -uid "976BE6E3-4D08-8925-3918-7FB0081CB4E0";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts464";
 	rename -uid "441E0FAF-404F-C260-78DA-70908995258A";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 375 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]" "f[185]" "f[186]" "f[187]" "f[188]" "f[189]" "f[190]" "f[191]" "f[192]" "f[193]" "f[194]" "f[195]" "f[196]" "f[197]" "f[198]" "f[199]" "f[200]" "f[201]" "f[202]" "f[203]" "f[204]" "f[205]" "f[206]" "f[207]" "f[208]" "f[209]" "f[210]" "f[211]" "f[212]" "f[213]" "f[214]" "f[215]" "f[216]" "f[217]" "f[218]" "f[219]" "f[220]" "f[221]" "f[222]" "f[223]" "f[224]" "f[225]" "f[226]" "f[227]" "f[228]" "f[229]" "f[230]" "f[231]" "f[232]" "f[233]" "f[234]" "f[235]" "f[236]" "f[237]" "f[238]" "f[239]" "f[240]" "f[241]" "f[242]" "f[243]" "f[244]" "f[245]" "f[246]" "f[247]" "f[248]" "f[249]" "f[250]" "f[251]" "f[252]" "f[253]" "f[254]" "f[255]" "f[256]" "f[257]" "f[258]" "f[259]" "f[260]" "f[261]" "f[262]" "f[263]" "f[264]" "f[265]" "f[266]" "f[267]" "f[268]" "f[269]" "f[270]" "f[271]" "f[272]" "f[273]" "f[274]" "f[275]" "f[276]" "f[277]" "f[278]" "f[279]" "f[280]" "f[281]" "f[282]" "f[283]" "f[284]" "f[285]" "f[286]" "f[287]" "f[288]" "f[289]" "f[290]" "f[291]" "f[292]" "f[293]" "f[294]" "f[295]" "f[296]" "f[297]" "f[298]" "f[299]" "f[300]" "f[301]" "f[302]" "f[303]" "f[304]" "f[305]" "f[306]" "f[307]" "f[308]" "f[309]" "f[310]" "f[311]" "f[312]" "f[313]" "f[314]" "f[315]" "f[316]" "f[317]" "f[318]" "f[319]" "f[320]" "f[321]" "f[322]" "f[323]" "f[324]" "f[325]" "f[326]" "f[327]" "f[328]" "f[329]" "f[330]" "f[331]" "f[332]" "f[333]" "f[334]" "f[335]" "f[336]" "f[337]" "f[338]" "f[339]" "f[340]" "f[341]" "f[342]" "f[343]" "f[344]" "f[345]" "f[346]" "f[347]" "f[348]" "f[349]" "f[350]" "f[351]" "f[352]" "f[353]" "f[354]" "f[355]" "f[356]" "f[357]" "f[358]" "f[359]" "f[360]" "f[361]" "f[362]" "f[363]" "f[364]" "f[365]" "f[366]" "f[367]" "f[368]" "f[369]" "f[370]" "f[371]" "f[372]" "f[373]" "f[374]";
+	setAttr ".ic" -type "componentList" 1 "f[0:374]";
 createNode groupId -n "groupId466";
 	rename -uid "64AB32D7-449B-57E0-C18C-E9ACC814C796";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts465";
 	rename -uid "1579E4AE-4F38-B801-5545-41BDBBC8E115";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 10 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]";
+	setAttr ".ic" -type "componentList" 1 "f[0:9]";
 createNode groupId -n "groupId467";
 	rename -uid "6F9CDE39-4FDD-AC3C-8F2B-C3B657D59E17";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts466";
 	rename -uid "D4F5610C-4E32-F73F-9B3A-A2B26FDB8400";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 165 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]";
+	setAttr ".ic" -type "componentList" 1 "f[0:164]";
 createNode groupId -n "groupId468";
 	rename -uid "65202D1F-4BF6-E3BE-E065-60857BCA4BB7";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts467";
 	rename -uid "918BAF4E-425F-0FBA-5CEF-7CB1F046F02F";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 44 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]";
+	setAttr ".ic" -type "componentList" 1 "f[0:43]";
 createNode groupId -n "groupId469";
 	rename -uid "9233B7BB-41FA-2A85-8F07-03AC0601BD98";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts468";
 	rename -uid "FA1F2ADF-4E13-667C-424C-51945F445EE5";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 44 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]";
+	setAttr ".ic" -type "componentList" 1 "f[0:43]";
 createNode groupId -n "groupId470";
 	rename -uid "83AA359E-43E7-6578-9A5C-A09F2F9801F7";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts469";
 	rename -uid "8554AF41-411A-E144-1560-7296D1C21D48";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 44 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]";
+	setAttr ".ic" -type "componentList" 1 "f[0:43]";
 createNode groupId -n "groupId471";
 	rename -uid "55A37E25-44EB-8632-6551-66BFCD0E5DA3";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts470";
 	rename -uid "0252E40A-4D68-453E-37CD-90AC2AE20923";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 44 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]";
+	setAttr ".ic" -type "componentList" 1 "f[0:43]";
 createNode groupId -n "groupId472";
 	rename -uid "287E2668-49CF-49DE-F2B9-A0B310AADC8E";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts471";
 	rename -uid "BE6F2F2A-49CA-889C-2727-F6AE0A6D2173";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 23 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]";
+	setAttr ".ic" -type "componentList" 1 "f[0:22]";
 createNode groupId -n "groupId473";
 	rename -uid "72A695D8-4E89-0A09-4BE2-9DA2E4CAFB10";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts472";
 	rename -uid "7C0FB414-4EF3-2FAF-7298-F486F0BA25EA";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 23 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]";
+	setAttr ".ic" -type "componentList" 1 "f[0:22]";
 createNode groupId -n "groupId474";
 	rename -uid "BF0D8F86-4757-AB59-F6C0-A986C250DABF";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts473";
 	rename -uid "43B93052-484B-E0A0-E3B0-559C8CAE98D4";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 27 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]";
+	setAttr ".ic" -type "componentList" 1 "f[0:26]";
 createNode groupId -n "groupId475";
 	rename -uid "33A809E9-4537-85EC-46AC-ADBA9A24AE52";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts474";
 	rename -uid "61D9EF88-4279-84BD-1D2D-9D8F2C1C0D1B";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 27 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]";
+	setAttr ".ic" -type "componentList" 1 "f[0:26]";
 createNode groupId -n "groupId476";
 	rename -uid "9A37E57B-4D4B-3129-B63D-DF91E50913B7";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts475";
 	rename -uid "EA96A67D-4F8D-A720-DF95-468E5957FC51";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 333 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]" "f[185]" "f[186]" "f[187]" "f[188]" "f[189]" "f[190]" "f[191]" "f[192]" "f[193]" "f[194]" "f[195]" "f[196]" "f[197]" "f[198]" "f[199]" "f[200]" "f[201]" "f[202]" "f[203]" "f[204]" "f[205]" "f[206]" "f[207]" "f[208]" "f[209]" "f[210]" "f[211]" "f[212]" "f[213]" "f[214]" "f[215]" "f[216]" "f[217]" "f[218]" "f[219]" "f[220]" "f[221]" "f[222]" "f[223]" "f[224]" "f[225]" "f[226]" "f[227]" "f[228]" "f[229]" "f[230]" "f[231]" "f[232]" "f[233]" "f[234]" "f[235]" "f[236]" "f[237]" "f[238]" "f[239]" "f[240]" "f[241]" "f[242]" "f[243]" "f[244]" "f[245]" "f[246]" "f[247]" "f[248]" "f[249]" "f[250]" "f[251]" "f[252]" "f[253]" "f[254]" "f[255]" "f[256]" "f[257]" "f[258]" "f[259]" "f[260]" "f[261]" "f[262]" "f[263]" "f[264]" "f[265]" "f[266]" "f[267]" "f[268]" "f[269]" "f[270]" "f[271]" "f[272]" "f[273]" "f[274]" "f[275]" "f[276]" "f[277]" "f[278]" "f[279]" "f[280]" "f[281]" "f[282]" "f[283]" "f[284]" "f[285]" "f[286]" "f[287]" "f[288]" "f[289]" "f[290]" "f[291]" "f[292]" "f[293]" "f[294]" "f[295]" "f[296]" "f[297]" "f[298]" "f[299]" "f[300]" "f[301]" "f[302]" "f[303]" "f[304]" "f[305]" "f[306]" "f[307]" "f[308]" "f[309]" "f[310]" "f[311]" "f[312]" "f[313]" "f[314]" "f[315]" "f[316]" "f[317]" "f[318]" "f[319]" "f[320]" "f[321]" "f[322]" "f[323]" "f[324]" "f[325]" "f[326]" "f[327]" "f[328]" "f[329]" "f[330]" "f[331]" "f[332]";
+	setAttr ".ic" -type "componentList" 1 "f[0:332]";
 createNode groupId -n "groupId477";
 	rename -uid "EB255473-49F4-6B54-E4CB-319942FA51A9";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts476";
 	rename -uid "BA446D4A-475E-90BC-8560-7AAF94AA3092";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 111 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]";
+	setAttr ".ic" -type "componentList" 1 "f[0:110]";
 createNode groupId -n "groupId478";
 	rename -uid "AF4BC75F-4D12-4A43-3BD3-3693A19CF712";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts477";
 	rename -uid "F197B43B-4F45-2D01-AFCE-00B006686E6B";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 185 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]";
+	setAttr ".ic" -type "componentList" 1 "f[0:184]";
 createNode tweak -n "tweak22";
 	rename -uid "8C57556E-40EB-189E-F24C-12BE2A69AA88";
 createNode objectSet -n "tweakSet22";
@@ -43843,6 +44581,17 @@ createNode nodeGraphEditorInfo -n "MayaNodeEditorSavedTabsInfo";
 	setAttr ".tgi[0].ni[49].x" -107.14286041259766;
 	setAttr ".tgi[0].ni[49].y" -95.714286804199219;
 	setAttr ".tgi[0].ni[49].nvs" 18304;
+createNode makeNurbCircle -n "makeNurbCircle2";
+	rename -uid "51710A96-468B-86D9-1528-0EA967D99BB2";
+	setAttr ".nr" -type "double3" 0 1 0 ;
+createNode transformGeometry -n "transformGeometry2";
+	rename -uid "50061D3A-46AB-9242-5261-5D8A0B0D3679";
+	setAttr ".txf" -type "matrix" 19.066479675048953 0 0 0 0 19.066479675048953 0 0
+		 0 0 19.066479675048953 0 0 0 0 1;
+createNode transformGeometry -n "transformGeometry3";
+	rename -uid "9CE6C261-4082-8E25-DE77-BCAE7F09D077";
+	setAttr ".txf" -type "matrix" 0.31416857597261222 0 0 0 0 6.9759437331698364e-17 0.31416857597261222 0
+		 0 -0.31416857597261222 6.9759437331698364e-17 0 0 0 0 1;
 select -ne :time1;
 	setAttr ".o" 0;
 select -ne :hardwareRenderingGlobals;
@@ -45327,36 +46076,40 @@ connectAttr ":initialShadingGroup.mwc" "polySurfaceShape476.iog.og[0].gco";
 connectAttr "groupParts239.og" "polySurface1Shape.i";
 connectAttr "groupId240.id" "polySurface1Shape.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "polySurface1Shape.iog.og[0].gco";
-connectAttr "COG_Jnt.s" "joint15.is";
-connectAttr "joint15.s" "joint16.is";
-connectAttr "joint16.s" "joint17.is";
-connectAttr "joint17.s" "joint18.is";
-connectAttr "joint15.s" "joint19.is";
-connectAttr "joint19.s" "joint20.is";
-connectAttr "joint19.s" "joint21.is";
-connectAttr "joint21.s" "joint22.is";
-connectAttr "COG_Jnt.s" "joint2.is";
-connectAttr "joint2.s" "joint3.is";
-connectAttr "joint3.s" "joint4.is";
-connectAttr "joint4.s" "joint5.is";
-connectAttr "joint2.s" "joint6.is";
-connectAttr "joint6.s" "joint9.is";
-connectAttr "joint6.s" "joint7.is";
-connectAttr "joint7.s" "joint8.is";
-connectAttr "COG_Jnt.s" "joint10.is";
-connectAttr "joint10.s" "joint11.is";
-connectAttr "COG_Jnt.s" "joint12.is";
-connectAttr "joint12.s" "joint13.is";
-connectAttr "COG_Jnt.s" "joint26.is";
-connectAttr "joint26.s" "joint27.is";
-connectAttr "joint27.s" "joint28.is";
-connectAttr "joint28.s" "joint29.is";
-connectAttr "COG_Jnt.s" "joint30.is";
-connectAttr "joint30.s" "joint31.is";
-connectAttr "COG_Jnt.s" "joint32.is";
-connectAttr "joint32.s" "joint33.is";
-connectAttr "COG_Jnt.s" "joint25.is";
+connectAttr "COG_Jnt.s" "Central_R_Leg01_jnt.is";
+connectAttr "Central_R_Leg01_jnt.s" "Front_R_Leg01_jnt.is";
+connectAttr "Front_R_Leg01_jnt.s" "Front_R_Leg02_jnt.is";
+connectAttr "Front_R_Leg02_jnt.s" "Front_R_Leg03_jnt.is";
+connectAttr "Central_R_Leg01_jnt.s" "Back_Central_R_Leg01_jnt.is";
+connectAttr "Back_Central_R_Leg01_jnt.s" "Middle_R_Leg01_jnt.is";
+connectAttr "Back_Central_R_Leg01_jnt.s" "Back_R_Leg01_jnt.is";
+connectAttr "Back_R_Leg01_jnt.s" "Back_R_Leg02_jnt.is";
+connectAttr "COG_Jnt.s" "Central_L_Leg01_jnt.is";
+connectAttr "Central_L_Leg01_jnt.s" "Front_L_Leg03_jnt.is";
+connectAttr "Front_L_Leg03_jnt.s" "Front_L_Leg02.is";
+connectAttr "Front_L_Leg02.s" "Front_L_Leg01.is";
+connectAttr "Central_L_Leg01_jnt.s" "Back_Central_L_Leg01_jnt.is";
+connectAttr "Back_Central_L_Leg01_jnt.s" "Back_L_Leg01_jnt.is";
+connectAttr "Back_Central_L_Leg01_jnt.s" "Back_L_Leg02_jnt.is";
+connectAttr "Back_L_Leg02_jnt.s" "Back_L_Leg03_jnt.is";
+connectAttr "COG_Jnt.s" "L_Wing01_jnt.is";
+connectAttr "L_Wing01_jnt.s" "|COG_Jnt|L_Wing01_jnt|L_Wing02_jnt.is";
+connectAttr "COG_Jnt.s" "L_SpinnyThing01_jnt.is";
+connectAttr "L_SpinnyThing01_jnt.s" "L_SpinnyThing02_jnt.is";
+connectAttr "COG_Jnt.s" "FrontArm01_jnt.is";
+connectAttr "FrontArm01_jnt.s" "FrontArm02_jnt.is";
+connectAttr "FrontArm02_jnt.s" "FrontArm03_jnt.is";
+connectAttr "FrontArm03_jnt.s" "FrontArm04_jnt.is";
+connectAttr "COG_Jnt.s" "FrontHead01_jnt.is";
+connectAttr "FrontHead01_jnt.s" "FrontHead02_jnt.is";
+connectAttr "COG_Jnt.s" "R_Wing01_jnt.is";
+connectAttr "R_Wing01_jnt.s" "R_Wing02_jnt.is";
+connectAttr "COG_Jnt.s" "Back_Wing01_jnt.is";
+connectAttr "COG_Jnt.s" "L_Wing01_jnt1.is";
+connectAttr "L_Wing01_jnt1.s" "|COG_Jnt|L_Wing01_jnt1|L_Wing02_jnt.is";
+connectAttr "L_Wing01_jnt1.s" "L_Wing02_jnt1.is";
 connectAttr "transformGeometry1.og" "Main_CtlShape.cr";
+connectAttr "transformGeometry3.og" "FrontArm01_ctlShape.cr";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
@@ -46803,28 +47556,36 @@ connectAttr "tweak22.msg" "tweakSet22.ub[0]";
 connectAttr "polySurfaceShape378Orig.w" "groupParts521.ig";
 connectAttr "groupId522.id" "groupParts521.gi";
 connectAttr "makeNurbCircle1.oc" "transformGeometry1.ig";
-connectAttr "joint26.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[0].dn";
-connectAttr "joint22.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[1].dn";
-connectAttr "joint21.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[2].dn";
-connectAttr "joint31.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[3].dn";
-connectAttr "joint25.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[4].dn";
-connectAttr "joint32.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[5].dn";
+connectAttr "FrontArm01_jnt.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[0].dn";
+connectAttr "Back_R_Leg02_jnt.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
+		;
+connectAttr "Back_R_Leg01_jnt.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[2].dn"
+		;
+connectAttr "FrontHead02_jnt.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[3].dn";
+connectAttr "Back_Wing01_jnt.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[4].dn";
+connectAttr "R_Wing01_jnt.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[5].dn";
 connectAttr "Main_CtlShape.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[6].dn";
 connectAttr "Main_Ctl.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[7].dn";
-connectAttr "joint20.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[8].dn";
-connectAttr "joint30.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[9].dn";
+connectAttr "Middle_R_Leg01_jnt.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[8].dn"
+		;
+connectAttr "FrontHead01_jnt.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[9].dn";
 connectAttr "Main_Ctl_Grp.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[10].dn";
-connectAttr "joint29.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[11].dn";
-connectAttr "joint33.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[12].dn";
-connectAttr "joint28.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[13].dn";
-connectAttr "joint18.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[14].dn";
-connectAttr "joint27.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[15].dn";
-connectAttr "joint19.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[16].dn";
+connectAttr "FrontArm04_jnt.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[11].dn";
+connectAttr "R_Wing02_jnt.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[12].dn";
+connectAttr "FrontArm03_jnt.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[13].dn";
+connectAttr "Front_R_Leg03_jnt.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[14].dn"
+		;
+connectAttr "FrontArm02_jnt.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[15].dn";
+connectAttr "Back_Central_R_Leg01_jnt.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[16].dn"
+		;
 connectAttr "makeNurbCircle1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[17].dn"
 		;
-connectAttr "joint16.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[18].dn";
-connectAttr "joint15.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[19].dn";
-connectAttr "joint17.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[20].dn";
+connectAttr "Front_R_Leg01_jnt.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[18].dn"
+		;
+connectAttr "Central_R_Leg01_jnt.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[19].dn"
+		;
+connectAttr "Front_R_Leg02_jnt.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[20].dn"
+		;
 connectAttr "polySurfaceShape379Orig.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[21].dn"
 		;
 connectAttr "polySurfaceShape343Orig.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[22].dn"
@@ -46846,24 +47607,35 @@ connectAttr "polySurfaceShape350.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[29]
 connectAttr "polySurface350.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[30].dn";
 connectAttr "tweak22.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[31].dn";
 connectAttr "tweakSet22.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[32].dn";
-connectAttr "joint3.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[33].dn";
-connectAttr "joint4.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[34].dn";
+connectAttr "Front_L_Leg03_jnt.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[33].dn"
+		;
+connectAttr "Front_L_Leg02.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[34].dn";
 connectAttr "COG_Jnt.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[35].dn";
-connectAttr "joint2.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[36].dn";
-connectAttr "joint5.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[37].dn";
-connectAttr "joint6.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[38].dn";
-connectAttr "joint7.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[39].dn";
-connectAttr "joint12.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[40].dn";
-connectAttr "joint13.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[41].dn";
-connectAttr "joint9.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[42].dn";
-connectAttr "joint10.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[43].dn";
-connectAttr "joint11.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[44].dn";
-connectAttr "joint8.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[45].dn";
+connectAttr "Central_L_Leg01_jnt.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[36].dn"
+		;
+connectAttr "Front_L_Leg01.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[37].dn";
+connectAttr "Back_Central_L_Leg01_jnt.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[38].dn"
+		;
+connectAttr "Back_L_Leg02_jnt.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[39].dn"
+		;
+connectAttr "L_SpinnyThing01_jnt.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[40].dn"
+		;
+connectAttr "L_SpinnyThing02_jnt.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[41].dn"
+		;
+connectAttr "Back_L_Leg01_jnt.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[42].dn"
+		;
+connectAttr "L_Wing01_jnt.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[43].dn";
+connectAttr "|COG_Jnt|L_Wing01_jnt|L_Wing02_jnt.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[44].dn"
+		;
+connectAttr "Back_L_Leg03_jnt.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[45].dn"
+		;
 connectAttr "transformGeometry1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[46].dn"
 		;
 connectAttr "COG_Ctl_Grp.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[47].dn";
 connectAttr "COG_Ctl.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[48].dn";
 connectAttr "COG_CtlShape.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[49].dn";
+connectAttr "makeNurbCircle2.oc" "transformGeometry2.ig";
+connectAttr "transformGeometry2.og" "transformGeometry3.ig";
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "RoverShape.iog.og[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "polySurfaceShape1.iog.og[0]" ":initialShadingGroup.dsm" -na;
