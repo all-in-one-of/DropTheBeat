@@ -1,0 +1,26 @@
+{
+    int $iterations = 200;
+    string $groupname = "Boxes";
+    doGroup 0 1 1;
+    rename "null1" $groupname;
+    
+    for ($i = 0; $i < $iterations; $i ++){
+        string $CubeNames = ("Box" + $i);
+        polyCube -name $CubeNames -w 1 -h 1 -d 1 -sx 1 -sy 1 -sz 1 -ax 0 1 0 -cuv 4 -ch 1;
+        $yMove = rand(-10, 10);
+        $xMove = rand(-10, 10);
+        $zMove = rand(-10, 10);
+        $xRot = rand(0, 360);
+        $yRot = rand(0, 360);
+        $zRot = rand(0, 360);
+        $rScale = rand(.5, 2);
+        move -r $xMove $yMove $zMove ;
+        rotate -r -os -fo $xRot $yRot $zRot ;
+        scale -r $rScale $rScale $rScale ;
+        
+        
+        select -r $CubeNames ;
+        parent $CubeNames Boxes ;
+    }
+}
+
