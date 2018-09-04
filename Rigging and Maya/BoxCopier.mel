@@ -1,11 +1,12 @@
-{
+
+
+global proc DuplicateCubes (){    
     int $iterations = 200;
-    string $groupname = "Boxes";
-    doGroup 0 1 1;
-    rename "null1" $groupname;
-    
+    string $groupname = "Spencersboxes";
+    string $objectName = "box";
+    string $objects[];
     for ($i = 0; $i < $iterations; $i ++){
-        string $CubeNames = ("Box" + $i);
+        string $CubeNames = ($objectName + $i);
         polyCube -name $CubeNames -w 1 -h 1 -d 1 -sx 1 -sy 1 -sz 1 -ax 0 1 0 -cuv 4 -ch 1;
         $yMove = rand(-10, 10);
         $xMove = rand(-10, 10);
@@ -17,10 +18,14 @@
         move -r $xMove $yMove $zMove ;
         rotate -r -os -fo $xRot $yRot $zRot ;
         scale -r $rScale $rScale $rScale ;
+        string $sels[] = `ls -selection`;
+        $objects[$i] = $sels[0]; 
         
-        
-        select -r $CubeNames ;
-        parent $CubeNames Boxes ;
     }
+    select $objects;
+    doGroup 0 1 1;
 }
+
+DuplicateCubes();
+
 
