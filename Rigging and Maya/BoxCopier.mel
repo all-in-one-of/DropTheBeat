@@ -5,16 +5,20 @@ global proc DuplicateCubes (){
     string $groupname = "Spencersboxes";
     string $objectName = "box";
     string $objects[];
+    string $startSel[] = `ls -selection`;
     for ($i = 0; $i < $iterations; $i ++){
+        select -cl  ;
+        select $startSel[0];
         string $CubeNames = ($objectName + $i);
-        polyCube -name $CubeNames -w 1 -h 1 -d 1 -sx 1 -sy 1 -sz 1 -ax 0 1 0 -cuv 4 -ch 1;
+       // polyCube -name $CubeNames -w 1 -h 1 -d 1 -sx 1 -sy 1 -sz 1 -ax 0 1 0 -cuv 4 -ch 1;
+        duplicate -rr;
         $yMove = rand(-10, 10);
         $xMove = rand(-10, 10);
         $zMove = rand(-10, 10);
         $xRot = rand(0, 360);
         $yRot = rand(0, 360);
         $zRot = rand(0, 360);
-        $rScale = rand(.5, 2);
+        $rScale = rand(2, 1);
         move -r $xMove $yMove $zMove ;
         rotate -r -os -fo $xRot $yRot $zRot ;
         scale -r $rScale $rScale $rScale ;
