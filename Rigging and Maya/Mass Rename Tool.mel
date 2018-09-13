@@ -1,0 +1,37 @@
+global proc renamer (string $inputString, int $startNum, string $startSel[]){
+    //human input
+    //string $inputString = "Arm_###_jnt" ; 
+    //int $startNum = 356;
+    //string $startSel[] = `ls -selection`;
+    //^selection
+    // finish human imput
+
+string $myString[];    //defining string to hold tokenized string
+$numTokens = `tokenize $inputString "#" $myString`; // separating the input string based on the # location
+string $numberString = `match "#+" $inputString`;  // finding the ## in the string
+
+int $iterations = size($startSel);
+
+
+for ($i = 0; $i < $iterations; $i ++){
+      string $newNumber = $i + $startNum; //setting up what the new number is      
+      
+      int $hashtagSize = size($numberString); //finding the number of # in the input string
+      int $myNumberSize = size($newNumber); //finding the number of digits in the number of i
+      int $paddingNumber = ($hashtagSize - $myNumberSize); //finding the number of padding 0's that need to go in front
+      string $padding; 
+          for ($x = 0; $x < $paddingNumber; $x++){
+              $padding = ($padding + "0");
+          }
+      
+      string $newName =($myString[0] + $padding + $newNumber + $myString[1]); // setting up the new name
+      rename $startSel[$i] $newName; // assign the selection the new name
+      
+        
+    }
+
+}
+
+renamer("Arm_###_jnt", 7, `ls -selection`);
+
+
