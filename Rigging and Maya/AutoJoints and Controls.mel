@@ -1,0 +1,115 @@
+global proc Variables (){
+    
+}
+
+global proc Controller () {
+    
+}
+
+
+global proc ControlsSetup (float $ControlSize, string $ChainName, float $StartNum){
+    global string $joints[] = `ls -sl`;
+
+    global int $iterations = `size($joints)`;
+    global string $controlGroupsGroup[];
+    global string $controlsGroup[];
+
+    for ($i = 0; $i < $iterations; $i ++){
+        //make circle and group
+        select -cl;
+        circle   -c 0 0 0 -nr 0 1 0 -sw 360 -r $ControlSize -d 3 -ut 0 -tol 0.01 -s 8 -ch 1; objectMoveCommand;
+        string $temp[] = `ls -sl`;
+        $controlsGroup[$i] = $temp[0];
+        doGroup 0 1 1;
+        string $temp[] = `ls -sl`;
+        //match transforms
+        select -r $temp;
+        select  -add $joints[$i];
+        MatchTransform;
+        matchTransform;
+        select -cl ;
+        $controlGroupsGroup[$i] = $temp[0];        
+        
+    }
+
+
+    
+  //print ($jointsGroup);
+   print ($joints);
+   print ($controlGroupsGroup);
+   print ($controlsGroup);
+}
+
+global proc Constrainer (){
+        // set up constraints
+        
+        select -cl;
+        select -r $controlsGroup[$i];
+        select -add $joints[$i];
+        
+        parentConstraint -mo -weight 1;
+        scaleConstraint -offset 1 1 1 -weight 1;
+        
+        }
+
+ControlsSetup (1, "Arm", 1);
+Constrainer ();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*
+    
+        // making the joints
+        
+    for ($j = 0; $j < $iterations; $j ++){
+        //create the joint
+        select -cl  ;
+        joint -p 0 0 0 ;
+        //set the joint to a temporary joint variable
+        string $tempjoints[] = `ls -sl`;
+        //find the center of the objects that I've selected to put joints in
+        float $temp[] = `objectCenter -gl $sels[$j]`;
+        //transform joint to location
+        xform -translation $temp[0] $temp[1] $temp[2] -worldSpace -absolute $tempjoints;
+        $jointsGroup[$j] = $tempjoints[0];
+    }
+    
+        // making the controls and groups
+
+
+    for ($i = 0; $i < $iterations; $i ++){
+        //make circle and group
+        circle   -c 0 0 0 -nr 0 1 0 -sw 360 -r $ControlSize -d 3 -ut 0 -tol 0.01 -s 8 -ch 1; objectMoveCommand;
+        string $temp[] = `ls -sl`;
+        $controlsGroup[$i] = $temp[0];
+        doGroup 0 1 1;
+        string $temp[] = `ls -sl`;
+        //match transforms
+        select -r $temp;
+        select  -add $sels[$i];
+        MatchTransform;
+        matchTransform;
+        select -cl ;
+        $controlGroupsGroup[$i] = $temp[0];
+
+
+    }
+    */
