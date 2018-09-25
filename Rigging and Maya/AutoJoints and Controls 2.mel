@@ -30,9 +30,22 @@ global proc ControlsSetup (float $ControlSize, string $ChainName, float $StartNu
             circle   -c 0 0 0 -nr 0 1 0 -sw 360 -r $ControlSize -d 3 -ut 0 -tol 0.01 -s 8 -ch 1; objectMoveCommand;
             string $temp[] = `ls -sl`;
             $controlsGroup[$i] = $temp[0];
+            
+            // change color of circle
+            string $shapes[];
+            $shapes = `listRelatives -shapes $controlsGroup[$i]`;
+            
+            setAttr ($shapes[0] + ".overrideEnabled") 1; //enable drawing overrides
+        
+            setAttr ($shapes[0] + ".overrideColor") 15; // change color
+            
+            //make group
+            select -r $controlsGroup[$i];
             doGroup 0 1 1;
-                string $temp[] = `ls -sl`;
-        //match transforms
+            string $temp[] = `ls -sl`;
+            
+            
+            //match transforms
             select -r $temp;
             select  -add $sels[$i];
             MatchTransform;
@@ -97,7 +110,7 @@ global proc ControlsSetup (float $ControlSize, string $ChainName, float $StartNu
 
 
 global proc WindowMaker (){	// create a window
-	window;	
+	window -title "Rigging Menu";	
 	            //formatting the window
         columnLayout -columnAttach "both" 20 -rowSpacing 10 -columnWidth 300;
 			// create the content and map it to functions
