@@ -1,0 +1,212 @@
+    global string $testingthisstring;
+    global string $controlGroupsGroup[];
+    global string $controlsGroup[];
+    global string $jointsGroup[];
+    global string $sels[];
+    global int $iterations;
+    global int $ColorOfNumber;
+    global int $AddSuffix = 0;
+
+global proc ControlsSetup (){
+    string $sels[] = `ls -sl`;
+    global int $iterations;
+    $iterations = `size($sels)`;
+    global string $jointsGroup[];
+    global string $controlGroupsGroup[];
+    global string $controlsGroup[];
+    global string $testingthisstring;
+    global int $AddSuffix;
+    
+        // making the controls and groups
+
+
+            clear $controlsGroup;
+            clear $controlGroupsGroup;
+            clear $jointsGroup;
+           
+            
+        for ($i = 0; $i < $iterations; $i ++)
+            {
+            $jointsGroup[$i] = $sels[$i];
+            //make circle and group
+
+            ControlCreator();            
+            
+            string $temp[] = `ls -sl`;
+            
+            if($AddSuffix == 1){
+                rename $temp[0] ($temp[0] + "_ctrl");
+                $controlsGroup[$i] = $temp[0];
+            }
+            
+            // change color of circle
+            
+            Recolorcontrols();
+            
+            //make group
+            //select -r $controlsGroup[$i];
+            doGroup 0 1 1;
+            string $temp[] = `ls -sl`;
+            
+            
+            //match transforms
+            select -r $temp;
+            select  -add $sels[$i];
+            MatchTransform;
+            matchTransform;
+            select -cl ;
+            $controlGroupsGroup[$i] = $temp[0];                       
+           
+        }
+    
+    // now go scale and rotate the controls        
+    
+}
+
+global proc Constrainer (){
+    //constrain the controls
+
+    
+        global string $jointsGroup[];
+        global string $controlGroupsGroup[];
+        global string $controlsGroup[];
+        global string $sels[];
+        global int $iterations;
+            print($iterations);
+        
+            for ($z = 0; $z < $iterations; $z ++)
+            {
+                // constraining the joints
+                select -cl;
+                select -r $controlsGroup[$z];
+                FreezeTransformations; // freezing transforms
+                select -cl;
+                select -r $controlsGroup[$z];
+                select -add $jointsGroup[$z];
+                parentConstraint -mo -weight 1;
+                scaleConstraint -offset 1 1 1 -weight 1;
+                
+                //constraining controls
+                if ($z + 1 < $iterations)
+                {
+                select -cl;
+                select -r $controlsGroup[$z];
+                select -add $controlGroupsGroup[($z + 1)];
+                parentConstraint -mo -skipRotate x -skipRotate y -skipRotate z -weight 1;
+                parentConstraint -mo -skipTranslate x -skipTranslate y -skipTranslate z -weight 1;
+                }
+                //Setting up broken FK
+                select -cl;
+                select -r $controlsGroup[$z];
+                addAttr -longName "FollowTranslates" -defaultValue 1.0 -minValue 0 -maxValue 1;
+                setAttr -e-keyable true ($controlsGroup[$z]+"." + "FollowTranslates");
+                
+                addAttr -longName "FollowRotates" -defaultValue 1.0 -minValue 0 -maxValue 1;
+                setAttr -e-keyable true ($controlsGroup[$z]+"." + "FollowRotates");
+                
+                
+            }
+}
+
+global proc Recolorcontrols (){
+    
+    string $controlTemp[] = `ls -sl`;   
+
+    int $myColor = `intField -q -v ColorNumber`;
+    for ($controls in $controlTemp){
+        string $shapes[];
+    
+        //find the shape node[s] of $ctrl
+        $shapes = `listRelatives -shapes $controls`;
+        
+        for ($shape in $shapes){
+            
+            if (`nodeType $shape` == "nurbsCurve"){
+                
+                setAttr ($shape + ".overrideEnabled") 1; //enable drawing overrides
+        
+                setAttr ($shape + ".overrideColor") $myColor; // change color
+            }
+        } 
+    }
+}
+
+
+
+global proc WindowMaker (){	// create a window
+    global int $ColorOfNumber;
+    global int $AddSuffix = 0;
+	window -title "Rigging Menu";	
+	            //formatting the window
+        columnLayout -columnAttach "both" 20 -rowSpacing 10 -columnWidth 300;
+			// create the content and map it to functions
+			text -label "";
+			text -label "Step 1: create Joints";
+			text -label "Step 2: Orient and Select joints in proper order";
+
+			text -label "Control Colors:";
+			intField -minValue 1 -maxValue 31 -value 3 ColorNumber;
+
+			button -label "Step 3: Make Controls and Groups" -command "ControlsSetup";
+			text -label "Step 4: Resize and Rotate controls";
+			button -label "Step 5: Constrain Everything" -command "Constrainer";
+
+		    button -label "Make a Control at the Origin" -command "ControlAtOrigin";
+		    button -label "Color the Selected Controls" -command "Recolorcontrols";
+		    
+		    optionMenu -label "ControlShape" ControlShape;
+		        menuItem -label "Circle";
+		        menuItem -label "Square";
+		        menuItem -label "Triangle";
+		    checkBox -label "Add _ctrl suffix when Creating Controls" 
+		                 -onCommand "on_func" 
+						 -offCommand "off_func";;
+
+	    // show the window we just created
+	showWindow;
+	
+}
+
+global proc ControlAtOrigin (){
+    global int $AddSuffix;
+    ControlCreator();
+    Recolorcontrols();
+    string $temp[] = `ls -sl`;
+            if($AddSuffix == 1){
+                rename $temp[0] ($temp[0] + "_ctrl");
+            }
+    doGroup 0 1 1;
+}
+
+global proc on_func (){
+    global int $AddSuffix;
+    $AddSuffix = 1;
+    print($AddSuffix);
+}
+
+global proc off_func (){
+    global int $AddSuffix;
+    $AddSuffix = 0;
+    print($AddSuffix);
+}
+
+global proc ControlCreator ()
+{
+    if((`optionMenu -q -v ControlShape`) == "Circle"){
+        circle   -c 0 0 0 -nr 0 1 0 -sw 360 -r 1 -d 3 -ut 0 -tol 0.01 -s 8 -ch 1; objectMoveCommand;
+    }
+    if((`optionMenu -q -v ControlShape`) == "Square"){
+        curve -bezier -d 3 -p -1 0 -1 -p -1 0 -1 -p 1 0 -1 -p 1 0 -1 -p 1 0 -1 -p 1 0 1 -p 1 0 1 -p 1 0 1 -p -1 0 1 -p -1 0 1 -p -1 0 1 -p -1 0 -1 -p -1 0 -1 -k 0 -k 0 -k 0 -k 1 -k 1 -k 1 -k 2 -k 2 -k 2 -k 3 -k 3 -k 3 -k 4 -k 4 -k 4 ;
+        bezierCurveToNurbs;
+    }
+    if((`optionMenu -q -v ControlShape`) == "Triangle"){
+        curve -bezier -d 3 -p -1 0 1 -p -1 0 1 -p 0 0 -1 -p 0 0 -1 -p 0 0 -1 -p 1 0 1 -p 1 0 1 -p 1 0 1 -p -1 0 1 -p -1 0 1 -k 0 -k 0 -k 0 -k 1 -k 1 -k 1 -k 2 -k 2 -k 2 -k 3 -k 3 -k 3 ;
+        bezierCurveToNurbs;
+    }
+    
+}
+
+
+
+ControlsSetup (1, "Arm", 2);
+WindowMaker ();
