@@ -208,5 +208,5 @@ global proc ControlCreator ()
 
 
 
-ControlsSetup (1, "Arm", 2);
+
 WindowMaker ();
