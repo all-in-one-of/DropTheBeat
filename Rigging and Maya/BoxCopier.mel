@@ -1,6 +1,6 @@
 
 
-global proc DuplicateCubes (string $copyNum, string $xName, string $yName, string $zName){    
+global proc DuplicateCubes (string $rotOrNot, string $copyNum, string $xName, string $yName, string $zName){    
     
     string $groupname = "Spencersboxes";
     string $objectName = "box";
@@ -12,9 +12,9 @@ global proc DuplicateCubes (string $copyNum, string $xName, string $yName, strin
     float $yVal = `GetFloatFieldValue($yName)`;
     float $zVal = `GetFloatFieldValue($zName)`;
     float $iterations = `GetIntFieldValue($copyNum)`;
-   // int $RotateMe = `GetIntFieldValue($rotOrNot)`;
+    float $RotateMe = `GetCheckboxValue($rotOrNot)`;
     
-   // print($RotateMe);
+    print($RotateMe);
     
    // int $iterations = $copyNum;
        
@@ -66,6 +66,11 @@ global proc float GetIntFieldValue (string $control) {
     return $value;
 }
 
+global proc float GetCheckboxValue (string $control){
+    float $value = `checkBox -q -value $control`;
+    return $value;
+}
+
 
 global proc WindowMaker3(){
     string $mainWindow = "RandomPlacementWindow";
@@ -91,10 +96,10 @@ global proc WindowMaker3(){
     //third row
     string $RotationCheckboxLayout = `rowLayout -parent $mainCol -numberOfColumns 2`;
     text -parent $RotationCheckboxLayout -label " " -width 60;
-    int $rotationCheck = `checkBox -parent $RotationCheckboxLayout -label "Random Rotation"`;
+    string $rotationCheck = `checkBox -parent $RotationCheckboxLayout -label "Random Rotation"`;
     
     //create buttonst
-    string $button = `button -parent $mainCol -label "Move" -command ("DuplicateCubes(\"" + $dupIntField + "\", \"" + $xRange + "\", \"" + $yRange + "\", \"" + $zRange + "\")")`;
+    string $button = `button -parent $mainCol -label "Move" -command ("DuplicateCubes(\"" + $rotationCheck + "\", \"" + $dupIntField + "\", \"" + $xRange + "\", \"" + $yRange + "\", \"" + $zRange + "\")")`;
     
     showWindow $mainWindow;
 }
