@@ -1,6 +1,6 @@
 //Maya ASCII 2018ff09 scene
 //Name: Snake_Model.ma
-//Last modified: Wed, Oct 10, 2018 12:14:43 PM
+//Last modified: Wed, Oct 10, 2018 12:22:22 PM
 //Codeset: 1252
 requires maya "2018ff09";
 requires -nodeType "colorConstant" "lookdevKit" "1.0";
@@ -16,8 +16,8 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "76B2A3A0-4192-294F-78E1-CFA1F23E97CE";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 104.87349442605677 72.846218232027368 7.9063591496370069 ;
-	setAttr ".r" -type "double3" -35.738352729668705 74.199999999994915 -1.1681180386870154e-14 ;
+	setAttr ".t" -type "double3" 48.869354162561677 65.860182465823371 80.811303849550498 ;
+	setAttr ".r" -type "double3" -32.138352729670622 25.399999999995018 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "642E4F6B-4166-6B3C-6E4A-4AAC04EB9EE1";
 	setAttr -k off ".v" no;
