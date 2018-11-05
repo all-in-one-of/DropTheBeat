@@ -1,0 +1,108 @@
+
+
+global proc DuplicateCubes (string $rotOrNot, string $copyNum, string $xName, string $yName, string $zName){    
+    
+    string $groupname = "Spencersboxes";
+    string $objectName = "box";
+    string $objects[];
+    string $startSel[] = `ls -selection`;
+    
+        //query values of float fields and assign to vars
+    float $xVal = `GetFloatFieldValue($xName)`;
+    float $yVal = `GetFloatFieldValue($yName)`;
+    float $zVal = `GetFloatFieldValue($zName)`;
+    float $iterations = `GetIntFieldValue($copyNum)`;
+    float $RotateMe = `GetCheckboxValue($rotOrNot)`;
+    
+    print($RotateMe);
+    
+   // int $iterations = $copyNum;
+       
+    
+    for ($i = 0; $i < $iterations; $i ++){
+        select -cl  ;
+        select $startSel[0];
+        string $CubeNames = ($objectName + $i);
+       // polyCube -name $CubeNames -w 1 -h 1 -d 1 -sx 1 -sy 1 -sz 1 -ax 0 1 0 -cuv 4 -ch 1;
+        duplicate -rr;
+        $yMove = rand(($yVal * -1), $yVal);
+        $xMove = rand(($xVal * -1), $xVal);
+        $zMove = rand(($zVal * -1), $zVal);
+        $xRot = rand(0, 360);
+        $yRot = rand(0, 360);
+        $zRot = rand(0, 360);
+        $rScale = rand(2, 1);
+        move -r $xMove $yMove $zMove ;
+        rotate -r -os -fo $xRot $yRot $zRot ;
+        scale -r $rScale $rScale $rScale ;
+        string $sels[] = `ls -selection`;
+        $objects[$i] = $sels[0]; 
+        
+    }
+    select $objects;
+    doGroup 0 1 1;
+}
+
+global proc MoveObj (string $xName, string $yName, string $zName){
+    //get selection
+    string $sels[] = `ls -selection`;
+    
+    //query values of float fields and assign to vars
+    float $xVal = `GetFloatFieldValue($xName)`;
+    float $yVal = `GetFloatFieldValue($yName)`;
+    float $zVal = `GetFloatFieldValue($zName)`;
+    
+    //move the objects
+    move $xVal $yVal $zVal $sels;
+}
+
+global proc float GetFloatFieldValue (string $control) {
+    float $value = `floatField -q -value $control`;
+    return $value;
+}
+
+global proc float GetIntFieldValue (string $control) {
+    float $value = `intField -q -value $control`;
+    return $value;
+}
+
+global proc float GetCheckboxValue (string $control){
+    float $value = `checkBox -q -value $control`;
+    return $value;
+}
+
+
+global proc WindowMaker3(){
+    string $mainWindow = "RandomPlacementWindow";
+    
+    if (`window -exists $mainWindow`)
+        deleteUI $mainWindow;
+        
+    $mainWindow = `window -title "Random Placement Generator" $mainWindow`;
+    string $mainCol = `columnLayout -parent $mainWindow -adjustableColumn 1`;
+    
+    //create first row for duplicate fields
+    string $dupRowLayout = `rowLayout -parent $mainCol -numberOfColumns 2 -adjustableColumn 2`;
+    text -parent $dupRowLayout -label "Duplicate" -width 60;
+    string $dupIntField = `intField -parent $dupRowLayout -minValue 1 -value 7`;
+    
+    //create seocnd row for range vals
+    string $rangeRowLayout = `rowLayout -parent $mainCol -numberOfColumns 4`;
+    text -parent $rangeRowLayout -label "Range" -width 60;
+    string $xRange = `floatField -parent $rangeRowLayout -value 10 -width 60`;
+    string $yRange = `floatField -parent $rangeRowLayout -value 10 -width 60`;
+    string $zRange = `floatField -parent $rangeRowLayout -value 10 -width 60`;
+    
+    //third row
+    string $RotationCheckboxLayout = `rowLayout -parent $mainCol -numberOfColumns 2`;
+    text -parent $RotationCheckboxLayout -label " " -width 60;
+    string $rotationCheck = `checkBox -parent $RotationCheckboxLayout -label "Random Rotation"`;
+    
+    //create buttonst
+    string $button = `button -parent $mainCol -label "Move" -command ("DuplicateCubes(\"" + $rotationCheck + "\", \"" + $dupIntField + "\", \"" + $xRange + "\", \"" + $yRange + "\", \"" + $zRange + "\")")`;
+    
+    showWindow $mainWindow;
+}
+
+WindowMaker3();
+

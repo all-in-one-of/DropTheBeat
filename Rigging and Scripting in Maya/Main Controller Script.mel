@@ -1,0 +1,35 @@
+
+
+global proc StartWindow (){
+    
+    
+    
+    string $mainWindow = "ControllerWindow";
+    
+    if (`window -exists $mainWindow`)
+        deleteUI $mainWindow;
+        
+    $mainWindow = `window -title "Toolbox" $mainWindow`;
+    string $mainCol = `columnLayout -parent $mainWindow -adjustableColumn 1`;
+    
+    //create first row for duplicate fields
+    string $dupRowLayout = `rowLayout -parent $mainCol -numberOfColumns 2 -adjustableColumn 1`;
+    button -parent $dupRowLayout -label "Copier Tool" -width 250 -command "defaultButtonPush";
+
+    
+    // second row for start umber
+    string $renameRowLayout = `rowLayout -parent $mainCol -numberOfColumns 2 -adjustableColumn 1`;
+    button -parent $renameRowLayout -label "Rename Tool" -width 250 -command "defaultButtonPush";  
+    
+    // third row for start umber
+    string $controlRowLayout = `rowLayout -parent $mainCol -numberOfColumns 2 -adjustableColumn 1`;
+    button -parent $controlRowLayout -label "Controls and Groups Tool" -width 250 -command "defaultButtonPush";  
+
+   
+    
+    //create third row for buttonst
+   // string $buttonLayout = `rowLayout -parent $mainCol -numberOfColumns 1 -adjustableColumn 2`;
+   // string $button = `button -parent $buttonLayout -label "Rename" -command ("renamer(\"" + $NewNameField + "\", \"" + $StartNum + "\")")`;
+    
+    showWindow $mainWindow;
+}

@@ -1,0 +1,77 @@
+global proc renamer (string $newNameString, string $numberToStart){
+    //convertnig fields to values
+    string $inputString = `GetTextFieldValue2($newNameString)`;
+    int $startNum = `GetIntFieldValue($numberToStart)`;
+    
+    //getting selection
+    string $startSel[] = `ls -sl`;
+
+    string $myString[];    //defining string to hold tokenized string
+    $numTokens = `tokenize $inputString "#" $myString`; // separating the input string based on the # location
+    string $numberString = `match "#+" $inputString`;  // finding the ## in the string
+    
+    
+    
+    int $iterations = size($startSel);
+
+
+for ($i = 0; $i < $iterations; $i ++){
+      string $newNumber = $i + $startNum; //setting up what the new number is      
+      int $hashtagSize = size($numberString); //finding the number of # in the input string
+      int $myNumberSize = size($newNumber); //finding the number of digits in the number of i
+      int $paddingNumber = ($hashtagSize - $myNumberSize); //finding the number of padding 0's that need to go in front
+      string $padding; 
+          for ($x = 0; $x < $paddingNumber; $x++){
+              $padding = ($padding + "0");
+          }
+      
+      string $newName =($myString[0] + $padding + $newNumber + $myString[1]); // setting up the new name
+      rename $startSel[$i] $newName; // assign the selection the new name
+      
+        
+    }
+
+}
+
+global proc float GetIntFieldValue (string $control) {
+    float $value = `intField -q -value $control`;
+    return $value;
+}
+
+global proc string GetTextFieldValue2 (string $control) {
+    string $newString = `textField -q -tx $control`;
+    return $newString;
+}
+
+//renamer("Arm_###_jnt", 7, `ls -selection`);
+
+global proc WindowMaker4(){
+    string $mainWindow = "RenamerWindow";
+    
+    if (`window -exists $mainWindow`)
+        deleteUI $mainWindow;
+        
+    $mainWindow = `window -title "Mass Rename Tool" $mainWindow`;
+    string $mainCol = `columnLayout -parent $mainWindow -adjustableColumn 1`;
+    
+    //create first row for duplicate fields
+    string $dupRowLayout = `rowLayout -parent $mainCol -numberOfColumns 2 -adjustableColumn 2`;
+    text -parent $dupRowLayout -label "New Name" -width 100;
+    string $NewNameField = `textField -parent $dupRowLayout -width 200`;
+    
+    // second row for start umber
+    string $copyRowLayout = `rowLayout -parent $mainCol -numberOfColumns 2 -adjustableColumn 2`;
+    text -parent $copyRowLayout -label "Start Number" -width 100;
+    string $StartNum = `intField -parent $copyRowLayout -width 200`;
+   
+    
+    //create third row for buttonst
+    string $buttonLayout = `rowLayout -parent $mainCol -numberOfColumns 1 -adjustableColumn 2`;
+    string $button = `button -parent $buttonLayout -label "Rename" -command ("renamer(\"" + $NewNameField + "\", \"" + $StartNum + "\")")`;
+    
+    showWindow $mainWindow;
+}
+
+WindowMaker4();
+
+
