@@ -26,4 +26,4 @@ def renamer (newNameString, numberToStart):
     
     
     
-renamer('testin_####_this', '9')
+renamer('R_Ring_##_jnt', '1')
