@@ -2,7 +2,7 @@ import maya.cmds as cmds
 
 
 
-class stretchyIK_tool():
+class RiggingTools():
     def __init__(self):
         self.mWin = 'Menu'
         
@@ -11,11 +11,20 @@ class stretchyIK_tool():
         self.delete()
 
         
-        self.mWin = cmds.window(self.mWin, title = 'Stretchy IK Setup', tlb = True, sizeable = False, widthHeight=(270, 75))
+        self.mWin = cmds.window(self.mWin, title = 'Stretchy IK Setup', tlb = True, sizeable = False, widthHeight=(270, 225))
         cmds.windowPref(self.mWin, remove = True)
         mCol = cmds.columnLayout(parent = self.mWin, w = 100, adjustableColumn = True)
         cmds.text(parent = mCol, ww = True,h = 40, label = "Select Control, then wrist joint, elbow joint, and shoulder joint. Basic IK functionality should be working already")
         cmds.button(parent = mCol, label = 'Setup dat stretchy IK', c = lambda x: self.stretchyIK())
+        
+        cmds.text(parent = mCol, ww = True,h = 40, label = "Setup bones beforehand. Select highest level parent")
+        cmds.button(parent = mCol, label = 'Create Curve for Spline IK', c = lambda x: self.CurveFromBones())
+        
+        cmds.text(parent = mCol, ww = True, w = 100, h = 40, label = "Create Locators Tool. Option 1 only works on geometry objects:")
+        self.dropCtrl = cmds.optionMenu(parent = mCol, w = 150, label = 'Type')
+        cmds.menuItem(parent = self.dropCtrl, label = 'Bounding Box')
+        cmds.menuItem(parent = self.dropCtrl, label = 'Pivot Point')
+        cmds.button(parent = mCol, label = 'Create Locator', c = lambda x: self.CreateLoc(cmds.optionMenu(self.dropCtrl, q = True, select = True)))
         
         cmds.showWindow(self.mWin)
         
@@ -105,6 +114,43 @@ class stretchyIK_tool():
         cmds.connectAttr( MD5 + ".outputX", sel[1] + '.translateX')
     
     
+    def CurveFromBones(self):
+        sel = cmds.ls(sl = True)
+        relatives = cmds.listRelatives(sel[0], ad = True)
+        relatives.append(sel[0])
+        locs = []
+        relatives.reverse()
+        for relative in relatives:
+            loc = cmds.spaceLocator()
+            cmds.matchTransform(loc, relative)
+            locs.append(loc)
+       
+        positionOrder = [cmds.pointPosition(loc) for loc in locs]
+        print positionOrder 
+        cmds.curve(p=positionOrder) 
+        for loc in locs:
+            cmds.delete(loc)
+    
+    def CreateLoc (self, option):
+        sels = cmds.ls(sl = True)
+        
+        if option == 1:
+            dups = cmds.duplicate(sels, rr=True)
+            dups = cmds.polyUnite(dups, ch=True, mergeUVSets=True, centerPivot=True)[0]
+            bbox = cmds.xform(dups, boundingBox=True, q=True)
+            bboxPivot = [ (bbox[0] + bbox[3])/2, (bbox[1] + bbox[4])/2, (bbox[2] + bbox[5])/2 ]
+            
+            cmds.delete(dups, ch=True)
+            cmds.delete(dups)
+            
+            loc = cmds.spaceLocator()[0]
+            cmds.xform(loc, translation=bboxPivot, worldSpace=True)
+        
+        elif option == 2:
+            for sel in sels:
+                pivot = cmds.xform(sel, q=True, rp=True, ws=True)
+                loc = cmds.spaceLocator()[0]
+                cmds.xform(loc, translation=pivot, worldSpace=True)   
     
         
     

@@ -3,6 +3,7 @@ def bonesList():
     relatives = cmds.listRelatives(sel[0], ad = True)
     relatives.append(sel[0])
     locs = []
+    relatives.reverse()
     for relative in relatives:
         loc = cmds.spaceLocator()
         cmds.matchTransform(loc, relative)
