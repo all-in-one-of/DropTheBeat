@@ -9,7 +9,7 @@ class RiggingTools():
         self.delete()
 
         
-        self.mWin = cmds.window(self.mWin, title = 'Stretchy IK Setup', tlb = True, sizeable = False, widthHeight=(270, 300))
+        self.mWin = cmds.window(self.mWin, title = 'Rigging Tools', tlb = True, sizeable = False, widthHeight=(270, 300))
         cmds.windowPref(self.mWin, remove = True)
         mCol = cmds.columnLayout(parent = self.mWin, w = 100, adjustableColumn = True)
         cmds.text(parent = mCol, ww = True,h = 40, label = "Select Control, then wrist joint, elbow joint, and shoulder joint. Basic IK functionality should be working already")

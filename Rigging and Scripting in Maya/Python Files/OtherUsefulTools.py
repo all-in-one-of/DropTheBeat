@@ -4,14 +4,14 @@ import random as rand
 #need to put random placement, renamer, and setup a basic control creator
 class otherTools():
     def __init__(self):
-        self.mWin = 'Menu'
+        self.otherWin = 'Menu2'
         
     def windowmaker(self):
         self.delete()
         
-        self.mWin = cmds.window(self.mWin, title = 'Other "Useful" Tools', tlb = True, w = 200, h = 200, sizeable = False)
-        cmds.windowPref(self.mWin, remove = True)
-        mCol = cmds.columnLayout(parent = self.mWin, w = 100, adjustableColumn = True)
+        self.otherWin = cmds.window(self.otherWin, title = 'Other "Useful" Tools', tlb = True, w = 200, h = 200, sizeable = False)
+        cmds.windowPref(self.otherWin, remove = True)
+        mCol = cmds.columnLayout(parent = self.otherWin, w = 100, adjustableColumn = True)
         mRow = cmds.rowLayout(parent = mCol, nc = 2)
         cmds.text(parent = mRow, label = 'Number of Copies')
         self.SizeField = cmds.floatField(parent = mRow, minValue=0, value=1, h = 30) 
@@ -28,11 +28,11 @@ class otherTools():
         cmds.button(parent = mCol, label = 'Rename', 
                                     c = lambda x: self.renamer(cmds.textField(self.renamed, q = True, tx = True), 
                                     cmds.intField(self.startnum, q = True, v = True)))
-        cmds.showWindow(self.mWin)        
+        cmds.showWindow(self.otherWin)        
         
     def delete(self):
-        if cmds.window(self.mWin, exists = True):
-            cmds.deleteUI(self.mWin) 
+        if cmds.window(self.otherWin, exists = True):
+            cmds.deleteUI(self.otherWin) 
             
     def copier(self, copies):
         
