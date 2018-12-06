@@ -1,7 +1,5 @@
 import maya.cmds as cmds
 
-
-
 class RiggingTools():
     def __init__(self):
         self.mWin = 'Menu'
@@ -11,20 +9,23 @@ class RiggingTools():
         self.delete()
 
         
-        self.mWin = cmds.window(self.mWin, title = 'Stretchy IK Setup', tlb = True, sizeable = False, widthHeight=(270, 225))
+        self.mWin = cmds.window(self.mWin, title = 'Stretchy IK Setup', tlb = True, sizeable = False, widthHeight=(270, 300))
         cmds.windowPref(self.mWin, remove = True)
         mCol = cmds.columnLayout(parent = self.mWin, w = 100, adjustableColumn = True)
         cmds.text(parent = mCol, ww = True,h = 40, label = "Select Control, then wrist joint, elbow joint, and shoulder joint. Basic IK functionality should be working already")
         cmds.button(parent = mCol, label = 'Setup dat stretchy IK', c = lambda x: self.stretchyIK())
         
         cmds.text(parent = mCol, ww = True,h = 40, label = "Setup bones beforehand. Select highest level parent")
-        cmds.button(parent = mCol, label = 'Create Curve for Spline IK', c = lambda x: self.CurveFromBones())
+        cmds.button(parent = mCol, label = 'Create Basic Spline IK', c = lambda x: self.CurveFromBones())
         
         cmds.text(parent = mCol, ww = True, w = 100, h = 40, label = "Create Locators Tool. Option 1 only works on geometry objects:")
         self.dropCtrl = cmds.optionMenu(parent = mCol, w = 150, label = 'Type')
         cmds.menuItem(parent = self.dropCtrl, label = 'Bounding Box')
         cmds.menuItem(parent = self.dropCtrl, label = 'Pivot Point')
         cmds.button(parent = mCol, label = 'Create Locator', c = lambda x: self.CreateLoc(cmds.optionMenu(self.dropCtrl, q = True, select = True)))
+        
+        cmds.text(parent = mCol, ww = True,h = 40, label = "Select locators to create joints at their location")
+        cmds.button(parent = mCol, label = 'Create joint chain', c = lambda x: self.placeJoints())
         
         cmds.showWindow(self.mWin)
         
@@ -126,10 +127,14 @@ class RiggingTools():
             locs.append(loc)
        
         positionOrder = [cmds.pointPosition(loc) for loc in locs]
-        print positionOrder 
-        cmds.curve(p=positionOrder) 
+         
+        mycurve = cmds.curve(p=positionOrder) 
         for loc in locs:
             cmds.delete(loc)
+        
+        cmds.ikHandle( sj= relatives[0], ee=relatives[-1], curve = mycurve, sol = "ikSplineSolver", ccv = False )    
+       # cmds.select( relatives[0], relatives[-1], add = True )
+        
     
     def CreateLoc (self, option):
         sels = cmds.ls(sl = True)
@@ -151,7 +156,15 @@ class RiggingTools():
                 pivot = cmds.xform(sel, q=True, rp=True, ws=True)
                 loc = cmds.spaceLocator()[0]
                 cmds.xform(loc, translation=pivot, worldSpace=True)   
+                
+                
+    def placeJoints():
+        sels = cmds.ls(sl = True) 
+        cmds.select(cl = True)
     
+        for sel in sels:
+            cmds.matchTransform(cmds.joint(),sel)
+        
         
     
     
